@@ -1,0 +1,2 @@
+class ThirdPartyContentsController < ApplicationController
+end
