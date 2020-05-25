@@ -1,0 +1,2 @@
+class OwnContent < ApplicationRecord
+end

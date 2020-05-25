@@ -1,0 +1,2 @@
+class ThirdPartyContent < ApplicationRecord
+end
