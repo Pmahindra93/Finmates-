@@ -1,0 +1,79 @@
+.banner {
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-content {
+  text-align: center;
+  h1 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    color: white;
+    font-size: 32px;
+  }
+}
+
+.banner-slogan {
+  padding: 50px 20px 20px 20px;
+}
+
+.banner-img {
+  text-align: right;
+  img {
+    max-width: 90%;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  h1 {
+    .typing {
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .banner-content {
+    h1 {
+      font-size: 44px;
+    }
+  }
+  .banner-img {
+    img {
+    max-width: 80%;
+    }
+  }
+  .banner-slogan {
+    padding: 100px 20px 20px 20px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .banner-content {
+    h1 {
+      font-size: 56px;
+    }
+  }
+  .banner-slogan {
+    padding: 150px 20px 20px 20px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .banner-img {
+    img {
+    max-width: 70%;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
