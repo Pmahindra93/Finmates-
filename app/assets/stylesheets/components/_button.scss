@@ -1,14 +1,22 @@
-.btn-white {
+.btn-white, .btn-gradient {
   margin: 20px 0;
-  color: white;
   padding: 8px 25px;
   border-radius: 8px;
-  background: white;
-  color: #3A3B9C;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-size: cover;
   justify-content: center;
   font-size: 24px;
   line-height: 28px;
+}
 
+.btn-white {
+  background: white;
+  color: #3A3B9C;
+}
+
+.btn-gradient {
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  color: white;
 }
 
 
