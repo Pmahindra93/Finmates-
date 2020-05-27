@@ -1,4 +1,8 @@
 // Specific to how-it-works section on lp
+#our-provision {
+  padding-bottom: 50px
+}
+
 .what-we-provide {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,16 +27,9 @@
     order: 1;
   }
   .text-2 {
-    margin-top: 80px;
-  }
-  .text-3 {
-    margin-top: 80px;
-  }
-}
-
-// Small devices (landscape phones, 600px and lower)
-@media screen and (max-width: 576px) {
-  .text-2 {
     order: 0;
+  }
+  .text-2, .text-3 {
+    margin-top: 80px;
   }
 }
