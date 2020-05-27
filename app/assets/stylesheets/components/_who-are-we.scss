@@ -9,6 +9,18 @@
   justify-items: center;
 }
 
+.who-are-we-header, .our-story {
+  text-align: center;
+  h2 {
+    margin-top: 50px;
+    color: #3A3B9C;
+    font-weight: bold;
+  }
+  p {
+    color: #3A3B9C;
+  }
+}
+
 .who-are-we-card-1, .who-are-we-card-2, .who-are-we-card-3 {
   text-align: center;
   margin-top: 50px;
@@ -39,18 +51,6 @@
 
 .who-are-we-card-3 {
  background: #7209B7;
-}
-
-.our-story {
-  text-align: center;
-  h2 {
-    margin-top: 50px;
-    color: #3A3B9C;
-    font-weight: bold;
-  }
-  p {
-    color: #3A3B9C;
-  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
