@@ -42,10 +42,6 @@
   .benefits-container {
     grid-template-columns: 1fr;
   }
-}
-
-// Small devices (landscape phones, 600px and lower)
-@media screen and (max-width: 576px) {
   .benefits-silver-platter {
     order: 0;
   }

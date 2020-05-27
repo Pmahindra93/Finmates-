@@ -1,7 +1,18 @@
+.who-are-we-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  text-align: center;
+  justify-items: center;
+}
+
 .who-are-we-card-1, .who-are-we-card-2, .who-are-we-card-3 {
   text-align: center;
+  vertical-align: bottom;
+  height: 420px;
+  width: 335px;
   img {
-    height: 400px;
+    height: 320px;
   }
   p {
     color: white;
@@ -9,6 +20,10 @@
     font-size: 24px;
     padding: 20px;
   }
+}
+
+.sign-up-btn {
+  text-align: center;
 }
 
 .who-are-we-card-1 {
@@ -21,5 +36,13 @@
 
 .who-are-we-card-3 {
  background: #7209B7;
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .who-are-we-container {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  }
 }
 
