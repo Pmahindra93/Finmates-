@@ -41,6 +41,18 @@
  background: #7209B7;
 }
 
+.our-story {
+  text-align: center;
+  h2 {
+    margin-top: 50px;
+    color: #3A3B9C;
+    font-weight: bold;
+  }
+  p {
+    color: #3A3B9C;
+  }
+}
+
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .who-are-we-container {
