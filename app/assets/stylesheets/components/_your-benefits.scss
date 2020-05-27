@@ -1,0 +1,47 @@
+#your-benefits {
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.benefits-silver-platter {
+  text-align: center;
+}
+
+// Specific to how-it-works section on lp
+.benefits-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  // text-align: center;
+  align-items: center;
+  img {
+    max-width: 100%;
+  }
+}
+
+// Small devices (landscape phones, 576px and lower)
+@media screen and (max-width: 576px) {
+  .benefits-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 600px and lower)
+@media screen and (max-width: 576px) {
+  .benefits-silver-platter {
+    order: 1;
+  }
+  .text-2 {
+    margin-top: 80px;
+  }
+  .text-3 {
+    margin-top: 80px;
+  }
+}
+
+// Small devices (landscape phones, 600px and lower)
+@media screen and (max-width: 576px) {
+  .benefits-content {
+    order: 0;
+  }
+}
