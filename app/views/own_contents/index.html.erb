@@ -2,6 +2,8 @@
   <br>
   <h5><strong>Tim, here is your bit-size news 💸</strong> </h5>
   <br>
+  <h6><%= Date.today() %> 📅 </h6>
+  <br>
   <% @today_content.each do |content| %>
     <%= link_to own_content_path(content) do %>
       <%= render 'components/card', content: content %>
