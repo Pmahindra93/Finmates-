@@ -1,0 +1,62 @@
+#who-are-we {
+  padding-bottom: 50px;
+}
+
+.who-are-we-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  justify-items: center;
+}
+
+.who-are-we-header, .our-story {
+  text-align: center;
+  h2 {
+    margin-top: 50px;
+    color: #3A3B9C;
+    font-weight: bold;
+  }
+  p {
+    color: #3A3B9C;
+  }
+}
+
+.who-are-we-card-1, .who-are-we-card-2, .who-are-we-card-3 {
+  text-align: center;
+  margin-top: 50px;
+  height: 420px;
+  width: 335px;
+  img {
+    height: 320px;
+  }
+  p {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 20px;
+  }
+}
+
+.sign-up-btn {
+  text-align: center;
+}
+
+.who-are-we-card-1 {
+ background: #4CC9F0;
+}
+
+.who-are-we-card-2 {
+ background: #F72585;
+}
+
+.who-are-we-card-3 {
+ background: #7209B7;
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .who-are-we-container {
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+

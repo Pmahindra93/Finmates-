@@ -1,0 +1,42 @@
+// Specific to how-it-works section on lp
+#our-provision {
+  padding-bottom: 50px
+}
+
+.what-we-provide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  text-align: center;
+  align-items: center;
+  h2 {
+    color: #3A3B9C;
+    font-weight: bold;
+  }
+  p {
+    color: #3A3B9C;
+  }
+  img {
+    max-width: 90%;
+  }
+}
+
+// Small devices (landscape phones, 576px and lower)
+@media screen and (max-width: 576px) {
+  .what-we-provide {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 600px and lower)
+@media screen and (max-width: 576px) {
+  .iphone-2 {
+    order: 1;
+  }
+  .text-2 {
+    order: 0;
+  }
+  .text-2, .text-3 {
+    margin-top: 80px;
+  }
+}

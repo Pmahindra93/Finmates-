@@ -1,29 +1,51 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "fm_heading.png" %>
+<div class="nav">
+
+  <div class="fm_heading">
+    <%= image_tag 'fm_heading.png' %>
+  </div>
+
+  <div class="nav-links">
+    <% if user_signed_in? %>
+          <li><%= link_to image_tag('home-btn.png', ), class: "nav-link" %></li>
+          <li><%= link_to image_tag('news.png', ), class: "nav-link" %></li>
+          <li><%= link_to image_tag('content.png', ), class: "nav-link" %></li>
+          <li><%= link_to image_tag('favourites.png', ), class: "nav-link" %></li>
+        </div>
+    <% else %>
+        </li><%= link_to "Enter", new_user_session_path, class: "nav-link" %></li>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <%= image_tag "user_tim.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", '#', class: "dropdown-item" %>
-            <%= link_to "Settings", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Enter", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
   </div>
 </div>
+
+ <script>
+   const navSlide = () => {
+      const burger = document.querySelector('.burger');
+      const nav = document.querySelector('.nav-links');
+      const navLinks = document.querySelectorAll('.nav-links li');
+
+      burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
+
+      //Animate Links
+      navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+        }
+      });
+      //Burger Animation
+      burger.classList.toggle('cross');
+    });
+  }
+
+  navSlide ();
+
+ </script>
+
