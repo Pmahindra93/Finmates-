@@ -1,4 +1,5 @@
 class Favourite < ApplicationRecord
   belongs_to :own_content
   belongs_to :third_party_content
+  belongs_to :user
 end
