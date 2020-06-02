@@ -6,7 +6,7 @@ class OwnContentsController < ApplicationController
   end
 
   def show
-    @own_content = Booking.find(params[:id])
+    find_content
   end
 
   private
