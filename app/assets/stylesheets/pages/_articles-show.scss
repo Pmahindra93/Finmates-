@@ -1,0 +1,36 @@
+.article-title, .article_abstract, .article_content {
+  h1, p {
+    color: #3A3B9C;
+  }
+}
+
+.article-title, .article_abstract {
+  h1, p {
+    font-weight: bold;
+  }
+  p {
+    margin-top: 20px;
+  }
+}
+
+.article-category {
+  color: grey;
+  font-style: italic;
+}
+
+.article_thumbnail {
+  img {
+    width: 100%;
+  }
+}
+
+.article_icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  text-align: right;
+  i {
+    padding: 8px;
+  }
+}
+
