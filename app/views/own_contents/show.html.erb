@@ -1,1 +1,45 @@
-<h1> This is the detailed news page 📈</h1>
+<div class="primary-container">
+  <div class="article-title">
+    <h1><%= @own_content.title %></h1>
+  </div>
+
+  <div class="article-category">
+    <h5><%= @own_content.category %></h5>
+  </div>
+
+  <div class="article-date">
+    <p><%= @own_content.created_at.strftime("%B %d, %Y") %></p>
+  </div>
+
+  <!-- Article thumbnail -->
+  <div class="article_thumbnail">
+    <% if @own_content.own_content_thumb.attached? %>
+      <%= cl_image_tag @cocktail.thumbnail.key, class: "article_thumb" %>
+    <% else %>
+      <%= image_tag 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80', class: "article_thumb" %>
+    <% end %>
+  </div>
+
+  <!-- Article icons -->
+  <div class="article_icons">
+    <div class="dollars">
+      <i class="fas fa-dollar-sign"></i>
+    </div>
+    <div class="thumbs-download-share">
+      <i class="far fa-thumbs-up"></i>
+      <i class="fas fa-download"></i>
+      <i class="fas fa-share-alt"></i>
+    </div>
+  </div>
+
+  <!-- Article abstract -->
+  <div class="article_abstract">
+    <p><%= @own_content.description %></p>
+  </div>
+
+  <!-- Article content -->
+  <div class="article_content">
+    <p><%= @own_content.article %></p>
+  </div>
+
+</div>
