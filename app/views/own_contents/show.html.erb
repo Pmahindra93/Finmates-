@@ -12,14 +12,20 @@
     <% end %>
   </div>
 
+  <div class="own_content_icons">
+    <i class="far fa-thumbs-up"></i>
+    <i class="fas fa-download"></i>
+    <i class="fas fa-share-alt"></i>
+  </div>
+
   <!-- Article abstract -->
   <div class="own_content_abstract">
-    <%= @own_content.description %>
+    <p><%= @own_content.description %></p>
   </div>
 
   <!-- Article content -->
   <div class="own_article_content">
-    <%= @own_content.article %>
+    <p><%= @own_content.article %></p>
   </div>
 
 </div>
