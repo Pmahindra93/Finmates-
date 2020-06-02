@@ -1,10 +1,25 @@
-<h1> <%= @own_content.title %> </h1>
+<div class="primary-container">
+  <h1><%= @own_content.title %></h1>
 
-<!-- Article thumbnail -->
-<div class="frofftail-img-grid">
-  <% if @own_content.own_content_thumb.attached? %>
-    <%= cl_image_tag @cocktail.thumbnail.key, class: "own_content_thumb" %>
-  <% else %>
-    <%= image_tag 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80', class: "own_content_thumb" %>
-  <% end %>
+  <h3><%= @own_content.category %></h3>
+
+  <!-- Article thumbnail -->
+  <div class="frofftail-img-grid">
+    <% if @own_content.own_content_thumb.attached? %>
+      <%= cl_image_tag @cocktail.thumbnail.key, class: "own_content_thumb" %>
+    <% else %>
+      <%= image_tag 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80', class: "own_content_thumb" %>
+    <% end %>
+  </div>
+
+  <!-- Article abstract -->
+  <div class="own_content_abstract">
+    <%= @own_content.description %>
+  </div>
+
+  <!-- Article content -->
+  <div class="own_article_content">
+    <%= @own_content.article %>
+  </div>
+
 </div>
