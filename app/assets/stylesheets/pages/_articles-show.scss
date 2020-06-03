@@ -34,3 +34,15 @@
   }
 }
 
+$size: 20px;
+
+.social-share-button {
+  -webkit-box-align: center;
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    // padding: 0 8px;
+    margin: 6.5px 8px 0 0;
+  }
+}
