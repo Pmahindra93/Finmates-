@@ -13,4 +13,5 @@ class User < ApplicationRecord
   # validates :email, presence: true
   # validates :name, presence: true
 
+  acts_as_voter
 end

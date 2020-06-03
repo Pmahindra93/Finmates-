@@ -20,6 +20,15 @@
     <% end %>
   </div>
 
+  <!-- like button -->
+  <div id="like-count">
+    <%= render 'own_contents/likes', own_content: @own_content %>
+  </div>
+
+  <div id="like_link">
+    <%= render 'own_contents/like_link', own_content: @own_content %>
+  </div>
+
   <!-- Article icons -->
   <div class="article_icons">
     <div class="thumbs">

@@ -1,0 +1,3 @@
+<% vote_text = current_user&.voted_for?(own_content) ? "Unlike" : "Like" %>
+
+<%= link_to vote_text, like_own_content_path(own_content), method: :put, remote: :true, class: 'like-post' %>

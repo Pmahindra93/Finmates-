@@ -10,6 +10,9 @@ gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'social-share-button'
 
+# Upvote gem
+gem 'acts_as_votable'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'

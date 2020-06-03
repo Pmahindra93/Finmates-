@@ -1,0 +1,15 @@
+// $('.liked-btn').on('ajax:success', function(){
+//   $(this).parent().find('like_count')
+//   .html('<%= @own_content.get_likes.size %> <i class="far fa-thumbs-up"></i>');
+//   $(this).closest('liked-btn').html('Like');
+// });
+
+// $('.like-btn').on('ajax:success', function(){
+//   $(this).parent().parent().find('.like_count')
+//   .html('<%= @own_content.get_likes.size %> <i class="far fa-thumbs-up"></i>');
+//   $(this).closest('.like-btn').html('Liked');
+// });
+
+$("#like-count").html("<%= j render 'own_contents/likes', own_content: @own_content %>");
+$("#like-link").html("<%= j render 'own_contents/like_link', own_content: @own_content %>");
+
