@@ -8,9 +8,14 @@
         <div class="banner-slogan">
           <h1>Lorem ipsum Lorem ipsum Lorem ipsum<div id="typing" class="typing"></div></h1>
         </div>
-
-        <%= link_to '#' do %>
-          <button class="btn-white"> Start free trial! </button>
+        <% if user_signed_in? %>
+            <%= link_to own_contents_path do %>
+              <button class="btn-white"> Start free trial! </button>
+            <% end %>
+        <% else %>
+            <%= link_to new_user_session_path do %>
+              <button class="btn-white"> Start free trial! </button>
+            <% end %>
         <% end %>
       </div>
 
