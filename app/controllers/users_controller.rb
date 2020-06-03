@@ -4,9 +4,6 @@ class UsersController < ApplicationController
 
 #     skip_before_action :authenticate_user!, only: [:home]
 
-#   def home
-#   end
-
   def index
     # @wishes = policy_scope(Wish).where(user: current_user)
     # @wishes = Wish.all
@@ -16,17 +13,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
-
-  # def edit
-  #   @user = User.find(params[:id])
-  # end
-
-   # def update
-  #   @user = User.find(params[:id])
-  #   @user.update(user_params)
-  # end
 
 end
 
