@@ -20,10 +20,9 @@
     <% end %>
   </div>
 
-  <!-- like button -->
-
   <!-- Article icons -->
   <div class="article_icons">
+    <!-- like button -->
     <div class="likes">
       <div class="like-count">
         <%= render 'own_contents/likes', own_content: @own_content %>
@@ -34,6 +33,7 @@
       </div>
     </div>
 
+    <!-- social-share-button -->
     <div class="social-share-btn">
       <%= social_share_button_tag(@own_content.title, :url => "finmates.com#{own_content_path(@own_content)}", desc: @own_content.description) %>
     </div>
