@@ -1,23 +1,37 @@
 <div class="container-dashboard">
-  <br>
-  <h3><strong>Hello!</strong></h3>
-
+    <br>
+    <h3><strong>Hello <%= @userName %>!</strong></h3>
+  <div class="col-x"style ="text-align: center;
+        display: block;">
+    <br>
       <%= image_tag 'user_tim.png' %>
+    <br><br><br>
+  </div>
 
-  <br><br><br>
+  <div class="row" style="justify-content: center">
+     <div class="col-6" id=user-info>
 
-  <h4><strong>Account Details</strong></h4>
+      <h5><strong>Account Info</strong></h5>
+      <h6><strong>Name: </strong><%= @userName %></h6>
+        <br>
+      <h6><strong>Email: </strong><%= @userEmail %></h6>
+        <br>
+      <h6><strong>Push Notifications: </strong> Y/N</h6>
+        <br>
+      <h6><strong>Manage Preferences</strong></h6>
+      <h6>Payments</h6>
+    </div>
 
-  <h6><%= @userEmail %></h6>
+    <div class="col-6" id="user-fav">
+      <h5>Favourites</h5>
+    <br>
 
+  </div>
+
+  </div>
   <br>
-
-  <h4><strong>Manage Preferences</strong></h4>
-  <h6>Payments</h6>
-  <h6>Preferences</h6>
-
-  <br>
-
-  <h5><%= link_to "Log out", destroy_user_session_path, method: :delete %></h5>
-
+    <div class="row" style="justify-content: center">
+       <h5><%= link_to "Log out", destroy_user_session_path, method: :delete %></h5>
+    </div>
+  </div>
 </div>
