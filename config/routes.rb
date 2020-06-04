@@ -16,10 +16,8 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show]
-
-  get "profile", to: "users#index", as: :profile
-  get "favourites", to: "users#show", as: :favourites
-  get "newsfeed", to: "own_contents#index", as: :newsfeed
+      # get "users/:id", to: "users#show"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
