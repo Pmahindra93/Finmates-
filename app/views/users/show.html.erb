@@ -1,16 +1,23 @@
-<br><br>
-    <%= image_tag 'user_tim.png' %>
+<div class="container-dashboard">
+  <br>
+  <h3><strong>Hello!</strong></h3>
 
-<br><br><br><br>
+      <%= image_tag 'user_tim.png' %>
 
-<h3><strong>Account Details</strong></h3>
-<h5>@userName</h5>
-<h5>@userEmail</h5>
-<br><br>
+  <br><br><br>
 
-<h3><strong>Manage Preferences</strong></h3>
+  <h4><strong>Account Details</strong></h4>
 
-<h5>Payments</h5>
-<h5>Card Options</h5>
-<br><br><br>
-<h6>Log Out</h6>
+  <h6><%= @userEmail %></h6>
+
+  <br>
+
+  <h4><strong>Manage Preferences</strong></h4>
+  <h6>Payments</h6>
+  <h6>Preferences</h6>
+
+  <br>
+
+  <h5><%= link_to "Log out", destroy_user_session_path, method: :delete %></h5>
+
+</div>

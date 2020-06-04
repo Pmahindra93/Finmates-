@@ -10,9 +10,12 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <!-- Shown in all views pages -->
+    <!-- Shown in all views pages excluding Home/Pages -->
 
-    <%= render 'shared/navbar' %>
+    <% unless controller_name == "pages" %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
 
     <%= yield %>
