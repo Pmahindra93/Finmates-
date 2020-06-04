@@ -15,12 +15,6 @@ class OwnContentsController < ApplicationController
   end
 
   def like
-    # @own_content = Post.find(params[:id])
-    # if params[format] == 'like'
-    #   @own_content.liked_by current_user
-    # elsif params[:format] == 'unlike'
-    #   @own_content.unliked_by current_user
-    # end
     if current_user.voted_for? @own_content
       @own_content.unliked_by current_user
     else
