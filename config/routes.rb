@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :own_contents do
-   resources :comments, only: [:index, :new, :create, :show]
-   resources :favourites, only: [:new, :create, :show]
+    member do
+      put "like" => "own_contents#like"
+    end
+    resources :comments, only: [:index, :new, :create, :show]
+    resources :favourites, only: [:index, :new, :create, :show]
   end
 
   resources :third_party_contents do
