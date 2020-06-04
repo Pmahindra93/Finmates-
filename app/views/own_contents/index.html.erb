@@ -2,6 +2,8 @@
   <br>
   <h5><strong>Tim, here is your bit-size news 💸</strong> </h5>
   <br>
+  <h6><%= Date.today() %> 📅 </h6>
+  <br>
   <% @today_content.each do |content| %>
     <%= link_to own_content_path(content) do %>
       <%= render 'components/card', content: content %>
@@ -10,3 +12,18 @@
   <% end %>
 </div>
 <hr></hr>
+<div class="container">
+  <div class="row m-2">
+    <h5><strong>Top Daily Picks</strong> </h5>
+    <div class ='d-flex mt-2 justify-content-lg-around'>
+      <%= render 'components/thirdpartycard' %>
+      <%= render 'components/thirdpartycard' %>
+      <%= render 'components/thirdpartycard' %>
+    </div>
+  </div>
+</div>
+<hr></hr>
+<div class="m-3">
+  <h5><strong>Top Fin-Tweets</strong> </h5>
+
+</div>

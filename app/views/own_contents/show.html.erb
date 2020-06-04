@@ -22,13 +22,20 @@
 
   <!-- Article icons -->
   <div class="article_icons">
-    <div class="dollars">
-      <i class="fas fa-dollar-sign"></i>
+    <!-- like button -->
+    <div class="likes">
+      <div class="like-count">
+        <%= render 'own_contents/likes', own_content: @own_content %>
+      </div>
+
+      <div class="like-link">
+        <%= render 'own_contents/like_link', own_content: @own_content %>
+      </div>
     </div>
-    <div class="thumbs-download-share">
-      <i class="far fa-thumbs-up"></i>
-      <i class="fas fa-download"></i>
-      <i class="fas fa-share-alt"></i>
+
+    <!-- social-share-button -->
+    <div class="social-share-btn">
+      <%= social_share_button_tag(@own_content.title, :url => "finmates.com#{own_content_path(@own_content)}", desc: @own_content.description) %>
     </div>
   </div>
 

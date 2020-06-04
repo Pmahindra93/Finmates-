@@ -42,6 +42,7 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_votable (0.12.1)
     arel (9.0.0)
     autoprefixer-rails (9.7.6)
       execjs
@@ -56,6 +57,13 @@ GEM
       aws_cf_signer
       rest-client
     coderay (1.1.2)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     devise (4.7.1)
@@ -173,6 +181,8 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    social-share-button (1.2.3)
+      coffee-rails
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -214,6 +224,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable
   autoprefixer-rails
   bootsnap
   cloudinary (~> 1.12.0)
@@ -230,6 +241,7 @@ DEPENDENCIES
   redis
   sassc-rails
   simple_form
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
