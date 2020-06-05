@@ -1,8 +1,9 @@
+<div class="primary-container">
 <div class="m-3">
   <br>
   <h5><strong>Tim, here is your bit-size news 💸</strong> </h5>
   <br>
-  <h6><%= Date.today() %> 📅 </h6>
+  <h6> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </h6>
   <br>
   <% @today_content.each do |content| %>
     <%= link_to own_content_path(content) do %>
@@ -12,18 +13,43 @@
   <% end %>
 </div>
 <hr></hr>
-<div class="container">
-  <div class="row m-2">
-    <h5><strong>Top Daily Picks</strong> </h5>
-    <div class ='d-flex mt-2 justify-content-lg-around'>
-      <%= render 'components/thirdpartycard' %>
-      <%= render 'components/thirdpartycard' %>
-      <%= render 'components/thirdpartycard' %>
+<div class="m-3">
+  <h5><strong>Top Daily Picks</strong> </h5>
+
+
+<!-- Carousel attempt using bootstrap -->
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= render 'components/thirdpartycard' %>
+          <div class="carousel-caption d-none d-md-block">
+          <h5>...</h5>
+          <p>...</p>
+          </div>
+      </div>
+      <div class="carousel-item">
+
+        <%= render 'components/thirdpartycard' %>
+      </div>
+      <div class="carousel-item">
+        <%= render 'components/thirdpartycard' %>
+      </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 </div>
+
 <hr></hr>
 <div class="m-3">
   <h5><strong>Top Fin-Tweets</strong> </h5>
+
+</div>
 
 </div>
