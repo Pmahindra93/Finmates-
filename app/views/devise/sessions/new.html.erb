@@ -1,7 +1,11 @@
 <div class="container">
-  <div class="row">
+  <div class="row" style="justify-content: center">
     <div class="col-sm-4 col-sm-offset-4">
-      <h2>Hello, please log in</h2>
+        <br>
+      <div class="fmlogo" style="width: 100%">
+        <%= link_to image_tag('fm_heading.png'), root_path %>
+      </div>
+        <br>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -14,10 +18,12 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+        <div class="">
+          <div class="form-actions btn-gradient">
+            <%= f.button :submit, "LOG IN", style: "line-height: 14px;" %>
+          </div>
+            <% end %>
         </div>
-      <% end %>
 
       <%= render "devise/shared/links" %>
 
