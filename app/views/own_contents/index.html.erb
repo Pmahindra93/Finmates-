@@ -1,8 +1,9 @@
+<div class="primary-container">
 <div class="m-3">
   <br>
   <h5><strong>Tim, here is your bit-size news 💸</strong> </h5>
   <br>
-  <h6><%= Date.today() %> 📅 </h6>
+  <h6> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </h6>
   <br>
   <% @today_content.each do |content| %>
     <%= link_to own_content_path(content) do %>
@@ -12,18 +13,17 @@
   <% end %>
 </div>
 <hr></hr>
-<div class="container">
-  <div class="row m-2">
+<div class="m-3">
     <h5><strong>Top Daily Picks</strong> </h5>
-    <div class ='d-flex mt-2 justify-content-lg-around'>
       <%= render 'components/thirdpartycard' %>
       <%= render 'components/thirdpartycard' %>
       <%= render 'components/thirdpartycard' %>
-    </div>
-  </div>
 </div>
+
 <hr></hr>
 <div class="m-3">
   <h5><strong>Top Fin-Tweets</strong> </h5>
+
+</div>
 
 </div>
