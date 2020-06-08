@@ -8,30 +8,68 @@
     <br><br><br>
   </div>
 
-  <div class="row" style="justify-content: center">
-     <div class="col-6" id=user-info>
+  <!-- Tabs -->
+  <div class="container">
+    <ul id="nav-tab" class="col-6" style="justify-content-between; display:flex;" >
+      <li class="active"><a href="#account-info">Account</a></li>
+      <li><a href="#favourites">Favourites</a></li>
+    </ul>
+    <hr></hr>
 
-      <h5><strong>Account Info</strong></h5>
-      <h6><strong>Name: </strong><%= @userName %></h6>
-        <br>
-      <h6><strong>Email: </strong><%= @userEmail %></h6>
-        <br>
-      <h6><strong>Push Notifications: </strong> Y/N</h6>
-        <br>
-      <h6><strong>Manage Preferences</strong></h6>
-      <h6>Payments</h6>
-    </div>
+  <!-- Tab panes -->
+  <div class="tab-content">
+      <div class="tab-pane active" id="account-info">
+        <h6><strong>Name: </strong><%= @userName %></h6>
+          <br>
+        <h6><strong>Email: </strong><%= @userEmail %></h6>
+          <br>
+        <h6><strong>Push Notifications: </strong> Y/N</h6>
+          <br>
+        <h6><strong>Manage Preferences</strong></h6>
+        <h6>Payments</h6>
+          <br>
+        <hr></hr>
+        <div class="row" style="justify-content: center">
+           <h5><%= link_to "Log out", destroy_user_session_path, method: :delete %></h5>
+        </div>
+      </div>
 
-    <div class="col-6" id="user-fav">
-      <h5>Favourites</h5>
-    <br>
-
+      <div class="tab-pane" id="favourites">
+        <h5>Article 1</h5>
+        <br>
+        <h5>Article 2</h5>
+        <br>
+        <h5>Article 3</h5>
+        <br>
+        <h5>Article 4</h5>
+        <br>
+      </div>
   </div>
 
-  </div>
-  <br>
-    <div class="row" style="justify-content: center">
-       <h5><%= link_to "Log out", destroy_user_session_path, method: :delete %></h5>
-    </div>
   </div>
 </div>
+
+<script>
+  function onTabClick(event) {
+  let activeTabs = document.querySelectorAll('.active');
+
+  // deactivate existing active tab and panel
+  // for( let i = 0; i < activeTabs.length; i++) {
+  //   activeTabs[i].className = activeTabs[i].className.replace('active-tab', '');
+  // }
+
+  activeTabs.forEach(function(tab) {
+    tab.className = tab.className.replace('active', '');
+  });
+
+  // activate new tab and panel
+  event.target.parentElement.className += ' active';
+  document.getElementById(event.target.href.split('#')[1]).className += ' active';
+}
+
+const element = document.getElementById('nav-tab');
+
+element.addEventListener('click', onTabClick, false);
+
+</script>
+

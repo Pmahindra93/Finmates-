@@ -6,11 +6,11 @@
     <div class="banner">
       <div class="banner-content">
         <div class="banner-slogan">
-          <h1>  Learn  <br>  Grow  <br>  Invest <div id="typing" class="typing"></div></h1>
+          <h1>  Educate  <br>  Grow  <br>  Invest <div id="typing" class="typing"></div></h1>
         </div>
         <% if user_signed_in? %>
             <%= link_to own_contents_path do %>
-              <button class="btn-white"> Start free trial! </button>
+              <button class="btn-white"> Go to Newsfeed </button>
             <% end %>
         <% else %>
             <%= link_to new_user_registration_path do %>

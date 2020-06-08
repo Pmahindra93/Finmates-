@@ -1,0 +1,39 @@
+// User Account Page/Favourties Tabs
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: inline-flex;
+
+    a {
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+      transition: all .3s ease-in-out;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+.col-6 .active a {
+  color: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  border-bottom: 1px solid linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  &:hover {
+    border-color: transparent;
+    background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+    color: white;
+  }
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
