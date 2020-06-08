@@ -13,7 +13,7 @@
   <body>
     <!-- Shown in all views pages excluding Home/Pages -->
 
-    <% unless controller_name == "pages" || controller_name == 'registrations' || controller_name == 'sessions' || controller_name == 'passwords' %>
+    <% unless controller_name == 'registrations' || controller_name == 'sessions' || controller_name == 'passwords' %>
       <%= render 'shared/navbar' %>
     <% end %>
 
