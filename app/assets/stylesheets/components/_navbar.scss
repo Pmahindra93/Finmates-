@@ -13,7 +13,7 @@
 .nav-links {
   display: flex;
   justify-content: space-around;
-  z-index: 1;
+  z-index: 2;
   overflow-x: hidden;
   position: fixed;
   right: 0px;
@@ -35,12 +35,16 @@
   transform: translateX(0%);
 }
 
+.nav-link text {
+  color: white;
+  text-align: center;
+}
+
 .nav-link img {
   width: 30%;
   list-style: none;
   text-decoration: none;
 }
-
 
 // NAVBAR ICONS //
 .fmlogo img {
