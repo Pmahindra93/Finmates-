@@ -57,19 +57,19 @@
     <h1>Comments</h1>
   </div>
 
-  <%= simple_form_for [ @own_content, @comment ], remote: true do |f| %>
+  <%= simple_form_for [ @own_content, @own_content_comment ], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}" %>
     <%= f.submit "Post", class: "btn-gradient" %>
   <% end %>
 
-  <div id="comments" data-own_content-id="<%= @own_content.id %>">
-    <% @own_content.comments.each do |comment| %>
-      <div class="comment-container" id="comment-<%= comment.id %>">
+  <div id="own_content_comments" data-own_content-id="<%= @own_content.id %>">
+    <% @own_content.own_content_comments.each do |own_content_comment| %>
+      <div class="own_content_comment-container" id="own_content_comment-<%= own_content_comment.id %>">
         <i class="author">
-          <span><%= comment.user.nickname %></span>
-          <small><%= comment.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <span><%= own_content_comment.user.nickname %></span>
+          <small><%= own_content_comment.created_at.strftime("%a %b %e at %l:%M%p") %></small>
         </i>
-        <p><%= comment.content %></p>
+        <p><%= own_content_comment.content %></p>
       </div>
     <% end %>
   </div>
