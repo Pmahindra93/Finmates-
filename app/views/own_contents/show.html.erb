@@ -67,7 +67,7 @@
       <div class="own_content_comment-container" id="own_content_comment-<%= own_content_comment.id %>">
         <i class="author">
           <span><%= own_content_comment.user.nickname %></span>
-          <small><%= own_content_comment.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <small><%= own_content_comment.created_at.strftime("%B %d, %Y at %l:%M%p") %></small>
         </i>
         <p><%= own_content_comment.content %></p>
       </div>
