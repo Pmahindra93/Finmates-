@@ -1,20 +1,30 @@
 class CommentsController < ApplicationController
-  def create
-    @own_content = OwnContent.find(params[:own_content_id])
+  def new
+    find_own_content
     @comment = Comment.new(comment_params)
-    # authorize @comment
+  end
+
+  def create
+    find_own_content
+    @comment = Comment.new(comment_params)
     @comment.own_content = @own_content
     @comment.user = current_user
     if @comment.save
-      redirect_to_own_content_path(@own_content, anchor: "comment-#{@comment.id}")
+      flash[:success] = "Comment was posted successfully"
+      redirect_to own_content_path(@own_content)
     else
+      flash[:alert] = "Comment could not be posted"
       render "own_contents/show"
     end
   end
 
   private
 
+  def find_own_content
+    @own_content = OwnContent.find(params[:own_content_id])
+  end
+
   def comment_params
-      params.require(:comment).permit(:content, :rating) #rating will be implemented later
+      params.require(:comment).permit(:content) #rating will be implemented later
   end
 end

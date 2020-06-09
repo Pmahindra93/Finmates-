@@ -13,6 +13,7 @@ class OwnContentsController < ApplicationController
 
   def show
     find_content
+    @comment = Comment.new
   end
 
   def like
