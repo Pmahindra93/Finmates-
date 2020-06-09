@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     member do
       put "like" => "own_contents#like"
     end
-    # resources :comments, only: [:index, :new, :create, :show]
-    resources :comments, only: :create
+    resources :comments, only: [:index, :new, :create, :show]
     resources :favourites, only: [:index, :new, :create, :show]
   end
 

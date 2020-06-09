@@ -52,6 +52,11 @@
     <p><%= @own_content.article %></p>
   </div>
 
+  <!-- Comments -->
+  <%= simple_form_for [ @own_content, @comment ], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message ##{@own_content.name}" %>
+  <% end %>
+
   <div id="comments" data-own_content-id="<%= @own_content.id %>">
     <% @own_content.comments.each do |comment| %>
       <div class="comment-container" id="comment-<%= comment.id %>">

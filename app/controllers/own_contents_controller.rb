@@ -1,7 +1,7 @@
 class OwnContentsController < ApplicationController
 
   before_action :find_content, only: [:show, :like]
-  before_action :authenticate_user!, only: [:like]
+  before_action :authenticate_user!, only: [:show, :like]
 
   respond_to :js, :html, :json
 
