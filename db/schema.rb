@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_134557) do
+ActiveRecord::Schema.define(version: 2020_06_09_101654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(version: 2020_06_03_134557) do
     t.datetime "updated_at", null: false
     t.bigint "own_content_id"
     t.bigint "third_party_content_id"
+    t.bigint "user_id"
     t.index ["own_content_id"], name: "index_comments_on_own_content_id"
     t.index ["third_party_content_id"], name: "index_comments_on_third_party_content_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -110,6 +112,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_134557) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "own_contents"
   add_foreign_key "comments", "third_party_contents"
+  add_foreign_key "comments", "users"
   add_foreign_key "favourites", "own_contents"
   add_foreign_key "favourites", "third_party_contents"
 end
