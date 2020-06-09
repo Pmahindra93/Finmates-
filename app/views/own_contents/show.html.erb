@@ -64,13 +64,7 @@
 
   <div id="own_content_comments" data-own_content-id="<%= @own_content.id %>">
     <% @own_content.own_content_comments.each do |own_content_comment| %>
-      <div class="own_content_comment-container" id="own_content_comment-<%= own_content_comment.id %>">
-        <i class="author">
-          <span><%= own_content_comment.user.nickname %></span>
-          <small><%= own_content_comment.created_at.strftime("%B %d, %Y at %l:%M%p") %></small>
-        </i>
-        <p><%= own_content_comment.content %></p>
-      </div>
+      <%= render 'own_content_comments/own_content_comment', own_content_comment: own_content_comment %>
     <% end %>
   </div>
 
