@@ -52,4 +52,16 @@
     <p><%= @own_content.article %></p>
   </div>
 
+  <div id="comments" data-own_content-id="<%= @own_content.id %>">
+    <% @own_content.comments.each do |comment| %>
+      <div class="comment-container" id="comment-<%= comment.id %>">
+        <i class="author">
+          <span><%= comment.user.nickname %></span>
+          <small><%= comment.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= comment.content %></p>
+      </div>
+    <% end %>
+  </div>
+
 </div>
