@@ -1,0 +1,25 @@
+<div class="primary-container-newsfeed">
+  <div class="m-3">
+    <br>
+    <h5><strong>Articles</strong> </h5>
+    <br>
+    <% @own_contents.each do |content| %>
+      <%= link_to own_content_path(content) do %>
+        <%= render 'components/card', content: content %>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+  <hr></hr>
+  <div class="m-3">
+    <br>
+    <h5><strong>Third Party Content</strong> </h5>
+    <br>
+    <% @third_party_contents.each do |content| %>
+      <%= link_to third_party_content_path(content) do %>
+        <%= render 'components/card', content: content %>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+</div>

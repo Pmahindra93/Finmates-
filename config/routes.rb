@@ -11,11 +11,14 @@ Rails.application.routes.draw do
       put "like" => "own_contents#like"
     end
     resources :own_content_comments, only: [:index, :new, :create, :show]
-    resources :favourites, only: [:index, :new, :create, :show]
+
   end
 
   resources :third_party_contents do
   end
+
+ get '/library', to: 'pages#library'
+ get '/newsfeed', to: 'pages#newsfeed'
 
   resources :users, only: [:index, :show]
       # get "users/:id", to: "users#show"
