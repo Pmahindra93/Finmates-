@@ -57,10 +57,16 @@
     <h1>Comments</h1>
   </div>
 
-  <%= simple_form_for [ @own_content, @own_content_comment ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}" %>
-    <%= f.submit "Post", class: "btn-gradient" %>
-  <% end %>
+  <div class="post-comment">
+      <div class="comment-input">
+    <%= simple_form_for [ @own_content, @own_content_comment ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}" %>
+      </div>
+      <div class="comment-submit">
+
+      </div>
+    <% end %>
+  </div>
 
   <div id="own_content_comments" data-own_content-id="<%= @own_content.id %>">
     <% @own_content.own_content_comments.each do |own_content_comment| %>

@@ -29,11 +29,8 @@ $('.carousel').carousel()
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-// import { initOwnContentCable } from '../channels/own_content_channel';
+import "../plugins/enter_submit";
 
 // document.addEventListener('turbolinks:load', () => {
 //   // Call your functions here, e.g:
 //   // initSelect2();
-  // initUpdateNavbarOnScroll();
-// });
-
