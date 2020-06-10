@@ -57,16 +57,12 @@
     <h1>Comments</h1>
   </div>
 
-  <div class="post-comment">
-      <div class="comment-input">
-    <%= simple_form_for [ @own_content, @own_content_comment ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}" %>
-      </div>
-      <div class="comment-submit">
-
-      </div>
-    <% end %>
-  </div>
+  <%= simple_form_for [ @own_content, @own_content_comment ], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}" %>
+    <div class="comment-submit">
+      <%= f.submit "Post", class: "btn-comment" %>
+    </div>
+  <% end %>
 
   <div id="own_content_comments" data-own_content-id="<%= @own_content.id %>">
     <% @own_content.own_content_comments.each do |own_content_comment| %>
