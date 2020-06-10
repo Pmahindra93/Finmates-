@@ -2,7 +2,7 @@
 <div class="primary-container-newsfeed">
   <div class="m-3">
     <br>
-    <h5><strong>Tim, here is your bit-size news 💸</strong> </h5>
+    <h5><strong><%= current_user.first_name %>, here is your bit-size news 💸</strong> </h5>
     <br>
     <h6> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </h6>
     <br>
