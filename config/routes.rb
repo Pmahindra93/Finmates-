@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users do
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
 
   root to: 'pages#home'
 
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
     member do
       put "like" => "own_contents#like"
     end
-    resources :comments, only: [:index, :new, :create, :show]
+    resources :own_content_comments, only: [:index, :new, :create, :show]
     resources :favourites, only: [:index, :new, :create, :show]
   end
 
