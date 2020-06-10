@@ -1,5 +1,3 @@
-import cable from '../cable'
-
 const initOwnContentCable = () => {
   const ownContentCommentContainer = document.getElementById('own_content_comments');
   if (ownContentCommentContainer) {
@@ -13,5 +11,3 @@ const initOwnContentCable = () => {
     });
   }
 }
-
-export { initOwnContentCable };
