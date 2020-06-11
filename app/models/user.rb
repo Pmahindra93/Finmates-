@@ -9,9 +9,5 @@ class User < ApplicationRecord
 
   has_one_attached :picture
 
-  # validates :email, uniqueness: true
-  # validates :email, presence: true
-  # validates :name, presence: true
-
   acts_as_voter
 end

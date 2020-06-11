@@ -3,7 +3,12 @@
     <h3><strong>Hello <%= @userName %>!</strong></h3>
   <div class="col-x"; display: block;">
     <br>
-      <%= f.input :picture, as: :file, label: false %>
+      <%= simple_form_for(article) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo, as: :file %>
+  <!-- [...] -->
+<% end %>
+
     <br><br><br>
 
   <div class="container" style="justify-content: center">
