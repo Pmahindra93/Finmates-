@@ -21,8 +21,7 @@ ul {
 }
 
 .col-6 .active a {
-  color: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
-  border-bottom: 1px solid linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
   &:hover {
     border-color: transparent;
     background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
