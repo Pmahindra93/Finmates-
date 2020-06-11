@@ -32,12 +32,10 @@
                       input_html: { autocomplete: "new-password" } %>
         </div>
 
-        <div class="">
-          <div class="form-actions btn-gradient">
-            <%= f.button :submit, "SIGN UP", style: "line-height: 14px; margin: 9px;" %>
-            <% end %>
-          </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up", class: "btn-login-sign-up-gradient" %>
         </div>
+      <% end %>
 
       <%= render "devise/shared/links" %>
 

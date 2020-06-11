@@ -27,11 +27,10 @@
   font-size: 20px;
 }
 
-.btn-login {
+.btn-login-sign-up-gradient {
   width: 100%;
   background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
   color: white;
-  margin: 20px 0;
   padding: 8px 25px;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -42,12 +41,12 @@
   border: none;
 }
 
-.btn-sign-up {
+.btn-login-sign-up-white {
   text-align: center;
   width: 100%;
+  margin-bottom: 20px;
   background: white;
   color: #3A3B9C;
-  margin: 20px 0;
   padding: 8px 25px;
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -56,4 +55,9 @@
   font-size: 24px;
   line-height: 28px;
   border: none;
+}
+
+.clickable {
+  background: none;
+  width: 100%;
 }
