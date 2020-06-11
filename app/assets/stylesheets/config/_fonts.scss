@@ -7,29 +7,37 @@ $body-font: "Montserrat Alternates", "Helvetica", "sans-serif";
 $headers-font: "Montserrat Alternates", "Helvetica", "sans-serif";
 $banner-font: "Montserrat", "Helvetica", "sans-serif";
 
+h1, h2, h3, h4, h5 {
+  font-weight: bold !important;
+}
+
 h1 {
-  font-size: 34px;
+  font-size: 32px !important;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 28px !important;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 26px !important;
 }
 
-h4{
-  font-size: 24px;
+h4 {
+  font-size: 24px !important;
 }
 
-a{
-  font-size: 22px;
-  text-decoration: none;
+h5 {
+  font-size: 20px !important;
+}
+
+a {
+  font-size: 18px !important;
+  text-decoration: none !important;
 }
 
 p {
-  font-size: 24px;
+  font-size: 18px !important;
 }
 
 .banner-content {

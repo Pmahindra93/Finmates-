@@ -2,9 +2,9 @@
 <div class="primary-container-newsfeed">
   <div class="m-3">
     <br>
-    <h5><strong><%= current_user.first_name %>, here is your bit-size news 💸</strong> </h5>
+    <h5><%= current_user.first_name %>, here is your bit-size news 💸</h5>
     <br>
-    <h6> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </h6>
+    <p> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </p>
     <br>
     <% @today_content.each do |content| %>
       <%= link_to own_content_path(content) do %>
@@ -15,7 +15,7 @@
   </div>
   <hr></hr>
   <div class="m-3">
-    <h5><strong>Top Daily Picks</strong> </h5>
+    <h5>Top Daily Picks</h5>
 
 
   <!-- Carousel attempt using bootstrap -->
