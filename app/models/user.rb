@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :favourites
   has_many :own_content_comments
 
-  # has_one_attached :picture
+  has_one_attached :picture
 
   # validates :email, uniqueness: true
   # validates :email, presence: true
