@@ -26,3 +26,34 @@
   justify-content: center;
   font-size: 20px;
 }
+
+.btn-login {
+  width: 100%;
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  color: white;
+  margin: 20px 0;
+  padding: 8px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-size: cover;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 28px;
+  border: none;
+}
+
+.btn-sign-up {
+  text-align: center;
+  width: 100%;
+  background: white;
+  color: #3A3B9C;
+  margin: 20px 0;
+  padding: 8px 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-size: cover;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 28px;
+  border: none;
+}
