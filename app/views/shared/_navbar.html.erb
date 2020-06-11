@@ -5,27 +5,28 @@
     <%= link_to image_tag('fm_heading.png'), newsfeed_path %>
   </div>
 
+
+  <!-- <div class=""> -->
+    <% if user_signed_in? %>
     <!-- Burger Menu Image -->
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-  </div>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
 
   <!-- Burger Menu -->
-  <div class="nav-links">
-    <% if user_signed_in? %>
+        <div class="nav-links">
           <li><%= link_to image_tag('news-text.png', class: "nav-link" ),  newsfeed_path %></li>
           <li><%= link_to image_tag('content-text.png', class: "nav-link"), library_path %></li>
           <li><%= link_to image_tag('favourites-text.png', ), class: "nav-link" %></li>
           <li><%= link_to image_tag('profile-text.png', :alt => "My Profile", class: "nav-link"), user_path(current_user.id) %></li>
     <% else %>
-        </li><%= link_to "Enter", new_user_session_path, class: "nav-link" %></li>
+        <%= link_to "LOG IN", new_user_session_path, class: "form-actions btn-login" %>
     <% end %>
-        </div>
-
+  </div>
 </div>
-
+<!-- </div> -->
 
 <!-- JS - Nav Menu Slide -->
  <script>
