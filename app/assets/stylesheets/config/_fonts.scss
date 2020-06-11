@@ -46,6 +46,26 @@ p {
   }
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  h1 {
+    font-size: 44px !important;
+  }
+  h5 {
+    font-size: 26px !important;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  h1 {
+    font-size: 56px !important;
+  }
+  h5 {
+    font-size: 32px !important;
+  }
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
