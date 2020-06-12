@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :favourites
   has_many :own_content_comments
 
-  has_one_attached :picture
+  has_one_attached :photo
 
   acts_as_voter
 end
