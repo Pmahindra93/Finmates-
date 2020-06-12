@@ -1,9 +1,72 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Montserrat Alternates", "Helvetica", "sans-serif";
+$headers-font: "Montserrat Alternates", "Helvetica", "sans-serif";
+$banner-font: "Montserrat", "Helvetica", "sans-serif";
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold !important;
+  color: #3A3B9C;
+}
+
+h1 {
+  font-size: 32px !important;
+}
+
+h2 {
+  font-size: 28px !important;
+}
+
+h3 {
+  font-size: 26px !important;
+}
+
+h4 {
+  font-size: 24px !important;
+}
+
+h5, h6 {
+  font-size: 20px !important;
+}
+
+p, a {
+  font-size: 18px !important;
+  color: #3A3B9C !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+
+.banner-content {
+  h1 {
+    font-family: $banner-font;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  h1 {
+    font-size: 44px !important;
+  }
+  h5 {
+    font-size: 26px !important;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  h1 {
+    font-size: 56px !important;
+  }
+  h5 {
+    font-size: 32px !important;
+  }
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

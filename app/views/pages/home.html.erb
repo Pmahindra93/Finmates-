@@ -6,16 +6,16 @@
     <div class="banner">
       <div class="banner-content">
         <div class="banner-slogan">
-          <h1>  Educate  <br>  Grow  <br>  Invest <div id="typing" class="typing"></div></h1>
+          <h1>  Your one-stop-shop for the latest crypto insights to...  <br><div id="typing" class="typing"></div></h1>
         </div>
         <% if user_signed_in? %>
-            <%= link_to newsfeed_path do %>
-              <button class="btn-white"> Go to Newsfeed </button>
-            <% end %>
+          <%= link_to newsfeed_path do %>
+            <button class="btn-white"> Go to Newsfeed </button>
+          <% end %>
         <% else %>
-            <%= link_to new_user_registration_path do %>
-              <button class="btn-white"> Start free trial! </button>
-            <% end %>
+          <%= link_to new_user_registration_path do %>
+            <button class="btn-white"> Start free trial! </button>
+          <% end %>
         <% end %>
       </div>
 
@@ -37,8 +37,14 @@
 
           <p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
 
-          <%= link_to '#' do %>
-            <button class="btn-gradient"> Start free trial! </button>
+          <% if user_signed_in? %>
+            <%= link_to newsfeed_path do %>
+              <button class="btn-gradient"> Go to Newsfeed </button>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path do %>
+              <button class="btn-gradient"> Start free trial! </button>
+            <% end %>
           <% end %>
 
         </div>
@@ -59,8 +65,14 @@
 
           <p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
 
-          <%= link_to '#' do %>
-            <button class="btn-gradient"> Start free trial! </button>
+          <% if user_signed_in? %>
+            <%= link_to newsfeed_path do %>
+              <button class="btn-gradient"> Go to Newsfeed </button>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path do %>
+              <button class="btn-gradient"> Start free trial! </button>
+            <% end %>
           <% end %>
 
         </div>
@@ -73,8 +85,14 @@
 
           <p>Cras mush pardon you knees up he lost his bottle it's all gone to pot faff about porkies arse, barney argy-bargy cracking goal loo cheers spend.!</p>
 
-          <%= link_to '#' do %>
-            <button class="btn-gradient"> Start free trial! </button>
+          <% if user_signed_in? %>
+            <%= link_to newsfeed_path do %>
+              <button class="btn-gradient"> Go to Newsfeed </button>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path do %>
+              <button class="btn-gradient"> Start free trial! </button>
+            <% end %>
           <% end %>
 
         </div>
@@ -128,7 +146,7 @@
         </div>
 
         <div class="benefits-silver-platter">
-          <%= image_tag('silver-platter.png') %>
+          <%= image_tag('your-benefits-silver-platter.png') %>
         </div>
 
       </div>
@@ -139,8 +157,14 @@
   <section id="who-are-we">
 
       <div class="sign-up-btn">
-        <%= link_to '#' do %>
-          <button class="btn-gradient"> Start free trial! </button>
+        <% if user_signed_in? %>
+          <%= link_to newsfeed_path do %>
+            <button class="btn-gradient"> Go to Newsfeed </button>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_registration_path do %>
+            <button class="btn-gradient"> Start free trial! </button>
+          <% end %>
         <% end %>
       </div>
 
@@ -197,7 +221,7 @@
 
 <!-- TYPING-EFFECT -->
 <script>
-  var typeString = ['lorem.  ', 'ipsum.  ', 'lorem.  '];
+  var typeString = ['Educate.  ', 'Grow.  ', 'Engage.  '];
   var  i = 0;
   var count = 0
   var selectedText = '';
