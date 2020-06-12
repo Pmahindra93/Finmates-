@@ -1,9 +1,7 @@
 <div class="container-dashboard"  style ="text-align: center">
+  <br> <h5>Hello <%= @nickame %>!</h5>
+    <div class="col-x" style ="text-align: center; display: block;">
 
-    <br>
-    <h5>Hello <%= @nickName %>!</h5>
-
-  <div class="col-x" style ="text-align: center; display: block;">
     <br>
     <!-- User Avatar -->
       <% if @user.avatar.attached? %>
@@ -13,34 +11,34 @@
       <% end %>
 
     <br><br><br>
-    <h5>Account Details</h5>
+      <h5>Account Details</h5>
     <hr></hr>
 
-  <div class="" style="text-align: left">
-        <p>NICKNAME</p>
-        <p><i class="fa fa-user-circle" aria-hidden="true"></i> <%= @nickname %></p>
-        <br>
+  <div class="account-details" style="text-align: left">
+      <p>NICKNAME</p>
+      <p><i class="fa fa-user-circle" aria-hidden="true"></i> <%= @nickname %></p>
+          <br>
+          <hr></hr>
+      <p> EMAIL </p>
+      <p><i class="fa fa-address-card" aria-hidden="true"></i> <%= @userEmail %></p>
+          <br>
+          <hr></hr>
+      <p> NOTIFICATIONS </p>
+      <p><i class="fa fa-eye" aria-hidden="true"></i> ON / OFF </p>
+         <br>
+         <hr></hr>
+      <p> MANAGE PREFERENCES </p>
+      <p><i class="fa fa-credit-card" aria-hidden="true"></i> Free Trial Period</p>
+         <br>
         <hr></hr>
-        <p> EMAIL </p>
-        <p><i class="fa fa-address-card" aria-hidden="true"></i> <%= @userEmail %></p>
-        <br>
-        <hr></hr>
-        <p> NOTIFICATIONS </p>
-        <p><i class="fa fa-eye" aria-hidden="true"></i> ON / OFF </p>
-        <br>
-        <hr></hr>
-        <p> MANAGE PREFERENCES </p>
-        <p><i class="fa fa-credit-card" aria-hidden="true"></i> Free Trial Period</p>
-        <br>
-      <hr></hr>
 
-     <div class="row" style="justify-content: center">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-white" %>
-        </div>
+      <div class="row" style="justify-content: center">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-white" %>
+      </div>
   </div>
 </div>
 
-<script>
+<!-- OPTIONS FOR TABS LATER --- <script>
   function onTabClick(event) {
   let activeTabs = document.querySelectorAll('.active');
 
@@ -63,4 +61,4 @@
   element.addEventListener('click', onTabClick, false);
 
 </script>
-
+ -->
