@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    authorize @user
     @userEmail = User.find(params[:id]).email
     @nickname = User.find(params[:id]).nickname
 
