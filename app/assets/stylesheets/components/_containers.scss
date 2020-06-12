@@ -21,13 +21,13 @@
   }
 }
 
-
-// User Dashboard - Show Page
+// USER DASHBOARD
 .container-dashboard {
   padding: 20px 40px 20px 40px;
   align-items: center;
 }
 
+// NEWSFEED
 .primary-container-newsfeed {
   margin: 0 auto;
   padding-top: 10px;
@@ -48,4 +48,12 @@
     padding-right: 40px;
     padding-left: 40px;
   }
+}
+
+@media (min-width: 576px) {
+  .forms-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
 }
