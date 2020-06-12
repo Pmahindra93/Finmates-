@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-.btn-login, .btn-white, .btn-gradient {
-=======
+
 // GENERAL BUTTONS
 .btn-white, .btn-gradient {
->>>>>>> master
   margin: 20px 0;
   padding: 8px 25px;
   border-radius: 8px;
@@ -32,12 +29,6 @@
   font-size: 20px;
 }
 
-<<<<<<< HEAD
-.btn-login {
-  font-size: 16px;
-  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
-  color: white;
-=======
 // BUTTONS SPECIFIC TO LOGIN / SIGN UP FORMS
 .btn-login-sign-up-white, .btn-login-sign-up-gradient {
   border-radius: 8px;
@@ -63,5 +54,4 @@
   color: #3A3B9C;
   padding: 8px 25px;
   margin-bottom: 20px;
->>>>>>> master
 }

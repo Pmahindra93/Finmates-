@@ -8,12 +8,18 @@ class UsersController < ApplicationController
     @userEmail = User.find(params[:id]).email
     @nickname = User.find(params[:id]).nickname
 
+    # @avatar = User.find(params[:id]).avatar
+
+    # def avatar
+    #    avatar.variant(resize: "150x150").processed if current_user.avatar.attached?
+    # end
+
   end
 
 private
 
-  def article_params
-    params.require(:photo)
-  end
+  # def article_params
+  #   params.require(:avatar)
+  # end
 
 end

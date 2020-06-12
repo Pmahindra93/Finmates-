@@ -1,44 +1,42 @@
 <div class="container-dashboard"  style ="text-align: center">
+
     <br>
-<<<<<<< HEAD
-    <h3><strong>Hello <%= @userName %>!</strong></h3>
-  <div class="col-x"; display: block;">
-=======
-    <h5>Hello <%= @userName %>!</h5>
+    <h5>Hello <%= @nickName %>!</h5>
+
   <div class="col-x" style ="text-align: center; display: block;">
->>>>>>> master
     <br>
-
-<%= cl_image_tag @user.photo.key, height: 300px, width: 300px, crop: fill %>
-
-<div class="form-inputs">
-      <%= simple_form_for(user) do |f| %>
-      <%= f.input :photo, as: :file %>
+    <!-- User Avatar -->
+      <% if @user.avatar.attached? %>
+        <%= image_tag(@user.avatar) %>
+      <% else %>
+        <%= image_tag 'avatar-placeholder.png' %>
       <% end %>
-</div>
-    <br><br><br>
 
-  <div class="container" style="justify-content: center">
-    <h2><strong>Account</strong></h2>
+    <br><br><br>
+    <h5>Account Details</h5>
     <hr></hr>
 
-        <h6><strong>Nickname: </strong><%= @nickname %></h6>
-          <br>
-        <h6>Email: <%= @userEmail %></h6>
-          <br>
-        <h6>Push Notifications:  Y/N</h6>
-          <br>
-        <h6>Manage Preferences</h6>
-          <br>
-
-        <h6><strong>Manage Preferences:</strong></h6>
-        <h6>Free Trial Period</h6>
-          <br>
+  <div class="" style="text-align: left">
+        <p>NICKNAME</p>
+        <p><i class="fa fa-user-circle" aria-hidden="true"></i> <%= @nickname %></p>
+        <br>
         <hr></hr>
+        <p> EMAIL </p>
+        <p><i class="fa fa-address-card" aria-hidden="true"></i> <%= @userEmail %></p>
+        <br>
+        <hr></hr>
+        <p> NOTIFICATIONS </p>
+        <p><i class="fa fa-eye" aria-hidden="true"></i> ON / OFF </p>
+        <br>
+        <hr></hr>
+        <p> MANAGE PREFERENCES </p>
+        <p><i class="fa fa-credit-card" aria-hidden="true"></i> Free Trial Period</p>
+        <br>
+      <hr></hr>
 
-    <div class="row" style="justify-content: center">
-        <h5><%= link_to "Log out", destroy_user_session_path, method: :delete %></h5>
-    </div>
+     <div class="row" style="justify-content: center">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-white" %>
+        </div>
   </div>
 </div>
 
