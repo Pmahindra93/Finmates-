@@ -1,7 +1,12 @@
 <div class="container-dashboard"  style ="text-align: center">
     <br>
+<<<<<<< HEAD
     <h3><strong>Hello <%= @userName %>!</strong></h3>
   <div class="col-x"; display: block;">
+=======
+    <h5>Hello <%= @userName %>!</h5>
+  <div class="col-x" style ="text-align: center; display: block;">
+>>>>>>> master
     <br>
 
 <%= cl_image_tag @user.photo.key, height: 300px, width: 300px, crop: fill %>
@@ -19,10 +24,13 @@
 
         <h6><strong>Nickname: </strong><%= @nickname %></h6>
           <br>
-        <h6><strong>Email: </strong><%= @userEmail %></h6>
+        <h6>Email: <%= @userEmail %></h6>
           <br>
-        <h6><strong>Push Notifications: </strong> Y/N</h6>
+        <h6>Push Notifications:  Y/N</h6>
           <br>
+        <h6>Manage Preferences</h6>
+          <br>
+
         <h6><strong>Manage Preferences:</strong></h6>
         <h6>Free Trial Period</h6>
           <br>
@@ -31,7 +39,6 @@
     <div class="row" style="justify-content: center">
         <h5><%= link_to "Log out", destroy_user_session_path, method: :delete %></h5>
     </div>
-
   </div>
 </div>
 
@@ -53,9 +60,9 @@
   document.getElementById(event.target.href.split('#')[1]).className += ' active';
 }
 
-const element = document.getElementById('nav-tab');
+  const element = document.getElementById('nav-tab');
 
-element.addEventListener('click', onTabClick, false);
+  element.addEventListener('click', onTabClick, false);
 
 </script>
 

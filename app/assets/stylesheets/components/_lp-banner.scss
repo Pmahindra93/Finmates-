@@ -10,7 +10,7 @@
   h1 {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     color: white;
-    font-size: 32px;
+    font-weight: bold;
   }
 }
 
@@ -37,11 +37,6 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .banner-content {
-    h1 {
-      font-size: 44px;
-    }
-  }
   .banner-img {
     img {
     max-width: 80%;
@@ -54,11 +49,6 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .banner-content {
-    h1 {
-      font-size: 56px;
-    }
-  }
   .banner-slogan {
     padding: 150px 20px 20px 20px;
   }
