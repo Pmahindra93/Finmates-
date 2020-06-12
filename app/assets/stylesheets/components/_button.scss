@@ -15,6 +15,11 @@
   color: #3A3B9C;
 }
 
+.btn-white:hover {
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  color: white;
+}
+
 .btn-gradient {
   background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
   color: white;
@@ -53,4 +58,12 @@
   color: #3A3B9C;
   padding: 8px 25px;
   margin-bottom: 20px;
+}
+
+// NAVBAR LOGIN
+#sml {
+  width: 120px;
+  height: 40px;
+  font-size: 14px !important;
+  text-align: center;
 }

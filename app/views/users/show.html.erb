@@ -1,59 +1,44 @@
-<div class="container-dashboard">
-    <br>
-    <h5>Hello <%= @userName %>!</h5>
-  <div class="col-x" style ="text-align: center; display: block;">
-    <br>
-      <%= image_tag 'user_tim.png' %>
-    <br><br><br>
-  </div>
+<div class="container-dashboard"  style ="text-align: center">
+  <br> <h5>Hello <%= @nickame %>!</h5>
+    <div class="col-x" style ="text-align: center; display: block;">
 
-  <!-- Tabs -->
-  <div class="container">
-    <ul id="nav-tab" class="col-6" style="justify-content-between; display:flex;" >
-      <li>
-        <a href="#account-info" class="tab-gradient active">Account</a>
-      </li>
-      <li>
-        <a href="#favourites" class="tab-gradient">Favourites</a>
-      </li>
-    </ul>
+    <br>
+    <!-- User Avatar -->
+      <% if @user.avatar.attached? %>
+        <%= image_tag(@user.avatar) %>
+      <% else %>
+        <%= image_tag 'avatar-placeholder.png' %>
+      <% end %>
+
+    <br><br><br>
+      <h5>Account Details</h5>
     <hr></hr>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-      <div class="tab-pane active" id="account-info">
-        <h6>Nickname: <%= @nickname %></h6>
+  <div class="account-details" style="text-align: left">
+      <p>NICKNAME</p>
+      <p><i class="fa fa-user-circle" aria-hidden="true"></i> <%= @nickname %></p>
           <br>
-        <h6>Email: <%= @userEmail %></h6>
+          <hr></hr>
+      <p> EMAIL </p>
+      <p><i class="fa fa-address-card" aria-hidden="true"></i> <%= @userEmail %></p>
           <br>
-        <h6>Push Notifications:  Y/N</h6>
-          <br>
-        <h6>Manage Preferences</h6>
-          <br>
-        <h6>Payments</h6>
-          <br>
+          <hr></hr>
+      <p> NOTIFICATIONS </p>
+      <p><i class="fa fa-eye" aria-hidden="true"></i> ON / OFF </p>
+         <br>
+         <hr></hr>
+      <p> MANAGE PREFERENCES </p>
+      <p><i class="fa fa-credit-card" aria-hidden="true"></i> Free Trial Period</p>
+         <br>
         <hr></hr>
-        <div class="row" style="justify-content: center">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-white" %>
-        </div>
-      </div>
 
-      <div class="tab-pane" id="favourites">
-        <h6>Article 1</h6>
-        <br>
-        <h6>Article 2</h6>
-        <br>
-        <h6>Article 3</h6>
-        <br>
-        <h6>Article 4</h6>
-        <br>
+      <div class="row" style="justify-content: center">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-white" %>
       </div>
-  </div>
-
   </div>
 </div>
 
-<script>
+<!-- OPTIONS FOR TABS LATER --- <script>
   function onTabClick(event) {
   let activeTabs = document.querySelectorAll('.active');
 
@@ -76,4 +61,4 @@
   element.addEventListener('click', onTabClick, false);
 
 </script>
-
+ -->

@@ -13,6 +13,9 @@ gem 'social-share-button'
 # Upvote gem
 gem 'acts_as_votable'
 
+# Upload Photo gem
+# gem 'image_processing', '~> 1.2'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'

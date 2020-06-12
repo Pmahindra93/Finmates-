@@ -7,11 +7,13 @@ class User < ApplicationRecord
   has_many :favourites
   has_many :own_content_comments
 
-  # has_one_attached :picture
+  acts_as_voter
 
   # validates :email, uniqueness: true
   # validates :email, presence: true
   # validates :name, presence: true
 
-  acts_as_voter
+  # Avatar
+  has_one_attached :avatar
+
 end
