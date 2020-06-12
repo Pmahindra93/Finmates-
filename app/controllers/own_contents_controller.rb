@@ -13,6 +13,15 @@ class OwnContentsController < ApplicationController
     @own_content_comment = OwnContentComment.new
   end
 
+  def new
+    @own_content = OwnContent.new
+  end
+
+  def create
+    @own_content = OwnContent.new(owncontent_params)
+
+  end
+
   def like
     if current_user.voted_for? @own_content
       @own_content.unliked_by current_user
@@ -25,5 +34,9 @@ class OwnContentsController < ApplicationController
 
   def find_content
     @own_content = OwnContent.find(params[:id])
+  end
+
+  def owncontent_params
+    params.require(:own_content).permit()
   end
 end

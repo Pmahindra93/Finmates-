@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'social-share-button'
+gem 'pundit'
 
 # Upvote gem
 gem 'acts_as_votable'
