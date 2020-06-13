@@ -7,6 +7,7 @@
       <%= simple_form_for @own_content do |f| %>
       <%= f.input :title%>
       <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :article, as: :text, :input_html => {:rows => 20} %>
       <%= f.input :category, collection: [ "BitCoin", "Ethereum", "Cryptocurrency", "Breaking News"] %>
       <%= f.input :published_date, as: :datetime %>
