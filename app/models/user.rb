@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :favourites
   has_many :own_content_comments
+  has_many :own_contents
 
   acts_as_voter
 
