@@ -1,6 +1,6 @@
 class OwnContentsController < ApplicationController
 
-  before_action :find_content, only: [:show, :like]
+  before_action :find_content, only: [:show, :like, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:index, :show, :like]
 
   respond_to :js, :html, :json
@@ -28,6 +28,19 @@ class OwnContentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @own_content.update(owncontent_params)
+    redirect_to own_content_path(@own_content)
+  end
+
+  def destroy
+   @own_content.destroy
+   redirect_to library_path
   end
 
   def like
