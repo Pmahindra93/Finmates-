@@ -1,26 +1,25 @@
-  <div class="primary-container">
-
-<div class="d-flex justify-content-between">
-  <%= link_to newsfeed_path do %>
-    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-  <% end %>
-  <!-- Favourite button -->
-  <div>
-   <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
-    <% if current_user.favourites.map { |fav| fav.own_content }.include?(@own_content) %>
-      <i class="pl-3 fas fa-heart fa-lg ct-primary-light"></i>
-    <% else %>
-      <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
-    <% end %>
-  <% end %>
-  <!-- Admin features -->
-  <% if current_user.admin %>
-
-      <%= link_to "Edit", edit_own_content_path(@own_content) %>
-      <%= link_to "Delete", own_content_path(@own_content), method: :delete %>
+<div class="primary-container">
+   <div class="d-flex justify-content-between">
+      <%= link_to newsfeed_path do %>
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      <% end %>
+      <!-- Favourite button -->
+      <div>
+        <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
+          <% if current_user.favourites.map { |fav| fav.own_content }.include?(@own_content) %>
+            <i class="pl-3 fas fa-heart fa-lg ct-primary-light"></i>
+          <% else %>
+            <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
+          <% end %>
+        <% end %>
+      <!-- Admin features -->
+        <% if current_user.admin %>
+          <%= link_to "Edit", edit_own_content_path(@own_content) %>
+          <%= link_to "Delete", own_content_path(@own_content), method: :delete %>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-</div>
+
 
 
   <div class="article-title">
@@ -37,8 +36,8 @@
 
   <!-- Article thumbnail -->
   <div class="article_thumbnail">
-    <% if @own_content.own_content_thumb.attached? %>
-      <%= cl_image_tag @cocktail.thumbnail.key, class: "article_thumb" %>
+    <% if @own_content.photo.attached? %>
+      <%= cl_image_tag @own_content.photo.key, class: "article_thumb" %>
     <% else %>
       <%= image_tag 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80', class: "article_thumb" %>
     <% end %>
@@ -90,5 +89,4 @@
       <%= render 'own_content_comments/own_content_comment', own_content_comment: own_content_comment %>
     <% end %>
   </div>
-
 </div>
