@@ -1,6 +1,6 @@
 class OwnContent < ApplicationRecord
   has_many :own_content_comments
-  has_many :favourites
+  has_many :favourites, dependent: :destroy
   has_one_attached :own_content_thumb
   has_one_attached :photo
   belongs_to :user
