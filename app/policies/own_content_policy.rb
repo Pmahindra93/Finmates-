@@ -5,7 +5,7 @@ class OwnContentPolicy < ApplicationPolicy
     end
   end
 
-  def new?
+  def create?
     user.admin
   end
 
