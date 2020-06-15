@@ -21,6 +21,10 @@ class OwnContentPolicy < ApplicationPolicy
     user_is_admin?
   end
 
+  def like?
+    true
+  end
+
   private
 
   def user_is_admin?
