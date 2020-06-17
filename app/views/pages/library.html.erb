@@ -11,15 +11,5 @@
     <% end %>
   </div>
   <hr></hr>
-  <div class="m-3">
-    <br>
-    <h5>Third Party Content</h5>
-    <br>
-    <% @third_party_contents.each do |content| %>
-      <%= link_to third_party_content_path(content) do %>
-        <%= render 'components/card', content: content %>
-        <br>
-      <% end %>
-    <% end %>
-  </div>
+
 </div>

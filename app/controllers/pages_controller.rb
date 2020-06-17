@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def library
     @own_contents = OwnContent.all
-    @third_party_contents =ThirdPartyContent.all
+    @didyouknows = Didyouknow.all
   end
 
   def newsfeed
