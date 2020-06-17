@@ -33,7 +33,7 @@ h5, h6 {
 }
 
 p, a {
-  font-size: 14px !important;
+  font-size: 16px !important;
   color: #3A3B9C !important;
 }
 
@@ -41,6 +41,18 @@ a {
   text-decoration: none !important;
 }
 
+.article_content, .article_abstract {
+  div, li {
+    color: #3A3B9C !important;
+    line-height: 1.8 !important;
+  }
+}
+
+.article_abstract {
+  li {
+    margin-bottom: 10px;
+  }
+}
 
 .banner-content {
   h1 {
