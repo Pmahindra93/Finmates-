@@ -2,7 +2,7 @@ class DidyouknowsController < ApplicationController
 
 before_action :find_content, only: [:show, :like, :edit, :update, :destroy]
 
-def index
+  def index
     @didyouknows = policy_scope(Didyouknow)
   end
 
@@ -20,7 +20,7 @@ def index
     @didyouknow.user = current_user
     authorize @didyouknow
     if @didyouknow.save
-      redirect_to library_path
+      redirect_to newsfeed_path
     else
       render :new
     end
@@ -52,4 +52,3 @@ def index
   end
 end
 
-end
