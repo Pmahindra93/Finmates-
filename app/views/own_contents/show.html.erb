@@ -23,7 +23,7 @@
 
 
   <div class="article-title">
-    <h1><%= @own_content.title %></h1>
+    <h1><%= sanitize @own_content.title %></h1>
   </div>
 
   <div class="article-category">
@@ -64,12 +64,12 @@
 
   <!-- Article abstract -->
   <div class="article_abstract">
-    <p><%= @own_content.description %></p>
+    <p><%= sanitize @own_content.description %></p>
   </div>
 
   <!-- Article content -->
   <div class="article_content">
-    <p><%= @own_content.article %></p>
+    <p><%= sanitize @own_content.article %></p>
   </div>
 
   <!-- Comments -->
