@@ -14,6 +14,9 @@ gem 'pundit'
 # Upvote gem
 gem 'acts_as_votable'
 
+# Formatting articles
+gem 'trix'
+
 # Upload Photo gem
 # gem 'image_processing', '~> 1.2'
 
