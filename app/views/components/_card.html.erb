@@ -5,7 +5,7 @@
     <%= cl_image_tag content.photo.key, crop: :fill %>
   <% end %>
   <div class="card-product-infos">
-    <h6><%= content.title %></h6>
-    <p><%= content.description %></p>
+    <h6><%= sanitize content.title %></h6>
+    <p><%= sanitize content.description %></p>
   </div>
 </div>
