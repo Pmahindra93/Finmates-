@@ -44,7 +44,10 @@ a {
 .article_content, .article_abstract {
   div, li {
     color: #3A3B9C !important;
-    line-height: 1.8 !important;
+    line-height: 1.5 !important;
+    a {
+      background-color: #e9ecef !important;
+    }
   }
 }
 
