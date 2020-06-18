@@ -1,6 +1,13 @@
 <div class="card" style="width: 100%;">
-  <%= image_tag'thirdpartycard.jpg', class: "card-img-top"  %>
+
+<% unless did_you_know.image.attached? %>
+    <%= cl_image_tag "thought-catalog-I0TDRP0fj6Y-unsplash_ccjbhz", class: "card-img-top"  %>
+  <% else %>
+    <%= cl_image_tag did_you_know.image.key, class: "card-img-top" , crop: :fill %>
+  <% end %>
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card </p>
+    <p class="card-text"><%= did_you_know.article %> </p>
   </div>
 </div>
+
+
