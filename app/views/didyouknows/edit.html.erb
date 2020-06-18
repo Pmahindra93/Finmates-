@@ -1,0 +1,17 @@
+<div class="primary-container-newsfeed">
+  <div class="row">
+    <div class="col">
+      <h5> Hello <%= current_user.first_name %>, edit your DYK below </h5>
+      <br>
+      <hr></hr>
+      <%= simple_form_for @didyouknow do |f| %>
+      <%= f.input :title%>
+      <%= f.input :description %>
+      <%= f.input :image, as: :file %>
+      <%= f.input :article, as: :text, :input_html => {:rows => 10} %>
+      <%= f.input :published_date, as: :datetime %>
+      <%= f.button :submit, "Publish your fact", class: "btn-login-sign-up-gradient" %>
+      <% end %>
+    </div>
+  </div>
+ </div>

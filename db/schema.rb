@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_133703) do
+ActiveRecord::Schema.define(version: 2020_06_17_191919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 2020_06_14_133703) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "didyouknows", force: :cascade do |t|
+    t.text "title"
+    t.text "description"
+    t.text "article"
+    t.datetime "published_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_didyouknows_on_user_id"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -91,9 +102,9 @@ ActiveRecord::Schema.define(version: 2020_06_14_133703) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nickname"
     t.string "first_name"
     t.string "last_name"
+    t.string "nickname"
     t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -114,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_06_14_133703) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "didyouknows", "users"
   add_foreign_key "favourites", "own_contents"
   add_foreign_key "favourites", "users"
   add_foreign_key "own_content_comments", "own_contents"

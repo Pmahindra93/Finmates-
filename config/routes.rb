@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :third_party_contents do
+  resources :didyouknows do
   end
 
  get '/library', to: 'pages#library'
