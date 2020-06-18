@@ -15,7 +15,7 @@
       <%= f.input :photo, as: :file %>
 
       <label>Content</label>
-      <%= f.input :article, as: :hidden, :input_html => {:rows => 20, :id => "article_content" } %>
+      <%= f.input :article, as: :hidden, :input_html => { :id => "article_content" } %>
       <trix-editor input="article_content"></trix-editor>
       <br>
 
