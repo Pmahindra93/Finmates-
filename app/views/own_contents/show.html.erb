@@ -30,6 +30,21 @@
     <h5><%= @own_content.category %></h5>
   </div>
 
+  <div class="article-author">
+    <div class="author-name">
+      <h5><%= "#{@own_content.user.first_name} #{@own_content.user.last_name}" %></h5>
+      <!-- <h5><%=  %></h5> -->
+    </div>
+
+    <div class="author-avatar">
+      <% if @own_content.user.avatar.attached? %>
+        <%= cl_image_tag @own_content.user.avatar.key, class: "avatar-small" %>
+      <% else %>
+        <%= image_tag("avatar-placeholder.png", class: "avatar-small") %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="article-date">
     <p><%= @own_content.created_at.strftime("%B %d, %Y") %></p>
   </div>
