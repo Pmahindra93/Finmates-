@@ -35,12 +35,12 @@ class OwnContentsController < ApplicationController
 
   def update
     @own_content.update(owncontent_params)
-    redirect_to own_content_path(@own_content)
+    redirect_to own_content_path(@own_content), alert: "Article Updated"
   end
 
   def destroy
    @own_content.destroy
-   redirect_to library_path
+   redirect_to library_path, alert: "Article Deleted"
   end
 
   def like
