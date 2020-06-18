@@ -39,9 +39,9 @@
       <% end %>
     </div>
 
-    <div class="publish-details">
-      <p><%= "#{@own_content.user.first_name} #{@own_content.user.last_name}" %></p>
-      <p><%= "#{@own_content.created_at.strftime("%B %d, %Y")} - #{@own_content.reading_time}" %></p>
+    <div class="publishing-details">
+      <p class="author-name"><%= "#{@own_content.user.first_name} #{@own_content.user.last_name}" %></p>
+      <p><%= "#{@own_content.created_at.strftime("%B %d, %Y")} - #{@own_content.reading_time} min read" %></p>
     </div>
   </div>
 
