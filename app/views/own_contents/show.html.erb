@@ -3,6 +3,7 @@
       <%= link_to newsfeed_path do %>
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
       <% end %>
+
       <!-- Favourite button -->
       <div>
         <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
@@ -12,6 +13,7 @@
             <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
           <% end %>
         <% end %>
+
       <!-- Admin features -->
         <% if current_user.admin %>
           <%= link_to "Edit", edit_own_content_path(@own_content) %>
@@ -19,8 +21,6 @@
         <% end %>
       </div>
     </div>
-
-
 
   <div class="article-title">
     <h1><%= @own_content.title %></h1>

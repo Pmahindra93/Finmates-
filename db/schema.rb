@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_130605) do
+ActiveRecord::Schema.define(version: 2020_06_18_132536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 2020_06_18_130605) do
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
     t.bigint "user_id"
-    t.string "author"
     t.string "reading_time"
     t.index ["user_id"], name: "index_own_contents_on_user_id"
   end
