@@ -70,7 +70,17 @@
 
     <!-- social-share-button -->
     <div class="social-share-btn">
-      <%= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: @own_content.description) %>
+      <i id="shareBtn" class="fab fa-facebook-square"></i>
+      <a href="#"
+        onclick="
+        window.open(
+          'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+          'facebook-share-dialog',
+          'width=626,height=436');
+          return false;">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+      <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
     </div>
   </div>
 
@@ -102,3 +112,20 @@
     <% end %>
   </div>
 </div>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.init({
+    appId            : '199160927992724',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v7.0'
+  });
+  FB.ui({
+    display: 'popup',
+    method: 'share',
+    href: 'https://developers.facebook.com/docs/',
+  }, function(response){});
+}
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
