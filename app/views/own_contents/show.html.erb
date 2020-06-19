@@ -130,8 +130,8 @@ document.getElementById('shareBtn').onclick = function() {
   });
   FB.ui({
     display: 'popup',
-    method: 'share',
-    href: encodeURIComponent(location.href),
+    method: 'feed',
+    link: window.location.href,
   }, function(response){});
 }
 </script>
