@@ -23,7 +23,7 @@
     </div>
 
   <div class="article-title">
-    <h1><%= @own_content.title %></h1>
+    <h1><%= sanitize @own_content.title %></h1>
   </div>
 
   <div class="article-category">
@@ -70,18 +70,18 @@
 
     <!-- social-share-button -->
     <div class="social-share-btn">
-      <%= social_share_button_tag(@own_content.title, :url => "finmates.com#{own_content_path(@own_content)}", desc: @own_content.description) %>
+      <%= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: @own_content.description) %>
     </div>
   </div>
 
   <!-- Article abstract -->
   <div class="article_abstract">
-    <p><%= @own_content.description %></p>
+    <p><%= sanitize @own_content.description %></p>
   </div>
 
   <!-- Article content -->
   <div class="article_content">
-    <p><%= @own_content.article %></p>
+    <p><%= sanitize @own_content.article %></p>
   </div>
 
   <!-- Comments -->
