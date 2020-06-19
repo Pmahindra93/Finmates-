@@ -1,14 +1,24 @@
 <div class="container-dashboard"  style ="text-align: center">
-  <br> <h5>Hello <%= @nickame %>!</h5>
+  <br> <h5>Hello <%= @nickname %>!</h5>
     <div class="col-x" style ="text-align: center; display: block;">
 
     <br>
-    <!-- User Avatar -->
+
+  <div class="">
       <% if @user.avatar.attached? %>
         <%= image_tag(@user.avatar) %>
       <% else %>
         <%= image_tag 'avatar-placeholder.png' %>
       <% end %>
+
+    <!-- User Avatar -->
+        <%= simple_form_for @user do |f| %>
+      <!-- [...] -->
+      <%= f.input :avatar%>
+      <%= f.button :submit, "Upload", class: "btn-white", id: "sml" %>
+      <!-- [...] -->
+      <% end %>
+     </div>
 
     <br><br><br>
       <h5>Account Details</h5>

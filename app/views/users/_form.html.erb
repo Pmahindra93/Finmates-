@@ -1,0 +1,8 @@
+<!-- app/views/users/_form.html.erb -->
+<h5> Hello <%= current_user.first_name %>, create your DYK below </h5>
+<%= simple_form_for @user do |f| %>
+  <!-- [...] -->
+  <%= f.input :avatar, as: :file, label: false %>
+  <%= f.button :submit, "Upload Photo", class: "btn-login-sign-up-gradient" %>
+  <!-- [...] -->
+<% end %>

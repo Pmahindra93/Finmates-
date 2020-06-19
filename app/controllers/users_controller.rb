@@ -10,17 +10,17 @@ class UsersController < ApplicationController
     @nickname = User.find(params[:id]).nickname
 
     # @avatar = User.find(params[:id]).avatar
+  end
 
-    # def avatar
-    #    avatar.variant(resize: "150x150").processed if current_user.avatar.attached?
-    # end
-
+  def update
+    user = User.find(params[:id])
+    # authorize @user
   end
 
 private
 
-  # def article_params
-  #   params.require(:avatar)
-  # end
+  def user_params
+    params.require(:user).permit(:avatar)
+  end
 
 end

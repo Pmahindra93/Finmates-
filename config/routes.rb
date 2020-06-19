@@ -22,8 +22,9 @@ Rails.application.routes.draw do
  get '/newsfeed', to: 'pages#newsfeed'
  get '/favourites', to: 'favourites#index'
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :update]
       # get "users/:id", to: "users#show"
+      patch "users/:id", to: "users#update"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
