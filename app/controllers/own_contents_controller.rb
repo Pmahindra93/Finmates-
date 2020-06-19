@@ -59,6 +59,6 @@ class OwnContentsController < ApplicationController
   end
 
   def owncontent_params
-    params.require(:own_content).permit(:title, :description,:article, :category, :published_date, :photo)
+    params.require(:own_content).permit(:title, :description, :article, :category, :published_date, :photo, :reading_time)
   end
 end

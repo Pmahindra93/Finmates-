@@ -3,6 +3,7 @@
       <%= link_to newsfeed_path do %>
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
       <% end %>
+
       <!-- Favourite button -->
       <div>
         <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
@@ -12,6 +13,7 @@
             <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
           <% end %>
         <% end %>
+
       <!-- Admin features -->
         <% if current_user.admin %>
           <%= link_to "Edit", edit_own_content_path(@own_content) %>
@@ -19,8 +21,6 @@
         <% end %>
       </div>
     </div>
-
-
 
   <div class="article-title">
     <h1><%= @own_content.title %></h1>
@@ -30,9 +30,21 @@
     <h5><%= @own_content.category %></h5>
   </div>
 
-  <div class="article-date">
-    <p><%= @own_content.created_at.strftime("%B %d, %Y") %></p>
+  <div class="article-credentials">
+    <div class="author-avatar">
+      <% if @own_content.user.avatar.attached? %>
+        <%= cl_image_tag @own_content.user.avatar.key, class: "avatar-small" %>
+      <% else %>
+        <%= image_tag("avatar-placeholder.png", class: "avatar-small") %>
+      <% end %>
+    </div>
+
+    <div class="publishing-details">
+      <p class="author-name"><%= "#{@own_content.user.first_name} #{@own_content.user.last_name}" %></p>
+      <p><%= "#{@own_content.created_at.strftime("%B %d, %Y")} - #{@own_content.reading_time} min read" %></p>
+    </div>
   </div>
+
 
   <!-- Article thumbnail -->
   <div class="article_thumbnail">

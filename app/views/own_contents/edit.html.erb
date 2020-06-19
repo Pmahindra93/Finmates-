@@ -5,7 +5,8 @@
       <br>
       <hr></hr>
       <%= simple_form_for @own_content do |f| %>
-      <%= f.input :title%>
+      <%= f.input :title %>
+      <%= f.input :reading_time %>
       <%= f.input :description %>
       <%= f.input :photo, as: :file %>
       <%= f.input :article, as: :text, :input_html => {:rows => 10} %>
