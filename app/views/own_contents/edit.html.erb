@@ -6,7 +6,8 @@
       <hr></hr>
       <%= simple_form_for @own_content do |f| %>
       <%= f.input :title %>
-
+      <%= f.input :reading_time %>
+    
       <label>Key Take Away</label>
       <%= f.input :description, as: :hidden, :input_html => { :id => "key_take_away" } %>
       <trix-editor input="key_take_away"></trix-editor>

@@ -14,8 +14,26 @@
 }
 
 .article-category {
-  color: grey;
-  font-style: italic;
+  h5 {
+    color: grey !important;
+    font-style: italic;
+  }
+}
+
+.article-credentials, .publishing-details {
+  align-items: center;
+  h5, p {
+    margin-bottom: 0px;
+  }
+}
+
+.article-credentials {
+  display: flex;
+  margin: 20px 0;
+}
+
+.author-name {
+  font-weight: bold;
 }
 
 .article_thumbnail {

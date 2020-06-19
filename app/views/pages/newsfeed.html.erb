@@ -6,10 +6,14 @@
     <br>
     <p> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </p>
     <br>
-    <% @today_content.each do |content| %>
-      <%= link_to own_content_path(content) do %>
-        <%= render 'components/card', content: content %>
-        <br>
+    <% if @today_content.empty? %>
+        <p>Apologies, our newspaper boy is on his way to deliver the latest news from the crypto world!</p>
+    <% else %>
+      <% @today_content.each do |content| %>
+        <%= link_to own_content_path(content) do %>
+          <%= render 'components/card', content: content %>
+          <br>
+        <% end %>
       <% end %>
     <% end %>
   </div>
@@ -22,29 +26,36 @@
         <% end %>
     </div>
 
+    <% if @didyouknows.empty? %>
+        <p>Apologies, our minions are currently working really hard to get the latest content to you!</p>
+
+
   <!-- Carousel attempt using bootstrap -->
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= render 'components/thirdpartycard', did_you_know: @didyouknows.first  %>
+
+      <% else %>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= render 'components/thirdpartycard', did_you_know: @didyouknows.first  %>
+          </div>
+          <% @didyouknows.each_with_index do |dyk_slide, i| %>
+              <% if i > 0 %>
+                <div class="carousel-item">
+                 <%= render 'components/thirdpartycard', did_you_know: dyk_slide %>
+                </div>
+              <% end %>
+          <% end %>
         </div>
-        <% @didyouknows.each_with_index do |dyk_slide, i| %>
-            <% if i > 0 %>
-              <div class="carousel-item">
-               <%= render 'components/thirdpartycard', did_you_know: dyk_slide %>
-              </div>
-            <% end %>
-        <% end %>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+      <% end %>
   </div>
 
   <hr></hr>
