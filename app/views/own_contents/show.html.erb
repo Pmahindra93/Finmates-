@@ -1,3 +1,27 @@
+<% content_for :meta_title, "#{@own_content.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @own_content.description %>
+<% content_for :meta_image, cl_image_path(@own_content.photo) %>
+
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId : '199160927992724',
+    autoLogAppEvents : true,
+    xfbml : true,
+    version : 'v7.0'
+  });
+  // FB.AppEvents.logPageView();
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <div class="primary-container">
    <div class="d-flex justify-content-between">
       <%= link_to newsfeed_path do %>
@@ -71,7 +95,7 @@
     <!-- social-share-button -->
     <div class="social-share-btn">
       <i id="shareBtn" class="fab fa-facebook-square"></i>
-      <a href="#"
+      <!-- <a href="#"
         onclick="
         window.open(
           'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
@@ -79,7 +103,7 @@
           'width=626,height=436');
           return false;">
         <i class="fab fa-facebook-square"></i>
-      </a>
+      </a> -->
       <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
     </div>
   </div>
@@ -115,17 +139,11 @@
 
 <script>
 document.getElementById('shareBtn').onclick = function() {
-  FB.init({
-    appId            : '199160927992724',
-    autoLogAppEvents : true,
-    xfbml            : true,
-    version          : 'v7.0'
-  });
   FB.ui({
     display: 'popup',
-    method: 'feed',
+    method: 'share',
     link: window.location.href,
   }, function(response){});
 }
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
