@@ -1,8 +1,26 @@
-<meta property="og:type" content="article">
-<meta property="og:title" content="Scotch Web Development">
-<meta property="og:description" content="Scotch is a web development blog discussing all things programming, development, web, and life.">
-<meta property="og:image" content="https://scotch.io/wp-content/themes/scotch/img/scotch-home.jpg">
-<meta property="fb:app_id" content="199160927992724">
+<% content_for :meta_title, "#{@own_content.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @own_content.description %>
+<% content_for :meta_image, cl_image_path(@own_content.photo) %>
+
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId : '199160927992724',
+    autoLogAppEvents : true,
+    xfbml : true,
+    version : 'v7.0'
+  });
+  // FB.AppEvents.logPageView();
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <div class="primary-container">
    <div class="d-flex justify-content-between">
@@ -76,8 +94,25 @@
 
     <!-- social-share-button -->
     <div class="social-share-btn">
-      <i id="shareBtn" class="fab fa-facebook-square"></i>
-      <a href="#"
+      <ul class="social-sharing">
+        <li>
+          <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
+          <a href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@own_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+              <i class="share-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="19" version="1.1" viewBox="0 0 19 19"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g id="twitter" fill-rule="nonzero"><circle id="Oval" cx="9.433" cy="9.432" r="9.432" fill="#55ACEE"></circle><path id="Shape" fill="#F1F2F2" d="M15.2102566,6.77879646 C14.8060442,6.9580354 14.3712301,7.07926549 13.9152301,7.13340708 C14.3808142,6.85446018 14.738115,6.4130885 14.9067611,5.88630088 C14.4711062,6.14473451 13.9883717,6.33221239 13.4750354,6.43326549 C13.0637611,5.99525664 12.4777876,5.72152212 11.8289292,5.72152212 C10.5840088,5.72152212 9.57431858,6.73121239 9.57431858,7.97613274 C9.57431858,8.15284956 9.59432743,8.32485841 9.633,8.48997345 C7.75923009,8.3959823 6.09782301,7.49844248 4.98573451,6.13397345 C4.79169912,6.46689381 4.68038938,6.85446018 4.68038938,7.26758407 C4.68038938,8.04961062 5.07871681,8.74 5.68335398,9.14421239 C5.3139469,9.13261062 4.96606195,9.03122124 4.66223009,8.86190265 C4.66206195,8.87148673 4.66206195,8.8810708 4.66206195,8.89048673 C4.66206195,9.98290265 5.43954867,10.8940619 6.47076106,11.1010442 C6.28176991,11.1528319 6.08218584,11.1802389 5.87688496,11.1802389 C5.73127434,11.1802389 5.59020354,11.1662832 5.45266372,11.1400531 C5.73951327,12.0355752 6.5719823,12.6874602 7.55880531,12.7057876 C6.7870354,13.3105929 5.81500885,13.6709204 4.75840708,13.6709204 C4.57681416,13.6709204 4.39690265,13.6603274 4.22085841,13.6393097 C5.21810619,14.2792566 6.40350442,14.6523628 7.67667257,14.6523628 C11.8237168,14.6523628 14.0916106,11.2168938 14.0916106,8.23725664 C14.0916106,8.13956637 14.0894248,8.04221239 14.0850531,7.94569912 C14.5259204,7.6279115 14.9081062,7.2309292 15.2102566,6.77879646 Z"></path></g></g></svg></i>
+          </a>
+        </li>
+        <li>
+          <i class="share-link" id="shareBtn" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="19" version="1.1" viewBox="0 0 19 19"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g id="facebook-app-logo" fill="#4267B2" fill-rule="nonzero"><path id="Shape" d="M17.9507014,0.001 L1.04867286,0.001 C0.469900547,0.001 0,0.469961997 0,1.04967286 L0,17.9517014 C0,18.5314123 0.469900547,19.001 1.04867286,19.001 L10.148225,19.001 L10.148225,11.6430833 L7.6723309,11.6430833 L7.6723309,8.77518824 L10.148225,8.77518824 L10.148225,6.66032293 C10.148225,4.20664118 11.6464631,2.86983356 13.8357867,2.86983356 C14.8853981,2.86983356 15.7854673,2.94835889 16.0479484,2.98245953 L16.0479484,5.54720299 L14.529375,5.54782869 C13.3389811,5.54782869 13.1093493,6.11377416 13.1093493,6.94376493 L13.1093493,8.77424969 L15.9494006,8.77424969 L15.5780478,11.6418319 L13.1090364,11.6418319 L13.1090364,19.0000615 L17.9503886,19.0000615 C18.5297866,19.0000615 19,18.5298481 19,17.9517014 L19,1.04904716 C18.9996872,0.469961997 18.5300995,0.001 17.9507014,0.001 Z"></path></g></g></svg></i>
+        </li>
+        <li>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+            <i class="share-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="18" version="1.1" viewBox="0 0 19 18"><g id="pages" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g id="city" fill="#0077B5" fill-rule="nonzero" transform="translate(-345.000000, -4104.000000)"><g id="teachers" transform="translate(-586.000000, 3686.000000)"><g id="Teacher-1" transform="translate(736.000000, 169.000000)"><g id="Linkedin" transform="translate(194.137931, 249.000000)"><g id="logo-linkedin" transform="translate(0.862069, 0.000000)"><path id="Shape" d="M18.2083333,0 L0.791666667,0 C0.316666667,0 0,0.3 0,0.75 L0,17.25 C0,17.7 0.316666667,18 0.791666667,18 L18.2083333,18 C18.6833333,18 19,17.7 19,17.25 L19,0.75 C19,0.3 18.6833333,0 18.2083333,0 Z M5.62083333,15.375 L2.85,15.375 L2.85,6.75 L5.7,6.75 L5.7,15.375 L5.62083333,15.375 Z M4.19583333,5.55 C3.325,5.55 2.53333333,4.875 2.53333333,3.975 C2.53333333,3.15 3.24583333,2.4 4.19583333,2.4 C5.06666667,2.4 5.85833333,3.075 5.85833333,3.975 C5.85833333,4.875 5.14583333,5.55 4.19583333,5.55 Z M16.2291667,15.375 L13.3791667,15.375 L13.3791667,11.175 C13.3791667,10.2 13.3791667,8.925 11.9541667,8.925 C10.45,8.925 10.2916667,9.975 10.2916667,11.1 L10.2916667,15.375 L7.44166667,15.375 L7.44166667,6.75 L10.1333333,6.75 L10.1333333,7.95 C10.5291667,7.275 11.4,6.6 12.825,6.6 C15.675,6.6 16.2291667,8.4 16.2291667,10.725 L16.2291667,15.375 Z"></path></g></g></g></g></g></g></svg></i>
+          </a>
+        </li>
+      </ul>
+
+      <!-- <i id="shareBtn" class="fab fa-facebook-square"></i> -->
+      <!-- <a href="#"
         onclick="
         window.open(
           'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
@@ -85,7 +120,7 @@
           'width=626,height=436');
           return false;">
         <i class="fab fa-facebook-square"></i>
-      </a>
+      </a> -->
       <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
     </div>
   </div>
@@ -121,17 +156,11 @@
 
 <script>
 document.getElementById('shareBtn').onclick = function() {
-  FB.init({
-    appId            : '199160927992724',
-    autoLogAppEvents : true,
-    xfbml            : true,
-    version          : 'v7.0'
-  });
   FB.ui({
     display: 'popup',
-    method: 'feed',
+    method: 'share',
     link: window.location.href,
   }, function(response){});
 }
 </script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
