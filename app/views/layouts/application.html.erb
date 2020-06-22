@@ -16,6 +16,8 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:description" content="<%= sanitize meta_description %>" />
     <meta property="og:site_name" content="<%= sanitize meta_title %>" />
 
@@ -37,6 +39,8 @@
   </head>
   <body>
     <!-- Shown in all views pages excluding Home/Pages -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=199160927992724&autoLogAppEvents=1" nonce="kW774mq9"></script>
 
     <% unless controller_name == 'registrations' || controller_name == 'sessions' || controller_name == 'passwords' %>
       <%= render 'shared/navbar' %>
