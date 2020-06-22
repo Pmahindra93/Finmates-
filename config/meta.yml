@@ -1,5 +1,5 @@
-# meta_product_name: "finmates."
-# meta_title: "finmates. - Your one-stop-shop for crypto insights"
-# meta_description: "We dare to envisage to be your one-stop-shop for information, updates, and, of course, fun stuff surrounding cryptocurrencies. Much like ALDI might be your one-stop grocery shop, we’d like to build an independent platform, where you happily shop for your crypto insights 🛍 🛒"
-# meta_image: "finmates_vertical_logo.png" # should exist in `app/assets/images/`
+meta_product_name: "finmates."
+meta_title: "finmates. - Your one-stop-shop for crypto insights"
+meta_description: "We dare to envisage to be your one-stop-shop for information, updates, and, of course, fun stuff surrounding cryptocurrencies. Much like ALDI might be your one-stop grocery shop, we’d like to build an independent platform, where you happily shop for your crypto insights 🛍 🛒"
+meta_image: "finmates_vertical_logo.png" # should exist in `app/assets/images/`
 twitter_account: "@finmates_co"   # required for Twitter Cards
