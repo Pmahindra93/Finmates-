@@ -23,8 +23,8 @@ Rails.application.routes.draw do
  get '/favourites', to: 'favourites#index'
 
   resources :users, only: [:index, :show, :update]
-      # get "users/:id", to: "users#show"
-      patch "users/:id", to: "users#update"
+      # post "users/:id", to: "users#show"
+      # post "users/:id", to: "users#update"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

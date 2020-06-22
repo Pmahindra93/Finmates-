@@ -8,13 +8,10 @@ class UsersController < ApplicationController
     authorize @user
     @userEmail = User.find(params[:id]).email
     @nickname = User.find(params[:id]).nickname
-
-    # @avatar = User.find(params[:id]).avatar
   end
 
   def update
     user = User.find(params[:id])
-    # authorize @user
   end
 
 private

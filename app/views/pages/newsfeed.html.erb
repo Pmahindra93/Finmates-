@@ -2,6 +2,9 @@
 <div class="primary-container-newsfeed">
   <div class="m-3">
     <br>
+    <script src="https://widgets.coingecko.com/coingecko-coin-price-static-headline-widget.js"></script>
+<coingecko-coin-price-static-headline-widget  coin-ids="bitcoin,ethereum,litecoin" currency="usd" locale="en"></coingecko-coin-price-static-headline-widget>
+
     <h5><%= current_user.first_name %>, here is your bit-size news 💸</h5>
     <br>
     <p> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </p>
