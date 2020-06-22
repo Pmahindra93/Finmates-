@@ -10,9 +10,14 @@ gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'social-share-button'
 gem 'pundit'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 # Upvote gem
 gem 'acts_as_votable'
+
+# Formatting articles
+gem 'trix'
 
 # Upload Photo gem
 # gem 'image_processing', '~> 1.2'

@@ -20,6 +20,7 @@ before_action :find_content, only: [:show, :like, :edit, :update, :destroy]
     @didyouknow.user = current_user
     authorize @didyouknow
     if @didyouknow.save
+
       redirect_to newsfeed_path
     else
       render :new

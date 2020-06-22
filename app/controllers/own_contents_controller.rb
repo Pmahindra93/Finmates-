@@ -35,12 +35,12 @@ class OwnContentsController < ApplicationController
 
   def update
     @own_content.update(owncontent_params)
-    redirect_to own_content_path(@own_content)
+    redirect_to own_content_path(@own_content), alert: "Article Updated"
   end
 
   def destroy
    @own_content.destroy
-   redirect_to library_path
+   redirect_to library_path, alert: "Article Deleted"
   end
 
   def like
@@ -59,6 +59,6 @@ class OwnContentsController < ApplicationController
   end
 
   def owncontent_params
-    params.require(:own_content).permit(:title, :description,:article, :category, :published_date, :photo)
+    params.require(:own_content).permit(:title, :description, :article, :category, :published_date, :photo, :reading_time)
   end
 end

@@ -5,10 +5,12 @@ class OwnContent < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true, uniqueness: true
-  validates :description, presence: true
   validates :category, presence: true
-  validates :article, presence: true
+  validates :description, presence: true
   validates :published_date, presence: true
+  validates :reading_time, presence: true
+  validates :photo, presence: true
+  validates :article, presence: true
 
   acts_as_votable
 end

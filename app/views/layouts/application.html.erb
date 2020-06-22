@@ -8,11 +8,24 @@
     <title>Finmates</title>
     <%= favicon_link_tag 'fm_graphic.png' %>
 
-    <meta property="og:title" content="XXX | www.finmates.co" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="XXX." />
-    <meta property="og:url" content="https://finmates.co/" />
-    <meta property="og:image" content="#" />
+    <meta name="description" content="<%= sanitize meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="fb:app_id" content="199160927992724" />
+    <meta property="og:title" content="<%= sanitize meta_title %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= sanitize meta_description %>" />
+    <meta property="og:site_name" content="<%= sanitize meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
 
     <%= csrf_meta_tags %>
     <%#= csp_meta_tag %>
@@ -24,6 +37,8 @@
   </head>
   <body>
     <!-- Shown in all views pages excluding Home/Pages -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=199160927992724&autoLogAppEvents=1" nonce="kW774mq9"></script>
 
     <% unless controller_name == 'registrations' || controller_name == 'sessions' || controller_name == 'passwords' %>
       <%= render 'shared/navbar' %>
