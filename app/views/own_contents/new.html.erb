@@ -5,10 +5,21 @@
       <br>
       <hr></hr>
       <%= simple_form_for @own_content do |f| %>
-      <%= f.input :title%>
-      <%= f.input :description %>
+      <%= f.input :title %>
+      <%= f.input :reading_time %>
+
+      <label>Key Take Away</label>
+      <%= f.input :description, as: :hidden, :input_html => { :id => "key_take_away" } %>
+      <trix-editor input="key_take_away"></trix-editor>
+      <br>
+
       <%= f.input :photo, as: :file %>
-      <%= f.input :article, as: :text, :input_html => {:rows => 20} %>
+
+      <label>Content</label>
+      <%= f.input :article, as: :hidden, :input_html => { :id => "article_content" } %>
+      <trix-editor input="article_content"></trix-editor>
+      <br>
+
       <%= f.input :category, collection: [ "BitCoin", "Ethereum", "Cryptocurrency", "Breaking News"] %>
       <%= f.input :published_date, as: :datetime %>
       <%= f.button :submit, "Publish your article", class: "btn-login-sign-up-gradient" %>

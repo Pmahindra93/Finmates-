@@ -1,8 +1,33 @@
+<% content_for :meta_title, "#{sanitize @own_content.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "#{sanitize @own_content.description}" %>
+<% content_for :meta_image, cl_image_path(@own_content.photo.key) %>
+
+<!-- <script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId : '199160927992724',
+    autoLogAppEvents : true,
+    xfbml : true,
+    version : 'v7.0'
+  });
+  // FB.AppEvents.logPageView();
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
 <div class="primary-container">
    <div class="d-flex justify-content-between">
       <%= link_to newsfeed_path do %>
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
       <% end %>
+
       <!-- Favourite button -->
       <div>
         <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
@@ -12,6 +37,7 @@
             <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
           <% end %>
         <% end %>
+
       <!-- Admin features -->
         <% if current_user.admin %>
           <%= link_to "Edit", edit_own_content_path(@own_content) %>
@@ -20,19 +46,29 @@
       </div>
     </div>
 
-
-
   <div class="article-title">
-    <h1><%= @own_content.title %></h1>
+    <h1><%= sanitize @own_content.title %></h1>
   </div>
 
   <div class="article-category">
     <h5><%= @own_content.category %></h5>
   </div>
 
-  <div class="article-date">
-    <p><%= @own_content.created_at.strftime("%B %d, %Y") %></p>
+  <div class="article-credentials">
+    <div class="author-avatar">
+      <% if @own_content.user.avatar.attached? %>
+        <%= cl_image_tag @own_content.user.avatar.key, class: "avatar-small" %>
+      <% else %>
+        <%= image_tag("avatar-placeholder.png", class: "avatar-small") %>
+      <% end %>
+    </div>
+
+    <div class="publishing-details">
+      <p class="author-name"><%= "#{@own_content.user.first_name} #{@own_content.user.last_name}" %></p>
+      <p><%= "#{@own_content.created_at.strftime("%B %d, %Y")} - #{@own_content.reading_time} min read" %></p>
+    </div>
   </div>
+
 
   <!-- Article thumbnail -->
   <div class="article_thumbnail">
@@ -58,18 +94,40 @@
 
     <!-- social-share-button -->
     <div class="social-share-btn">
-      <%= social_share_button_tag(@own_content.title, :url => "finmates.com#{own_content_path(@own_content)}", desc: @own_content.description) %>
+      <ul class="social-sharing">
+        <li>
+          <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
+          <a href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@own_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+              <i class="fab fa-twitter-square"></i>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="https://www.facebook.com/dialog/share?app_id=199160927992724&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+            <i id="shareBtn" class="fab fa-facebook-square"></i>
+          </a>
+        </li> -->
+        <li>
+          <div class="fb-share-button" data-href="http://www.finmates.co/own_contents/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffinmates.co%2Fown_contents%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+        </li>
+        <li>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+
+      <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
     </div>
   </div>
 
   <!-- Article abstract -->
   <div class="article_abstract">
-    <p><%= @own_content.description %></p>
+    <p><%= sanitize @own_content.description %></p>
   </div>
 
   <!-- Article content -->
   <div class="article_content">
-    <p><%= @own_content.article %></p>
+    <p><%= sanitize @own_content.article %></p>
   </div>
 
   <!-- Comments -->
@@ -90,3 +148,14 @@
     <% end %>
   </div>
 </div>
+
+<!-- <script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    display: 'popup',
+    method: 'share',
+    href: window.location.href,
+  }, function(response){});
+}
+</script> -->
+<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
