@@ -101,10 +101,13 @@ window.fbAsyncInit = function() {
               <i class="fab fa-twitter-square"></i>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="https://www.facebook.com/dialog/share?app_id=199160927992724&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
             <i id="shareBtn" class="fab fa-facebook-square"></i>
           </a>
+        </li> -->
+        <li>
+          <div class="fb-share-button" data-href="http://www.finmates.co/own_contents/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffinmates.co%2Fown_contents%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
         </li>
         <li>
           <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
