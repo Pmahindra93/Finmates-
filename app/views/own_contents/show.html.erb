@@ -135,8 +135,8 @@ window.fbAsyncInit = function() {
     <h1>Comments</h1>
   </div>
 
-  <%= simple_form_for [ @own_content, @own_content_comment ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}" %>
+  <%= simple_form_for [ @own_content, @own_content_comment ], html: { id: :comment_form }, remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}", :input_html => { :id => "enter_submit" } %>
     <div class="comment-submit">
       <%= f.submit "Post", class: "btn-comment" %>
     </div>
