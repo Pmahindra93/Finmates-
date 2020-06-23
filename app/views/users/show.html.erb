@@ -1,16 +1,24 @@
 <div class="container-dashboard"  style ="text-align: center">
-  <br> <h5>Hello <%= @nickame %>!</h5>
+  <br> <h5>Hello <%= @nickname %>!</h5>
     <div class="col-x" style ="text-align: center; display: block;">
 
     <br>
-    <!-- User Avatar -->
-      <% if @user.avatar.attached? %>
+
+  <label for="avatar">
+      <input type="file" name="avatar" id="avatar" style="display:none;"/>
+      <img src="image_tag" style="display:none;"/>
+        <% if current_user.avatar.attached? %>
         <%= image_tag(@user.avatar) %>
       <% else %>
         <%= image_tag 'avatar-placeholder.png' %>
       <% end %>
+   </label>
 
-    <br><br><br>
+      <%= simple_form_for @user do |f| %>
+        <%= f.button :submit, "Upload", class: "btn-white", id: "sml" %>
+      <% end %>
+
+    <br>
       <h5>Account Details</h5>
     <hr></hr>
 
@@ -23,10 +31,10 @@
       <p><i class="fa fa-address-card icons" aria-hidden="true"></i> <%= @userEmail %></p>
           <br>
           <hr></hr>
-      <p> NOTIFICATIONS </p>
+<!--       <p> NOTIFICATIONS </p>
       <p><i class="fa fa-eye icons" aria-hidden="true"></i> ON / OFF </p>
          <br>
-         <hr></hr>
+         <hr></hr> -->
       <p> MANAGE PREFERENCES </p>
       <p><i class="fa fa-credit-card icons" aria-hidden="true"></i> Free Trial Period</p>
          <br>
