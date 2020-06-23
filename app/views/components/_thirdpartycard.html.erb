@@ -2,7 +2,7 @@
     <% unless did_you_know.image.attached? %>
         <%= cl_image_tag "thought-catalog-I0TDRP0fj6Y-unsplash_ccjbhz", class: "card-img-top"  %>
       <% else %>
-        <%= cl_image_tag did_you_know.image.key, class: "card-img-top" , crop: :fill, :opacity=>50, :overlay=>{:font_family=>"Arial", :font_size=>48, :font_weight=>"bold", :text=> did_you_know.title} %>
+        <%= cl_image_tag did_you_know.image.key, class: "card-img-top" , crop: :fill, :opacity=>80  %>
       <% end %>
   <div class="card-body">
     <p class="card-text"><%= sanitize did_you_know.description %> </p>
