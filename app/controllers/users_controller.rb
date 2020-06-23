@@ -1,23 +1,27 @@
 class UsersController < ApplicationController
-#     skip_before_action :authenticate_user!, only: [:home]
+    before_action :find_user, only: [:show, :update]
+
   def index
   end
 
   def show
-    @user = User.find(params[:id])
-    authorize @user
-    @userEmail = User.find(params[:id]).email
-    @nickname = User.find(params[:id]).nickname
+    @userEmail = @user.email
+    @nickname = @user.nickname
   end
 
   def update
-    @avatar = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path
   end
 
 private
 
+  def find_user
+    @user = User.find(params[:id])
+    authorize @user
+  end
+
   def user_params
     params.require(:user).permit(:avatar)
   end
-
 end
