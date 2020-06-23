@@ -5,14 +5,14 @@
     <br>
 
   <label for="avatar">
-      <input type="file" name="avatar" id="avatar" style="display:none;"/>
-      <img src="image_tag" style="display:none;"/>
-        <% if current_user.avatar.attached? %>
-        <%= image_tag(@user.avatar) %>
-      <% else %>
-        <%= image_tag 'avatar-placeholder.png' %>
-      <% end %>
-   </label>
+    <input type="file" name="avatar" id="avatar" style="display:none;"/>
+    <img src="image_tag" style="display:none;"/>
+    <% if current_user.avatar.attached? %>
+      <%= cl_image_tag(@user.avatar.key) %>
+    <% else %>
+      <%= image_tag 'avatar-placeholder.png' %>
+    <% end %>
+  </label>
 
       <%= simple_form_for @user do |f| %>
         <%= f.button :submit, "Upload", class: "btn-white", id: "sml" %>
