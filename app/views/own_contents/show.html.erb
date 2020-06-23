@@ -45,7 +45,6 @@ window.fbAsyncInit = function() {
       <!-- Admin features -->
         <% if current_user.admin %>
           <%= link_to "Edit", edit_own_content_path(@own_content) %>
-          <%= link_to "Delete", own_content_path(@own_content), method: :delete %>
         <% end %>
       </div>
     </div>

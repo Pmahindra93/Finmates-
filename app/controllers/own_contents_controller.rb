@@ -40,7 +40,7 @@ class OwnContentsController < ApplicationController
 
   def destroy
    @own_content.destroy
-   redirect_to library_path, alert: "Article Deleted", data: {confirm: "Are you sure?"}
+   redirect_to library_path, alert: "Article Deleted"
   end
 
   def like
