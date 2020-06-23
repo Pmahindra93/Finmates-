@@ -26,62 +26,20 @@ window.fbAsyncInit = function() {
  }(document, 'script', 'facebook-jssdk'));
 </script> -->
 
+<!-- Article thumbnail -->
+<div class="article_banner">
+  <% if @own_content.photo.attached? %>
+    <div class="article_thumbnail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @own_content.photo.key %>')">
+      <%= render 'components/banner_content' %>
+    </div>
+
+  <% else %>
+    <div class="article_thumbnail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80')">
+      <%= render 'components/banner_content' %>
+  <% end %>
+</div>
+
 <div class="primary-container">
-   <div class="d-flex justify-content-between">
-      <%= link_to newsfeed_path do %>
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-      <% end %>
-
-      <!-- Favourite button -->
-      <div>
-        <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
-          <% if current_user.favourites.map { |fav| fav.own_content }.include?(@own_content) %>
-            <i class="pl-3 fas fa-heart fa-lg ct-primary-light"></i>
-          <% else %>
-            <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
-          <% end %>
-        <% end %>
-
-      <!-- Admin features -->
-        <% if current_user.admin %>
-          <%= link_to "Edit", edit_own_content_path(@own_content) %>
-          <%= link_to "Delete", own_content_path(@own_content), method: :delete %>
-        <% end %>
-      </div>
-    </div>
-
-  <div class="article-title">
-    <h1><%= sanitize @own_content.title %></h1>
-  </div>
-
-  <div class="article-category">
-    <h5><%= @own_content.category %></h5>
-  </div>
-
-  <div class="article-credentials">
-    <div class="author-avatar">
-      <% if @own_content.user.avatar.attached? %>
-        <%= cl_image_tag @own_content.user.avatar.key, class: "avatar-small" %>
-      <% else %>
-        <%= image_tag("avatar-placeholder.png", class: "avatar-small") %>
-      <% end %>
-    </div>
-
-    <div class="publishing-details">
-      <p class="author-name"><%= "#{@own_content.user.first_name} #{@own_content.user.last_name}" %></p>
-      <p><%= "#{@own_content.created_at.strftime("%B %d, %Y")} - #{@own_content.reading_time} min read" %></p>
-    </div>
-  </div>
-
-
-  <!-- Article thumbnail -->
-  <div class="article_thumbnail">
-    <% if @own_content.photo.attached? %>
-      <%= cl_image_tag @own_content.photo.key, class: "article_thumb" %>
-    <% else %>
-      <%= image_tag 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80', class: "article_thumb" %>
-    <% end %>
-  </div>
 
   <!-- Article icons -->
   <div class="article_icons">
