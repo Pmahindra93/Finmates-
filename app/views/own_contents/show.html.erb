@@ -110,14 +110,14 @@ window.fbAsyncInit = function() {
             <i id="shareBtn" class="fab fa-facebook-square"></i>
           </a>
         </li> -->
-        <li>
+        <!-- <li>
           <div class="fb-share-button" data-href="http://www.finmates.co/own_contents/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffinmates.co%2Fown_contents%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
         </li>
         <li>
           <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
             <i class="fab fa-linkedin"></i>
           </a>
-        </li>
+        </li> -->
       </ul>
 
       <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
@@ -139,8 +139,8 @@ window.fbAsyncInit = function() {
     <h1>Comments</h1>
   </div>
 
-  <%= simple_form_for [ @own_content, @own_content_comment ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}" %>
+  <%= simple_form_for [ @own_content, @own_content_comment ], html: { id: :comment_form }, remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Comment on ##{@own_content.title}", :input_html => { :id => "enter_submit" } %>
     <div class="comment-submit">
       <%= f.submit "Post", class: "btn-comment" %>
     </div>
