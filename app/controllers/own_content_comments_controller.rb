@@ -6,6 +6,7 @@ class OwnContentCommentsController < ApplicationController
     @own_content_comment = OwnContentComment.new(own_content_comment_params)
     @own_content_comment.own_content = @own_content
     @own_content_comment.user = current_user
+    authorize @own_content_comment
     if @own_content_comment.save
       OwnContentChannel.broadcast_to(
         @own_content,
@@ -26,6 +27,6 @@ class OwnContentCommentsController < ApplicationController
   end
 
   def own_content_comment_params
-      params.require(:own_content_comment).permit(:content) #rating will be implemented later
+    params.require(:own_content_comment).permit(:content) #rating will be implemented later
   end
 end

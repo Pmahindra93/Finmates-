@@ -1,26 +1,27 @@
 class UsersController < ApplicationController
-#     skip_before_action :authenticate_user!, only: [:home]
+    before_action :find_user, only: [:show, :update]
+
   def index
   end
 
   def show
-    @user = User.find(params[:id])
-    authorize @user
-    @userEmail = User.find(params[:id]).email
-    @nickname = User.find(params[:id]).nickname
+    @userEmail = @user.email
+    @nickname = @user.nickname
+  end
 
-    # @avatar = User.find(params[:id]).avatar
-
-    # def avatar
-    #    avatar.variant(resize: "150x150").processed if current_user.avatar.attached?
-    # end
-
+  def update
+    @user.update(user_params)
+    redirect_to user_path
   end
 
 private
 
-  # def article_params
-  #   params.require(:avatar)
-  # end
+  def find_user
+    @user = User.find(params[:id])
+    authorize @user
+  end
 
+  def user_params
+    params.require(:user).permit(:avatar)
+  end
 end
