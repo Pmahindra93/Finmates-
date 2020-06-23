@@ -33,10 +33,23 @@
     color: #3A3B9C;
   }
 }
+
+.nf {
+  h6, p {
+  color: white;
+  font-size: 14px;
+  }
+}
+
+
 .cardsnf{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+.card-img-top{
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
 }
 
 @media(max-width: 992px) {
@@ -51,8 +64,3 @@
   }
 }
 
-.carousel-caption{
-  h5 ,p{
-  color: white;
-  }
-}

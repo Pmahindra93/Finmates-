@@ -7,7 +7,7 @@
       <%= simple_form_for @didyouknow do |f| %>
       <%= f.input :title%>
 
-      <label>Key Take Aways</label>
+      <label>Description</label>
       <%= f.input :description, as: :hidden, :input_html => { :id => "dyk_description" } %>
       <trix-editor input="dyk_description"></trix-editor>
 
