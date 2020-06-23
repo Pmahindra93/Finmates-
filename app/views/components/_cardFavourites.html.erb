@@ -5,7 +5,7 @@
     <%= cl_image_tag content.photo.key, crop: :fill %>
   <% end %>
   <div class="card-product-infos">
-    <p><%= content.category + " | " + content.published_date.strftime("%B %d") %></p>
+
     <h6><%= sanitize content.title %></h6>
   </div>
 </div>

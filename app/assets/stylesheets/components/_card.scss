@@ -33,3 +33,26 @@
     color: #3A3B9C;
   }
 }
+.cardsnf{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+@media(max-width: 992px) {
+  .cardsnf {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cardsnf {
+    grid-template-columns: 1fr;
+  }
+}
+
+.carousel-caption{
+  h5 ,p{
+  color: white;
+  }
+}
