@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 30px 30px;
+  padding: 20px 30px;
   align-items: center;
   min-height: 8vh;
   background: white;
@@ -14,7 +14,7 @@
 .nav-links {
   display: flex;
   justify-content: space-around;
-  z-index: 2;
+  z-index: 3;
   overflow-x: hidden;
   position: fixed;
   right: 0px;
