@@ -18,7 +18,11 @@ class User < ApplicationRecord
   # Avatar
   has_one_attached :avatar
 
-   def self.find_for_facebook_oauth(auth)
+  #this tells Carrierwave to use the image attribute in the
+  #model to store the file reference
+    mount_uploader :image, ImageUploader
+
+  def self.find_for_facebook_oauth(auth)
     user_params = auth.slice("provider", "uid")
     user_params.merge! auth.info.slice("email", "first_name", "last_name")
     user_params[:facebook_picture_url] = auth.info.image
