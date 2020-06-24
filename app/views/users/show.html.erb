@@ -1,49 +1,45 @@
 <div class="container-dashboard"  style ="text-align: center">
-  <br> <h5>Hello <%= @nickname %>!</h5>
-    <div class="col-x" style ="text-align: center; display: block;">
+  <br>
+  <h5>Hello <%= @nickname || @firstName %>!</h5>
+    <div class="col-x" style ="text-align: center; align-items: center; display: block;">
 
-    <br>
-
-  <label for="avatar">
-      <input type="file" name="avatar" id="avatar" style="display:none;"/>
-      <img src="image_tag" style="display:none;"/>
+    <div class="avatar" >
         <% if current_user.avatar.attached? %>
-        <%= image_tag(@user.avatar) %>
-      <% else %>
-        <%= image_tag 'avatar-placeholder.png' %>
-      <% end %>
-   </label>
+          <%= cl_image_tag(@user.avatar.key) %>
+        <% else %>
+          <%= image_tag 'avatar-placeholder.png' %>
+        <% end %>
+    </div>
 
-      <%= simple_form_for @user do |f| %>
-        <%= f.button :submit, "Upload", class: "btn-white", id: "sml" %>
-      <% end %>
-
-    <br>
+          <br>
       <h5>Account Details</h5>
-    <hr></hr>
+          <hr></hr>
 
   <div class="account-details" style="text-align: left">
       <p>NICKNAME</p>
       <p><i class="fa fa-user-circle icons" aria-hidden="true"></i> <%= @nickname %></p>
-          <br>
-      <p>FIRST NAME</p>
-      <p><%= @firstName %></p>
-          <br>
-      <p>LAST NAME</p>
-      <p><i class="fa fa-user-circle icons" aria-hidden="true"></i> <%= @nickname %></p>
           <hr></hr>
+
+      <p>FIRST NAME</p>
+      <p><i class="fa fa-user-circle icons" aria-hidden="true"></i> <%= @firstName %></p>
+          <hr></hr>
+
+      <p>LAST NAME</p>
+      <p><i class="fa fa-user-circle icons" aria-hidden="true"></i> <%= @lastName %></p>
+          <hr></hr>
+
       <p> EMAIL </p>
       <p><i class="fa fa-address-card icons" aria-hidden="true"></i> <%= @userEmail %></p>
-          <br>
           <hr></hr>
-<!--       <p> NOTIFICATIONS </p>
+
+      <!-- <p> NOTIFICATIONS </p>
       <p><i class="fa fa-eye icons" aria-hidden="true"></i> ON / OFF </p>
-         <br>
-         <hr></hr> -->
       <p> MANAGE PREFERENCES </p>
-      <p><i class="fa fa-credit-card icons" aria-hidden="true"></i> Free Trial Period</p>
-         <br>
-        <hr></hr>
+      <p><i class="fa fa-credit-card icons" aria-hidden="true"></i> Free Trial Period</p> -->
+
+      <br>
+      <p>Change Profile Picture:</p>
+      <%= render "form" %>
 
       <div class="row" style="justify-content: center">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-white" %>
@@ -54,24 +50,18 @@
 <!-- OPTIONS FOR TABS LATER --- <script>
   function onTabClick(event) {
   let activeTabs = document.querySelectorAll('.active');
-
   // deactivate existing active tab and panel
   // for( let i = 0; i < activeTabs.length; i++) {
   //   activeTabs[i].className = activeTabs[i].className.replace('active-tab', '');
   // }
-
   activeTabs.forEach(function(tab) {
     tab.className = tab.className.replace('active', '');
   });
-
   // activate new tab and panel
   event.target.parentElement.className += ' active';
   document.getElementById(event.target.href.split('#')[1]).className += ' active';
 }
-
   const element = document.getElementById('nav-tab');
-
   element.addEventListener('click', onTabClick, false);
-
 </script>
  -->
