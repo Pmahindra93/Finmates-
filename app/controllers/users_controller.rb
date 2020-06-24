@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :update]
 
-  def index
-  end
 
   def show
     @userEmail = @user.email
