@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       put "like" => "own_contents#like"
     end
     resources :own_content_comments, only: [:index, :new, :create, :show]
-    resources :favourites, only: [:new, :create]
+    resources :favourites, only: [:new, :create,:destroy]
   end
 
 
