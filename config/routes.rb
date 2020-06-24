@@ -28,7 +28,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :update]
       # post "users/:id", to: "users#show"
-      # post "users/:id", to: "users#update"
+      # get "users/:id/edit", to: "users#edit"
+      # patch "users/:id", to: "users#update"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

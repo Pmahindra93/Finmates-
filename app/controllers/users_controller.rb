@@ -5,11 +5,16 @@ class UsersController < ApplicationController
   def show
     @userEmail = @user.email
     @nickname = @user.nickname
+    @firstName = @user.first_name
+    @lastName = @user.last_name
   end
 
   def update
     @user.update(user_params)
     redirect_to user_path
+  end
+
+  def edit
   end
 
 private
@@ -22,4 +27,5 @@ private
   def user_params
     params.require(:user).permit(:avatar)
   end
+
 end
