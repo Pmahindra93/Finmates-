@@ -6,7 +6,9 @@ import "../plugins/enter_submit";
 import "bootstrap";
 import $ from 'jquery';
 global.$ = jQuery;
-$('.carousel').carousel()
+$('.carousel').carousel({
+ interval: 100
+})
 
 
 // document.addEventListener('turbolinks:load', () => {

@@ -6,8 +6,8 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_many :favourites
-  has_many :own_content_comments
-  has_many :own_contents
+  has_many :own_content_comments, dependent: :destroy
+  has_many :own_contents, dependent: :destroy
 
   acts_as_voter
 

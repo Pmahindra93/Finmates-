@@ -56,13 +56,12 @@ window.fbAsyncInit = function() {
 
     <!-- social-share-button -->
     <div class="social-share-btn">
-      <ul class="social-sharing">
-        <li>
+
           <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
           <a href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@own_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
               <i class="fab fa-twitter-square"></i>
           </a>
-        </li>
+
         <!-- <li>
           <a href="https://www.facebook.com/dialog/share?app_id=199160927992724&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
             <i id="shareBtn" class="fab fa-facebook-square"></i>
@@ -76,7 +75,6 @@ window.fbAsyncInit = function() {
             <i class="fab fa-linkedin"></i>
           </a>
         </li> -->
-      </ul>
 
       <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
     </div>
