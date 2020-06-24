@@ -1,7 +1,16 @@
 label, input.form-control {
   color: #3A3B9C !important;
+  content-align: center;
 }
 
 label {
   font-weight: bold;
 }
+
+// Profile Avatar
+ .avatar img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+ }
+

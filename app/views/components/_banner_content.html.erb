@@ -1,0 +1,38 @@
+<div class="banner-container">
+  <div class="d-flex justify-content-between">
+    <%= link_to newsfeed_path do %>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <% end %>
+
+    <!-- Favourite button -->
+    <div>
+      <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
+        <% if current_user.favourites.map { |fav| fav.own_content }.include?(@own_content) %>
+          <i class="pl-3 fas fa-heart fa-lg ct-primary-light"></i>
+        <% else %>
+          <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
+        <% end %>
+      <% end %>
+
+    <!-- Admin features -->
+      <% if current_user.admin %>
+        <%= link_to "Edit", edit_own_content_path(@own_content) %>
+        <%= link_to "Delete", own_content_path(@own_content), method: :delete %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="article-category">
+    <p><%= @own_content.category.upcase %></p>
+  </div>
+
+  <!-- Article title -->
+  <div class="article-title">
+    <h1><%= sanitize @own_content.title %></h1>
+  </div>
+
+  <div class="publishing-details">
+    <p class="author-name"><%= "#{@own_content.user.first_name} #{@own_content.user.last_name}" %></p>
+    <p><%= "#{@own_content.created_at.strftime("%B %d, %Y")} - #{@own_content.reading_time} min read" %></p>
+  </div>
+</div>
