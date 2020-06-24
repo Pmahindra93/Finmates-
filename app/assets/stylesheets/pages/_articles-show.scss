@@ -47,7 +47,9 @@
   align-items: center;
 }
 
-.d-flex {
+.banner-icons {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   top: 15px;
   left: 0;
@@ -59,7 +61,7 @@
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-  .d-flex {
+  .banner-icons {
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -67,7 +69,7 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .d-flex {
+  .banner-icons {
     padding-right: 40px;
     padding-left: 40px;
   }
