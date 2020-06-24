@@ -41,8 +41,26 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :cloudinary
+  # Use GMail's SMTP service for delivery
+     config.action_mailer.delivery_method = :smtp
 
-  config.active_storage.service = :cloudinary
+  config.action_mailer.smtp_settings = {
+         user_name: ENV["EMAIL_ADDRESS"],
+         password: ENV["EMAIL_PASSWORD"],
+         #domain: "mail.google.com",
+         address: 'smtp.gmail.com',
+         port: '587',
+         authentication: :plain,
+         enable_starttls_auto: true
+     }
+
+
+
+     config.action_mailer.default_options = {
+         from: "finmatesapp@gmail.com"
+     }
+
+
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
