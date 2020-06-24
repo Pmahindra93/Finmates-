@@ -1,12 +1,11 @@
 <div class="card" style="width: 100%;">
-
-<% unless did_you_know.image.attached? %>
-    <%= cl_image_tag "thought-catalog-I0TDRP0fj6Y-unsplash_ccjbhz", class: "card-img-top"  %>
-  <% else %>
-    <%= cl_image_tag did_you_know.image.key, class: "card-img-top" , crop: :fill %>
-  <% end %>
+    <% unless did_you_know.image.attached? %>
+        <%= cl_image_tag "thought-catalog-I0TDRP0fj6Y-unsplash_ccjbhz", class: "card-img-top"  %>
+      <% else %>
+        <%= cl_image_tag did_you_know.image.key, class: "card-img-top" , crop: :fill, :opacity=>80  %>
+      <% end %>
   <div class="card-body">
-    <p class="card-text"><%= did_you_know.article %> </p>
+    <p class="card-text"><%= sanitize did_you_know.description %> </p>
   </div>
 </div>
 

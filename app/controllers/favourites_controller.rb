@@ -18,5 +18,10 @@ class FavouritesController < ApplicationController
     redirect_to own_content_path(@own_content)
   end
 
+  def destroy
+   @own_content = OwnContent.find(params[:own_content_id])
+   @favourite = Favourite.find_by(own_content: @own_content)
+   @favourite.destroy
+  end
 
 end

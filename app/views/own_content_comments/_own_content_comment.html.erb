@@ -1,8 +1,22 @@
 <div class="own_content_comment-container" id="own_content_comment-<%= own_content_comment.id %>">
-  <i class="author">
-    <span><%= own_content_comment.user.nickname %></span>
-    <small><%= own_content_comment.created_at.strftime("%B %d, %Y at %l:%M%p") %></small>
-  </i>
-  <p><%= own_content_comment.content %></p>
+  <div class="comment-avatar">
+    <% if @own_content.user.avatar.attached? %>
+      <%= cl_image_tag @own_content_comment.user.avatar.key, class: "avatar-small" %>
+    <% else %>
+      <%= image_tag("avatar-placeholder.png", class: "avatar-small") %>
+    <% end %>
+  </div>
+
+  <div class="author-time-comment">
+    <i class="author">
+      <% if own_content_comment.user.nickname? %>
+        <span><%= own_content_comment.user.nickname %></span>
+      <% else %>
+        <span><%= "#{own_content_comment.user.first_name} #{own_content_comment.user.last_name}" %></span>
+      <% end %>
+      <small><%= own_content_comment.created_at.strftime("%B %d, %Y at %l:%M%p") %></small>
+    </i>
+    <p><%= own_content_comment.content %></p>
+  </div>
 </div>
 <hr>
