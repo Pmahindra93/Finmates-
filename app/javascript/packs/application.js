@@ -7,7 +7,7 @@ import "bootstrap";
 import $ from 'jquery';
 global.$ = jQuery;
 $('.carousel').carousel({
- interval: 2000
+ interval: 4000
 })
 
 
