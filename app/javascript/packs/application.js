@@ -9,7 +9,7 @@ global.$ = jQuery;
 $('.carousel').carousel({
  interval: 4000
 })
-
+window.location.hash = "";
 
 // document.addEventListener('turbolinks:load', () => {
 //   // Call your functions here, e.g:
