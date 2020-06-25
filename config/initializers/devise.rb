@@ -9,11 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'b83870978436c0c4bc4e307904b6cfd0e4672d99356874a37d409df57b577cc417ef68893c78afce203d514f6ce2e74826039ae8961f4f213e51b1827a018263'
-   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-    scope: 'email',
-    info_fields: 'email, first_name, last_name',
-    image_size: 'large',  # 50x50, guaranteed ratio
-    secure_image_url: true
+
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -23,7 +19,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = '"SeeQL Support" <finmatesapp@gmail.com>'
+  config.mailer_sender = '"Finmates Support" <finmatesapp@gmail.com>'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -144,7 +140,7 @@ Devise.setup do |config|
   # their account can't be confirmed with the token any more.
   # Default is nil, meaning there is no restriction on how long a user can take
   # before confirming their account.
-  # config.confirm_within = 3.days
+  config.confirm_within = 3.days
 
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
@@ -153,7 +149,7 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
-  # config.confirmation_keys = [:email]
+  config.confirmation_keys = [:email]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
@@ -265,6 +261,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+    scope: 'email',
+    info_fields: 'email, first_name, last_name',
+    image_size: 'large',  # 50x50, guaranteed ratio
+    secure_image_url: true
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
