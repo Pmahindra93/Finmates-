@@ -24,6 +24,10 @@ gem 'acts_as_votable'
 # Formatting articles
 gem 'trix'
 
+# for image processing/uploading
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Upload Photo gem
 # gem 'image_processing', '~> 1.2'
 
