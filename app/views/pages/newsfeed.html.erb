@@ -78,29 +78,3 @@
 
 </div>
 
-
-
-    <!--     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active d-flex justify-content-center">
-              <% unless @didyouknows.first.image.attached? %>
-                <%= cl_image_tag "thought-catalog-I0TDRP0fj6Y-unsplash_ccjbhz", class: "card-img-top dyk"  %>
-              <% else %>
-                <%= cl_image_tag @didyouknows.first.image.key, class: "card-img-top" , crop: :fill, :opacity=>50 %>
-              <% end %>
-                <div class="nf carousel-caption ">
-                  <h6><%= @didyouknows.first.title %></h6>
-                </div>
-            </div>
-            <% @didyouknows.each_with_index do |dyk_slide, i| %>
-              <% if i > 0 %>
-                <div class="carousel-item">
-                 <%= cl_image_tag dyk_slide.image.key, class: "card-img-top" , crop: :fill, :opacity=>50  %>
-                   <div class="nf carousel-caption">
-                    <h6><%= dyk_slide.title %></h6>
-                  </div>
-                </div>
-              <% end %>
-          <% end %>
-        </div>
-
