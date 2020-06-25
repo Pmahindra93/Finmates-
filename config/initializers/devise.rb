@@ -265,7 +265,8 @@ Devise.setup do |config|
     scope: 'email',
     info_fields: 'email, first_name, last_name',
     image_size: 'large',  # 50x50, guaranteed ratio
-    secure_image_url: true
+    secure_image_url: true,
+    callback_url: "https://finmates.co/users/auth/facebook/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
