@@ -20,7 +20,19 @@ class User < ApplicationRecord
 
   #this tells Carrierwave to use the image attribute in the
   #model to store the file reference
-    mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
+
+  def self.create_from_provider_data(provider_data)
+    where(provider: provider_data.provider, uid: provider_data.uid).first_or_initialize do |user|
+      user.remote_picture_url = provider_data.info.image
+      user.username = provider_data.info.name
+      user.email = provider_data.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.oauth_token = provider_data.credentials.token
+      user.oauth_expires_at = provider_data.credentials.expires_at
+      user.save!
+    end
+  end
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice("provider", "uid")
