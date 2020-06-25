@@ -1,4 +1,4 @@
-class OmniauthCallbacksPolicy < ApplicationPolicy
+class Users::OmniauthCallbacksPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
