@@ -1,7 +1,9 @@
 <div class="own_content_comment-container" id="own_content_comment-<%= own_content_comment.id %>">
   <div class="comment-avatar">
-    <% if @own_content.user.avatar.attached? %>
-      <%= cl_image_tag @own_content_comment.user.avatar.key, class: "avatar-small" %>
+    <% if own_content_comment.user.avatar.attached? %>
+      <%= cl_image_tag own_content_comment.user.avatar.key, class: "avatar-small" %>
+    <% elsif own_content_comment.user.facebook_picture_url? %>
+      <%= image_tag(own_content_comment.user.facebook_picture_url, class: "avatar-small") %>
     <% else %>
       <%= image_tag("avatar-placeholder.png", class: "avatar-small") %>
     <% end %>
