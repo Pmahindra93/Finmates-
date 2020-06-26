@@ -11,8 +11,9 @@ gem 'redis'
 gem 'social-share-button'
 gem 'pundit'
 
-gem 'figaro'
-gem 'omniauth-facebook'
+
+gem 'omniauth'
+gem 'omniauth-facebook', '~> 6.0'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
