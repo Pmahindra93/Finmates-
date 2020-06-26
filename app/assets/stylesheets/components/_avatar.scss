@@ -4,3 +4,21 @@
   margin-right: 10px;
 }
 
+.avatar-large {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-size: cover;
+ }
+
+ .avatar-edit {
+  color: white !important;
+  i {
+    font-size: 24px;
+  }
+ }
