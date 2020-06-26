@@ -9,15 +9,12 @@
             </div>
             <div class="modal-body">
                 <div class="forms-container">
-            <!--       <%= simple_form_for @user, method: :patch do |f| %>
+                  <%= simple_form_for @user, method: :patch do |f| %>
                     <%= f.input :avatar, as: :file, label: false %>
 
                     <%= f.button :submit, "Upload", class: "btn-gradient" %>
-                  <% end %> -->
-
-                  <%= link_to "Edit Profile", edit_user_path(@user) %>
+                  <% end %>
                 </div>
-
             </div>
         </div>
     </div>

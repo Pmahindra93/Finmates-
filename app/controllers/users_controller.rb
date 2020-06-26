@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
+    @user.update(user_param)
+    authorize @user
     redirect_to user_path(@user), alert: "User Updated"
   end
 
@@ -26,7 +27,7 @@ private
     authorize @user
   end
 
-  def user_params
+  def user_param
     params.require(:user).permit(:first_name,:last_name,:email,:avatar)
   end
 
