@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :find_user, only: [:show, :update]
+    before_action :find_user, only: [:show, :edit, :update]
 
 
   def show
@@ -9,13 +9,16 @@ class UsersController < ApplicationController
     @lastName = @user.last_name
   end
 
-  def update
-    @user.update(user_params)
-    redirect_to user_path
-  end
-
   def edit
   end
+
+  def update
+    @user.update(user_param)
+    authorize @user
+    redirect_to user_path(@user), alert: "User Updated"
+  end
+
+
 
 private
 
@@ -24,8 +27,8 @@ private
     authorize @user
   end
 
-  def user_params
-    params.require(:user).permit(:avatar)
+  def user_param
+    params.require(:user).permit(:first_name,:last_name,:email,:avatar)
   end
 
 end

@@ -26,7 +26,7 @@
  get '/newsfeed', to: 'pages#newsfeed'
  get '/favourites', to: 'favourites#index'
 
-  resources :users, only: [:index, :show, :update]
+  resources :users, only: [:show, :edit, :update]
       # post "users/:id", to: "users#show"
       # get "users/:id/edit", to: "users#edit"
       # patch "users/:id", to: "users#update"

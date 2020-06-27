@@ -1,0 +1,21 @@
+<div class="modal fade" id="avatarModal" tabindex="-1" role="dialog" aria-labelledby="avatarModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title modal-header" id="avatarModalTitle">Edit Profile Picture</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="forms-container">
+                  <%= simple_form_for @user, method: :patch do |f| %>
+                    <%= f.input :avatar, as: :file, label: false %>
+
+                    <%= f.button :submit, "Upload", class: "btn-gradient" %>
+                  <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

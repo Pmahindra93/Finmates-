@@ -13,6 +13,21 @@
 .btn-white {
   background: white;
   color: #3A3B9C;
+  border: none;
+  &:hover {
+    text-decoration: none;
+    color: #3A3B9C;
+  }
+}
+
+.btn-gradient {
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
+  color: white;
+  border: none;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .btn-comment {
@@ -59,12 +74,12 @@
 }
 
 // AVATAR UPLOAD
-#sml-upload {
-  width: 80px;
-  height: 30px;
-  font-size: 14px !important;
-  text-align: center !important;
-}
+// #sml-upload {
+//   width: 80px;
+//   height: 30px;
+//   font-size: 14px !important;
+//   text-align: center !important;
+// }
 
 // back button on show page
 .fa-chevron-left {
