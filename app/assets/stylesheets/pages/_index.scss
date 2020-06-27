@@ -2,3 +2,7 @@
 @import "home";
 @import "articles-show";
 @import "newsfeed";
+
+body {
+  min-height: 100vh;
+}
