@@ -12,7 +12,7 @@
     </div>
 
   <% else %>
-    <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('avatar-placeholder.png')">
+    <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path 'avatar-placeholder.png' %>)">
       <a class="avatar-edit" data-toggle="modal" data-target="#avatarModal"><i class="far fa-edit"></i></a>
     </div>
   <% end %>
