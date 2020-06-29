@@ -17,14 +17,19 @@
     </div>
   <% end %>
 
-  <br>
-  <h5>Account Details</h5>
+<div class="row py-4">
+  <div class="col justify-content-center">
+    <h5>Account Details</h5>
+  </div>
+    <%= link_to edit_user_path(@user) do %>
+      <i class="far fa-edit"></i>
+    <% end %>
+</div>
+
+
   <hr></hr>
 
   <div class="account-details" style="text-align: left">
-      <p>NICKNAME</p>
-      <p><i class="fa fa-user-circle icons" aria-hidden="true"></i> <%= @nickname %></p>
-          <hr></hr>
 
       <p>FIRST NAME</p>
       <p><i class="fa fa-user-circle icons" aria-hidden="true"></i> <%= @firstName %></p>
@@ -38,6 +43,9 @@
       <p><i class="fa fa-address-card icons" aria-hidden="true"></i> <%= @userEmail %></p>
           <hr></hr>
 
+      <p>NICKNAME</p>
+      <p><i class="fa fa-user-circle icons" aria-hidden="true"></i> <%= @nickname %></p>
+          <hr></hr>
       <!-- <p> NOTIFICATIONS </p>
       <p><i class="fa fa-eye icons" aria-hidden="true"></i> ON / OFF </p>
       <p> MANAGE PREFERENCES </p>

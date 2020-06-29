@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   def newsfeed
     @own_contents = OwnContent.all
     @today_content = @own_contents.select {|own_content|  own_content.published_date >= (Date.today()-10) && own_content.published_date <= Date.today() }
+    @today_content = @today_content.reverse
     @week_date = Date.today()-7
     @didyouknows = Didyouknow.all
   end
