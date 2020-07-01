@@ -80,7 +80,7 @@ window.fbAsyncInit = function() {
       <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
     </div>
   </div>
-
+  <br>
   <!-- Article abstract -->
   <div class="article_abstract">
     <p><%= sanitize @own_content.description %></p>
