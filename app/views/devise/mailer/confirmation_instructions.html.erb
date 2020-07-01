@@ -1,5 +1,19 @@
-<p>Welcome to Finmates <%= @user.first_name %>!</p>
+ <div class="mx-2 py-2">
 
-<p>You can confirm your account email through the link below:</p>
+  <div class="d-flex justify-content-center">
+    <%= image_tag('fm_heading.png') %>
+  </div>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  <p>Welcome to Finmates, <%= @user.first_name %>!</p>
+
+  <p>You can confirm your account email through the link below:</p>
+
+  <div class="py-2 d-flex justify-content-center">
+    <%= link_to confirmation_url(@resource, confirmation_token: @token) do %>
+      <button class="btn-white"> Confirm my account </button>
+    <% end %>
+  </div>
+
+  <p> Note: This email is only valid for <strong> three days </strong> upon receiving the email.
+  If you do not confirm your email after three days, you will not be able to access your Finmates account. </p>
+ </div>
