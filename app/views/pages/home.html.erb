@@ -2,30 +2,33 @@
 
 <!-- BANNER -->
   <section id="banner">
-
     <div class="banner">
       <div class="banner-content">
-        <button class="btn-white" style="height:45px"><%= link_to "What We Provide", '#what-we-provide'%></button>
-        <button class="btn-white" style="height:45px"><%= link_to "Your Benefits", '#your-benefits'%></button>
-        <button class="btn-white" style="height:45px"><%= link_to "Who are we?", '#who-are-we-3'%></button>
-        <div class="banner-slogan">
-          <h1>  Your one-stop-shop for the latest crypto insights to...  <br><div id="typing" class="typing"></div></h1>
-        </div>
-        <% if user_signed_in? %>
-          <%= link_to newsfeed_path do %>
-            <button class="btn-white"> Go to Newsfeed </button>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_registration_path do %>
-            <button class="btn-white"> Join finmates. </button>
-          <% end %>
-        <% end %>
-      </div>
 
-      <div class="banner-img">
-        <%= image_tag 'banner-img.png' %>
+        <div class="lp-links">
+          <%= link_to "What we provide | ", '#what-we-provide'%>
+          <%= link_to "Your benefits | ", '#your-benefits'%>
+          <%= link_to "Our story", '#our-story'%>
+        </div>
+
+          <div class="banner-slogan">
+            <h1>  Your one-stop-shop for the latest crypto insights to...  <br><div id="typing" class="typing"></div></h1>
+          </div>
+          <% if user_signed_in? %>
+            <%= link_to newsfeed_path do %>
+              <button class="btn-white"> Go to Newsfeed </button>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path do %>
+              <button class="btn-white"> Join finmates. </button>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="banner-img">
+          <%= image_tag 'banner-img.png' %>
+        </div>
       </div>
-    </div>
   </section>
 
   <!-- WHAT-WE-PROVIDE-SECTION -->
@@ -171,7 +174,7 @@
         <% end %>
       </div>
 
-      <div class="who-are-we-header" id="who-are-we-3">
+      <div class="who-are-we-header">
         <h2>Who are we?</h2>
       </div>
 
@@ -200,7 +203,7 @@
       </div>
 
       <div class="primary-container">
-        <div class="our-story">
+        <div class="our-story" id="our-story">
           <h2>Our Story</h2>
 
           <p>It all started when we didn't even know each other. In early 2020, each individually, and for different reasons, decided to quit whatever we were doing at the time and to start learning how to code 👨🏻‍💻. And that's where we met - at the Le Wagon Bootcamp in Berlin. <br><br>
