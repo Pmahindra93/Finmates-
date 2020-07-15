@@ -40,7 +40,7 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0&appId=199160927992724&autoLogAppEvents=1" nonce="kW774mq9"></script>
 
-    <% unless controller_name == 'registrations' || controller_name == 'sessions' || controller_name == 'passwords' %>
+    <% unless controller_name == 'registrations' || controller_name == 'sessions' || controller_name == 'passwords' || controller_name == 'confirmations' %>
       <%= render 'shared/navbar' %>
     <% end %>
 

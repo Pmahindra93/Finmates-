@@ -6,22 +6,21 @@
     </div>
       <br>
 
-<h4>Forgot your password?</h4>
+    <h4>Forgot your password?</h4>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-  </div>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Reset Password", class: "btn-login-sign-up-gradient" %>
-    </div>
-  <% end %>
-
+      <div class="form-actions">
+        <%= f.button :submit, "Reset Password", class: "btn-login-sign-up-gradient" %>
+      </div>
+        <% end %>
   </div>
 </div>
