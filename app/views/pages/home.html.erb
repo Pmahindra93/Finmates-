@@ -36,10 +36,14 @@
 
     <div class="primary-container">
 
+      <div class="what-we-provide-header">
+        <h2>What we provide</h2>
+      </div>
+
       <!-- 1. Feature -->
       <div class="what-we-provide" id="what-we-provide">
         <div class="text-1">
-          <h2>1. Educational Content</h2>
+          <h3>1. Educational Content</h3>
 
           <p>Easy to understand introduction into the world of cryptocurrencies with brief, simplified information</p>
 
@@ -67,7 +71,7 @@
         </div>
 
         <div class="text-2">
-          <h2>2. Original articles & audio</h2>
+          <h3>2. Original articles & audio</h3>
 
           <p>YOLO! Bitcoin and blockchin news summarised for easy consumption</p>
 
@@ -87,7 +91,7 @@
       <!-- 3. Feature -->
       <div class="what-we-provide">
         <div class="text-3">
-          <h2>3. Social media </h2>
+          <h3>3. Social media </h3>
 
           <p> Twitter can get noisy, we will only provide you with the most relevant content </p>
 
@@ -161,18 +165,6 @@
 
   <!-- WHO-ARE-WE -->
   <section id="who-are-we">
-
-      <div class="sign-up-btn">
-        <% if user_signed_in? %>
-          <%= link_to newsfeed_path do %>
-            <button class="btn-gradient"> Go to Newsfeed </button>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_registration_path do %>
-            <button class="btn-gradient"> Join finmates. </button>
-          <% end %>
-        <% end %>
-      </div>
 
       <div class="who-are-we-header">
         <h2>Who are we?</h2>
