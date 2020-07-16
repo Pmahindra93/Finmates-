@@ -1,4 +1,4 @@
-<div class="lp-top">
+<div id="lp-top">
 
 <!-- BANNER -->
   <section id="banner">
@@ -32,27 +32,19 @@
   </section>
 
   <!-- WHAT-WE-PROVIDE-SECTION -->
-  <section id="our-provision">
+  <section id="what-we-provide">
 
     <div class="primary-container">
 
+      <div class="what-we-provide-header">
+        <h2>What we provide</h2>
+      </div>
+
       <!-- 1. Feature -->
-      <div class="what-we-provide" id="what-we-provide">
+      <div class="what-we-provide">
         <div class="text-1">
-          <h2>1. Educational Content</h2>
-
+          <h3>1. Educational Content</h3>
           <p>Easy to understand introduction into the world of cryptocurrencies with brief, simplified information</p>
-
-          <% if user_signed_in? %>
-            <%= link_to newsfeed_path do %>
-              <button class="btn-gradient"> Go to Newsfeed </button>
-            <% end %>
-          <% else %>
-            <%= link_to new_user_registration_path do %>
-              <button class="btn-gradient"> Join finmates. </button>
-            <% end %>
-          <% end %>
-
         </div>
 
         <div class="iphone-1">
@@ -67,40 +59,16 @@
         </div>
 
         <div class="text-2">
-          <h2>2. Original articles & audio</h2>
-
+          <h3>2. Original articles & audio</h3>
           <p>YOLO! Bitcoin and blockchin news summarised for easy consumption</p>
-
-          <% if user_signed_in? %>
-            <%= link_to newsfeed_path do %>
-              <button class="btn-gradient"> Go to Newsfeed </button>
-            <% end %>
-          <% else %>
-            <%= link_to new_user_registration_path do %>
-              <button class="btn-gradient"> Join finmates. </button>
-            <% end %>
-          <% end %>
-
         </div>
       </div>
 
       <!-- 3. Feature -->
       <div class="what-we-provide">
         <div class="text-3">
-          <h2>3. Social media </h2>
-
+          <h3>3. Social media </h3>
           <p> Twitter can get noisy, we will only provide you with the most relevant content </p>
-
-          <% if user_signed_in? %>
-            <%= link_to newsfeed_path do %>
-              <button class="btn-gradient"> Go to Newsfeed </button>
-            <% end %>
-          <% else %>
-            <%= link_to new_user_registration_path do %>
-              <button class="btn-gradient"> Join finmates. </button>
-            <% end %>
-          <% end %>
-
         </div>
 
         <div class="iphone-3">
@@ -162,18 +130,6 @@
   <!-- WHO-ARE-WE -->
   <section id="who-are-we">
 
-      <div class="sign-up-btn">
-        <% if user_signed_in? %>
-          <%= link_to newsfeed_path do %>
-            <button class="btn-gradient"> Go to Newsfeed </button>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_registration_path do %>
-            <button class="btn-gradient"> Join finmates. </button>
-          <% end %>
-        <% end %>
-      </div>
-
       <div class="who-are-we-header">
         <h2>Who are we?</h2>
       </div>
@@ -219,10 +175,17 @@
           The first step on our self-imposed mission is to build and develop this cool app to help others – and ourselves – understand what is happening in this “new”, "crazy" world of crypto by providing bit-sized snacks for your consumption 🍿, without all the complicated, fancy words 🙅🏼‍♂‍. <br><br>
 
           Eventually, we hope to excite others about cryptocurrencies and all that it may entail. We hope you jump on board 🚀.</p>
+
+          <a href="#lp-top">
+            <div class="arrow-up">
+              <%= image_tag "chevron-up-solid.svg", alt: "Back-to-top" %>
+            </div>
+          </a>
+
+          <p>Back to Top</p>
         </div>
       </div>
   </section>
-
 </div>
 
 <!-- TYPING-EFFECT -->
@@ -243,7 +206,7 @@
       count++;
       i = 0;
     }
-    setTimeout(type, 200);
+    setTimeout(type, 400);
   }());
 
   function sleep(milliseconds) {
