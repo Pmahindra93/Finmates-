@@ -1,8 +1,10 @@
+var eventposted = 0
+
 $("#enter_submit").keypress(function(event) {
-    if (event.which == 13) {
-        event.preventDefault();
-        $("form").submit();
-    }
+  if (event.which == 13) {
+    event.preventDefault();
+    $("form").submit();
+  }
 });
 
 $(document).ready(function () {
@@ -11,4 +13,10 @@ $(document).ready(function () {
     $("form").submit();
   });
 });
+
+
+// $("#comment_form").on("submit",function() {
+   // e.preventDefault(); // cancel submission
+//    window.location.hash = "comment_form";
+// });
 
