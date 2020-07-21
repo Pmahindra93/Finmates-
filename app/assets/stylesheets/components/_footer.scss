@@ -8,7 +8,7 @@
   padding: 10px 30px 5px 30px;
   font-size: 6px !important;
   text-color: black !important;;
-  background: #F0F0F0;
+  background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
 }
 
 .footer-links {
@@ -16,6 +16,7 @@
   justify-content: center;
   a, p {
     margin: 0 16px;
+    color: white !important;
   }
 }
 
@@ -25,5 +26,6 @@
   i {
     font-size: 20px;
     margin: 8px 8px 24px 8px;
+    color: white !important;
   }
 }
