@@ -1,15 +1,29 @@
-.footer{
-  position: fixed;
+.footer {
+  // position: fixed;
   bottom: 0;
-  height: 2.5rem;
+  height: 9.5rem;
   z-index: 2;
   box-shadow: 5px 0px 0px 0px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   padding: 10px 30px 5px 30px;
   font-size: 6px !important;
   text-color: black !important;;
   background: #F0F0F0;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  a, p {
+    margin: 0 16px;
+  }
+}
+
+.social-share-btn {
+  display: flex;
+  justify-content: center;
+  i {
+    font-size: 20px;
+    margin: 8px 8px 24px 8px;
+  }
+}
