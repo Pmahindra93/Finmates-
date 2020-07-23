@@ -24,7 +24,7 @@
   background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 35%;
   transform: translateX(100%);
   transition: transform 0.25s ease-in;
 }
@@ -33,6 +33,19 @@
   opacity: 0;
   text-align: -webkit-center;
   color: white !important;
+}
+
+ul {
+  display: contents;
+  li a {
+  display: grid;
+  color: white !important;
+  min-width: 105px;
+  }
+}
+
+.sidemenu-active {
+  border-bottom: 3px solid #fff;
 }
 
 .nav-active {

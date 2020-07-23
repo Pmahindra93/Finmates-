@@ -1,6 +1,7 @@
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import "../plugins/enter_submit";
+import "../plugins/active_sidemenu";
 
 // External imports
 import "bootstrap";
