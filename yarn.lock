@@ -6221,6 +6221,11 @@ retry@^0.12.0:
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
 
+reveal.js@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-4.0.2.tgz#2e5e9f8ed0fa239924b448f21d4238c5aa6e852e"
+  integrity sha512-LWZSUenufF1gpD7npxJ7KfoQQFKgc1D6XrLTFgKlwWNP1BQ74hT48KONFWMAw+8R/QUeaScCLCLrBVHDfFIEiw==
+
 rgb-regex@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/rgb-regex/-/rgb-regex-1.0.1.tgz#c0e0d6882df0e23be254a475e8edd41915feaeb1"
