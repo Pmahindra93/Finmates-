@@ -15,10 +15,10 @@
 
       <!-- Burger Menu -->
       <div class="nav-links">
-         <li><%= link_to image_tag('news-text.png', class: "nav-link" ),  newsfeed_path %></li>
-          <li><%= link_to image_tag('content-text.png', class: "nav-link"), library_path %></li>
-          <li><%= link_to image_tag('favourites-text.png', class: "nav-link"), favourites_path %></li>
-          <li><%= link_to image_tag('profile-text.png', :alt => "My Profile", class: "nav-link"), user_path(current_user.id) %></li>
+         <li><%= link_to image_tag('news-text.png', class: "nav-link" ),  newsfeed_path %>Newsfeed</li>
+          <li><%= link_to image_tag('content-text.png', class: "nav-link"), library_path %>Library</li>
+          <li><%= link_to image_tag('favourites-text.png', class: "nav-link"), favourites_path %>Favourites</li>
+          <li><%= link_to image_tag('profile-text.png', :alt => "My Profile", class: "nav-link"), user_path(current_user.id) %>Profile</li>
           <% if current_user.admin %>
           <li><%= link_to image_tag('add_box_24px.png', class: "nav-link"), new_own_content_path %></li>
           <% end %>
@@ -53,6 +53,4 @@
   }
 
   navSlide ();
-
  </script>
-
