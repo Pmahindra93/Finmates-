@@ -33,7 +33,7 @@ class EducationContentsController < ApplicationController
   end
 
   def update
-    @education_content.update(owncontent_params)
+    @education_content.update(educontent_params)
     redirect_to education_content_path(@education_content), alert: "Content Updated"
   end
 
