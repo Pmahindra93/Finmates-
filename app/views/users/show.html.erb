@@ -20,10 +20,10 @@
 <div class="row py-4">
   <div class="col justify-content-center">
     <h5>Account Details</h5>
+    <div class="mt-5">
+      <%= link_to "Edit profile", edit_user_path(@user), class: "btn-gradient" %>
+    </div>
   </div>
-    <%= link_to edit_user_path(@user) do %>
-      <i class="far fa-edit"></i>
-    <% end %>
 </div>
 
 
