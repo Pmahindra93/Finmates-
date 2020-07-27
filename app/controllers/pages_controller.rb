@@ -17,6 +17,7 @@ class PagesController < ApplicationController
     @today_content = @today_content.reverse
     @week_date = Date.today()-7
     @didyouknows = Didyouknow.all
+    @education_contents = EducationContent.all
   end
 
 end

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :favourites, dependent: :destroy
   has_many :own_content_comments, dependent: :destroy
   has_many :own_contents, dependent: :destroy
+  has_many :education_contents, dependent: :destroy
 
   acts_as_voter
 
