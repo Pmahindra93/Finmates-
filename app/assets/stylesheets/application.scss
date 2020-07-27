@@ -20,3 +20,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.page-content {
+  min-height: calc(100vh - 9.5rem);
+}

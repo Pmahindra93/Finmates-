@@ -1,11 +1,10 @@
 .footer {
-  // position: fixed;
+  position: unset;
   bottom: 0;
   height: 9.5rem;
   z-index: 2;
   box-shadow: 5px 0px 0px 0px;
   width: 100%;
-  padding: 10px 30px 5px 30px;
   font-size: 6px !important;
   text-color: black !important;;
   background: linear-gradient(115deg, #BC00DD 0%, #2D00F7 50%, #4DECFF 100%);

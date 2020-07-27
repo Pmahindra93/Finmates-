@@ -1,7 +1,11 @@
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import "../plugins/enter_submit";
+
 import "../plugins/reveal";
+
+import "../plugins/active_sidemenu";
+
 // External imports
 import "bootstrap";
 import $ from 'jquery';
