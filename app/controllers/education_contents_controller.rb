@@ -14,15 +14,15 @@ class EducationContentsController < ApplicationController
   end
 
   def new
-    @education_content = OwnContent.new
+    @education_content = EducationContent.new
     authorize @education_content
   end
 
   def create
-    @education_content = EducationContent.new(educationcontent_params)
+    @education_content = EducationContent.new(educontent_params)
     @education_content.user = current_user
     authorize @education_content
-    if @own_content.save
+    if @education_content.save
       redirect_to newsfeed_path
     else
       render :new
@@ -50,8 +50,8 @@ class EducationContentsController < ApplicationController
     authorize @education_content
   end
 
-  def educationcontent_params
-    params.require(:education_content).permit(:title, :description, :content, :thumbnail, photos: [])
+  def educontent_params
+    params.require(:education_content).permit(:title, :description, :edu_content, :thumbnail, photos: [])
   end
 
 

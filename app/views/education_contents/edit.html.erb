@@ -16,8 +16,7 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
       <label>Content</label>
-      <%= f.input :contnet, as: :hidden, :input_html => { :id => "education_content" } %>
-      <trix-editor input="education_content"></trix-editor>
+      <%= f.input :content %>
       <br>
 
       <%= f.button :submit, "Publish your article", class: "btn-login-sign-up-gradient" %>

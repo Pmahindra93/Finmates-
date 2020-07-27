@@ -2,12 +2,12 @@
       <div class="slides">
         <section data-markdown>
           <textarea data-template>
-            <%= @education_content.title %>
+            <%= sanitize @education_content.title %>
             ## Slide 1
-            <%= @education_content.description %>
+            <%= sanitize @education_content.description %>
             ---
             ## Slide 2
-            <%= @education_content.content %>
+            <%= sanitize @education_content.edu_content %>
           </textarea>
         </section>
       </div>
