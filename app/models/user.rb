@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   acts_as_voter
 
+  validates :nickname, uniqueness: true
   validates :email, :first_name, :last_name, presence: true
 
   # Avatar

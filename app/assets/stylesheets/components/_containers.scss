@@ -54,10 +54,16 @@
   }
 }
 
+// FORMS CONTAINER
+
+.forms-container {
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+
 @media (min-width: 576px) {
   .forms-container {
     width: 50%;
-    margin: 0 auto;
   }
 
 }
