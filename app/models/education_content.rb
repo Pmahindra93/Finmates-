@@ -5,5 +5,5 @@ class EducationContent < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :content, presence: true
+  validates :edu_content, presence: true
 end
