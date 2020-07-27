@@ -3,9 +3,9 @@
   <h5>Hello <%= @nickname || @firstName %>!</h5>
 
   <% if current_user.avatar.attached? %>
-    <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.avatar.key, crop: :fill %>')">
-      <a class="avatar-edit" data-toggle="modal" data-target="#avatarModal"><i class="far fa-edit"></i></a>
-    </div>
+    <a class="avatar-edit" data-toggle="modal" data-target="#avatarModal">
+      <div class="avatar-large" style="background-image: url('<%= cl_image_path @user.avatar.key, crop: :fill %>')"></div>
+    </a>
   <% elsif current_user.facebook_picture_url? %>
     <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path(@user.facebook_picture_url) %>')">
       <a class="avatar-edit" data-toggle="modal" data-target="#avatarModal"><i class="far fa-edit"></i></a>
