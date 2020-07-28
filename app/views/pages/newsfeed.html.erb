@@ -35,13 +35,14 @@
     <!-- Education content -->
 
     <div class="m-3">
-      <div class= "py-2">
-        <h5>Finmates Lessons</h5>
+      <div class= "py-2 d-flex justify-content-between">
+        <h5>Learn 📚</h5>
         <% if current_user.admin %>
             <%= link_to "Add", new_education_content_path %>
           <% end %>
       </div>
 
+     <div class="cardsGrid">
         <% if @education_contents.empty? %>
         <div class="py-2">
           <p>Apologies, our teacher is on the way to deliver the latest course from the crypto world!</p>
@@ -54,6 +55,7 @@
         <% end %>
       <% end %>
     <% end %>
+    </div>
   </div>
   <hr></hr>
 
@@ -62,8 +64,8 @@
     <!-- Did-you know section -->
 
   <div class="m-3">
-      <div class= "py-2">
-        <h5>Did you know?</h5>
+      <div class= "py-2 d-flex justify-content-between">
+        <h5>Did you know? 🤔</h5>
         <% if current_user.admin %>
             <%= link_to "Add", new_didyouknow_path %>
           <% end %>

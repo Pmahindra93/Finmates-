@@ -6,4 +6,4 @@ let deck = new Reveal({
 })
 deck.initialize();
 
-Reveal.initialize();
+
