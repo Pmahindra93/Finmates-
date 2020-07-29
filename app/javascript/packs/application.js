@@ -3,7 +3,7 @@
 import "../plugins/enter_submit";
 import "../plugins/active_sidemenu";
 
-import "../plugins/reveal";
+
 
 
 // External imports
