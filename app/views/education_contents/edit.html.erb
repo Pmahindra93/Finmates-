@@ -8,15 +8,16 @@
       <%= f.input :title %>
 
       <label>Education content description</label>
-      <%= f.input :description %>
-      <trix-editor input="content_description"></trix-editor>
+      <%= f.input :description, as: :hidden, :input_html => { :id => "key_take_away" } %>
+      <trix-editor input="key_take_away"></trix-editor>
       <br>
 
       <%= f.input :thumbnail, as: :file %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
       <label>Content</label>
-      <%= f.input :edu_content %>
+      <%= f.input :edu_content, as: :hidden, :input_html => { :id => "education_content"} %>
+      <trix-editor input="education_content"></trix-editor>
       <br>
 
       <%= f.button :submit, "Publish your article", class: "btn-login-sign-up-gradient" %>
