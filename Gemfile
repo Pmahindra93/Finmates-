@@ -27,6 +27,7 @@ gem 'trix'
 
 # for image processing/uploading
 gem 'carrierwave'
+gem "shrine", "~> 3.0"
 gem 'mini_magick'
 
 # Upload Photo gem
