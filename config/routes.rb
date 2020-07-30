@@ -19,6 +19,9 @@
 
 
   resources :education_contents do
+    member do
+      put "like" => "education_contents#like"
+    end
   end
 
   resources :didyouknows do

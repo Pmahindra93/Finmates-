@@ -42,6 +42,13 @@ class EducationContentsController < ApplicationController
    redirect_to newsfeed_path, alert: "Content Deleted"
   end
 
+  def like
+    if current_user.voted_for? @education_content
+      @education_content.unliked_by current_user
+    else
+      @education_content.liked_by current_user
+    end
+  end
 
   private
 
