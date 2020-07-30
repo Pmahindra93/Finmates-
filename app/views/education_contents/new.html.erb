@@ -1,0 +1,28 @@
+<div class="primary-container-newsfeed">
+  <div class="row">
+    <div class="col">
+      <h5> Hello <%= current_user.first_name %>, create your Education content below </h5>
+      <br>
+      <hr></hr>
+      <%= simple_form_for @education_content do |f| %>
+      <%= f.input :title %>
+
+      <label>Education content description</label>
+      <%= f.input :description , as: :hidden, :input_html => { :id => "content_description" }%>
+      <trix-editor input="content_description"></trix-editor>
+      <br>
+
+      <%= f.input :thumbnail, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
+      <label>Content</label>
+      <%= f.input :edu_content, as: :hidden, :input_html => { :id => "education_content" } %>
+      <trix-editor input="education_content"></trix-editor>
+      <br>
+
+      <%= f.button :submit, "Publish your article", class: "btn-login-sign-up-gradient" %>
+      <% end %>
+      <br><br>
+    </div>
+  </div>
+ </div>

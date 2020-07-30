@@ -30,13 +30,46 @@
     <% end %>
   </div>
   <hr></hr>
-  <div class="m-3">
-    <div class= "py-2">
-      <h5>Did you know?</h5>
-      <% if current_user.admin %>
-          <%= link_to "Add", new_didyouknow_path %>
+
+
+    <!-- Education content -->
+
+    <div class="m-3">
+      <div class= "py-2 d-flex justify-content-between">
+        <h5>Learn 📚</h5>
+        <% if current_user.admin %>
+            <%= link_to "Add", new_education_content_path %>
+          <% end %>
+      </div>
+
+     <div class="cardsGrid">
+        <% if @education_contents.empty? %>
+        <div class="py-2">
+          <p>Apologies, our teacher is on the way to deliver the latest course from the crypto world!</p>
+        </div>
+    <% else %>
+      <% @education_contents.each do |e_content| %>
+        <%= link_to education_content_path(e_content) do %>
+          <%= render 'components/cardGrid', e_content: e_content %>
+          <br>
         <% end %>
+      <% end %>
+    <% end %>
     </div>
+  </div>
+  <hr></hr>
+
+
+
+    <!-- Did-you know section -->
+
+  <div class="m-3">
+      <div class= "py-2 d-flex justify-content-between">
+        <h5>Did you know? 🤔</h5>
+        <% if current_user.admin %>
+            <%= link_to "Add", new_didyouknow_path %>
+          <% end %>
+      </div>
 
     <% if @didyouknows.empty? %>
         <p>Apologies, our minions are currently working really hard to get the latest content to you!</p>
@@ -71,10 +104,14 @@
       <% end %>
   </div>
 
+  <!-- end of did you know -->
   <hr></hr>
+
+<!-- start of the twitter feed -->
   <div class="m-3 py-2">
     <a class="twitter-timeline" data-width="100%" data-height="550" href="https://twitter.com/finmates_co?ref_src=twsrc%5Etfw">Tweets by finmates_co</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
+  <!-- end of twitter feed -->
 
 </div>
 

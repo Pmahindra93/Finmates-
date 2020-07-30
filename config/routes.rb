@@ -18,6 +18,8 @@
   end
 
 
+  resources :education_contents do
+  end
 
   resources :didyouknows do
   end
