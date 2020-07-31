@@ -1,8 +1,6 @@
 class EducationContent < ApplicationRecord
-  include FotoUploader[:image]
-
   has_one_attached :thumbnail
-  has_many_attached :photos
+  # has_many_attached :photos
   belongs_to :user
 
   validates :title, presence: true, uniqueness: true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_132735) do
+ActiveRecord::Schema.define(version: 2020_07_31_145322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2020_07_31_132735) do
     t.datetime "updated_at", null: false
     t.text "edu_content"
     t.bigint "user_id"
-    t.text "image_data"
     t.index ["user_id"], name: "index_education_contents_on_user_id"
   end
 
@@ -98,6 +97,12 @@ ActiveRecord::Schema.define(version: 2020_07_31_132735) do
     t.bigint "user_id"
     t.string "reading_time"
     t.index ["user_id"], name: "index_own_contents_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.text "image_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "third_party_contents", force: :cascade do |t|
