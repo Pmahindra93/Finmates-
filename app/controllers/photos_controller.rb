@@ -10,11 +10,13 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    authorize @photo
   end
 
   # GET /photos/new
   def new
     @photo = Photo.new
+    authorize @photo
   end
 
   # GET /photos/1/edit
@@ -25,6 +27,7 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
+    authorize @photo
 
     respond_to do |format|
       if @photo.save
@@ -69,6 +72,6 @@ class PhotosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def photo_params
-      params.require(:photo).permit(:image_data)
+      params.require(:photo).permit(:image)
     end
 end
