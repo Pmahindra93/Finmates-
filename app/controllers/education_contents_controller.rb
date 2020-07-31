@@ -58,7 +58,7 @@ class EducationContentsController < ApplicationController
   end
 
   def educontent_params
-    params.require(:education_content).permit(:title, :description, :edu_content, :thumbnail, photos: [])
+    params.require(:education_content).permit(:title, :description, :edu_content, :thumbnail, :image)
   end
 
 
