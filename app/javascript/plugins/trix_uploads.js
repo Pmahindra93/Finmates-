@@ -8,6 +8,7 @@ function uploadAttachment(attachment) {
   // Create our form data to submit
   var file = attachment.file;
   var form = new FormData;
+  console.log(form);
   form.append("Content-Type", file.type);
   form.append("photo[image]", file);
 
