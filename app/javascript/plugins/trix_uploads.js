@@ -1,8 +1,8 @@
-// Turn off the default Trix captions
-Trix.config.attachments.preview.caption = {
-  name: false,
-  size: false
-};
+// Turn off the default Trix captions (doesn't work as seen in tutorial)
+// Trix.editor.config.attachments.preview.caption = {
+//   name: false,
+//   size: false
+// };
 
 function uploadAttachment(attachment) {
   // Create our form data to submit
