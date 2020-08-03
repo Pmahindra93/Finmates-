@@ -27,10 +27,11 @@ gem 'trix'
 
 # for image processing/uploading
 gem 'carrierwave'
+gem "shrine", "~> 3.0"
 gem 'mini_magick'
 
 # Upload Photo gem
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
