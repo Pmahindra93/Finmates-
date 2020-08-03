@@ -2,6 +2,7 @@
 // import { initSelect2 } from '../components/init_select2';
 import "../plugins/enter_submit";
 import "../plugins/active_sidemenu";
+import "../plugins/trix-uploads";
 
 
 
