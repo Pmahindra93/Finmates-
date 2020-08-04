@@ -9,7 +9,7 @@
 <!-- <script>
 window.fbAsyncInit = function() {
   FB.init({
-    appId : '199160927992724',
+    appId : '195110855167474',
     autoLogAppEvents : true,
     xfbml : true,
     version : 'v7.0'
@@ -56,28 +56,21 @@ window.fbAsyncInit = function() {
     </div>
 
     <!-- social-share-button -->
-    <div class="social-share-btn">
+    <div class="social-share-btn-article">
 
-          <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
-          <a href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@own_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
-              <i class="fab fa-twitter-square"></i>
-          </a>
+      <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
+      <a class="twitter-link" href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@own_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i class="fab fa-twitter-square"></i>
+      </a>
 
-        <!-- <li>
-          <a href="https://www.facebook.com/dialog/share?app_id=199160927992724&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
-            <i id="shareBtn" class="fab fa-facebook-square"></i>
-          </a>
-        </li> -->
-        <!-- <li>
-          <div class="fb-share-button" data-href="http://www.finmates.co/own_contents/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffinmates.co%2Fown_contents%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-        </li>
-        <li>
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li> -->
+      <a href="https://www.facebook.com/dialog/share?app_id=195110855167474&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i id="shareBtn" class="fab fa-facebook-square"></i>
+      </a>
 
-      <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
     </div>
   </div>
   <br>
