@@ -88,6 +88,19 @@
   }
 }
 
+.article_content {
+  word-wrap: break-word;
+  a {
+    .size {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
 .comments-title {
   margin-top: 50px;
   border-top: 1px solid #3A3B9C;
