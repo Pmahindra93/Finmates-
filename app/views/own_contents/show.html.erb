@@ -95,7 +95,7 @@ window.fbAsyncInit = function() {
         <p><%= sanitize @own_content.article.truncate_words(50, seperator: /\s/) %></p>
       </div>
       <div class="read-full-story">
-        <p>TO READ THE FULL STORY</p>
+        <p><strong>TO READ THE FULL STORY</strong></p>
       </div>
       <div class="flex-sign-up-login-btn">
         <%= link_to "Sign up", new_user_registration_path, class: "btn-horizontal-gradient" %>
