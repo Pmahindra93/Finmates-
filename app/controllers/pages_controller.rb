@@ -20,4 +20,10 @@ class PagesController < ApplicationController
     @education_contents = EducationContent.all
   end
 
+  def about
+  end
+
+  def faq
+  end
+
 end
