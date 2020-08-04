@@ -1,7 +1,7 @@
 class EducationContentsController < ApplicationController
 
   before_action :find_econtent, only: [:show, :like, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :show, :like]
+  before_action :authenticate_user!, only: [:index, :like]
 
 
 

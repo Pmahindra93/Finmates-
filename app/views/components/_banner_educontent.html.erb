@@ -15,7 +15,7 @@
       <%# end %>
 
     <!-- Admin features -->
-      <% if current_user.admin %>
+      <% if user_signed_in? && current_user.admin %>
           <%= link_to  edit_education_content_path(@education_content) do %>
             <i class="far fa-edit"></i>
           <% end %>
