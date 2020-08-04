@@ -31,6 +31,9 @@
  get '/library', to: 'pages#library'
  get '/newsfeed', to: 'pages#newsfeed'
  get '/favourites', to: 'favourites#index'
+ get '/about', to: 'pages#about'
+ get '/faq', to: 'pages#faq'
+
 
   resources :users, only: [:show, :edit, :update]
       # post "users/:id", to: "users#show"
