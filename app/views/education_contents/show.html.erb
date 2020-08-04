@@ -47,14 +47,24 @@
   </div>
   <br>
   <!-- Article abstract -->
-  <div class="article_abstract">
-    <p><%= sanitize @education_content.description %></p>
-  </div>
+  <% if user_signed_in? %>
+    <div class="article_abstract">
+      <p><%= sanitize @education_content.description %></p>
+    </div>
 
-  <!-- Article content -->
-  <div class="article_content">
-    <p><%= sanitize @education_content.edu_content %></p>
-  </div>
+    <!-- Article content -->
+    <div class="article_content">
+      <p><%= sanitize @education_content.edu_content %></p>
+    </div>
+  <% else %>
+    <div class="read-full-story">
+      <p><strong>TO READ THIS LEARNING UNIT</strong></p>
+    </div>
+    <div class="flex-sign-up-login-btn">
+      <%= link_to "Sign up", new_user_registration_path, class: "btn-horizontal-gradient" %>
+      <%= link_to "Log in", new_user_session_path, class: "btn-horizontal-white" %>
+    </div>
+  <% end %>
 
   <!-- Comments -->
   <!-- SEE OWN CONTENT -->
