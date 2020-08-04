@@ -5,15 +5,14 @@
     <%= link_to image_tag('fm_heading.png'), newsfeed_path %>
   </div>
 
-    <!-- Burger Menu Image -->
-    <% if user_signed_in? %>
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
 
-      <!-- Burger Menu -->
+    <!-- SIGNED IN - Burger Menu -->
+    <% if user_signed_in? %>
       <div class="nav-links">
         <ul class="navbar-menu">
           <li class="menu-item">
@@ -34,10 +33,27 @@
             </li>
           <% end %>
         </ul>
-    <% else %>
-      <%= link_to "LOG IN", new_user_session_path, class: "btn-white", id: "sml" %>
-    <% end %>
       </div>
+
+    <!-- NOT SIGNED IN - Burger Menu Image -->
+    <% else %>
+      <div class="nav-links">
+        <ul class="navbar-menu">
+          <li class="menu-item">
+            <a id="newsfeed" href="<%= newsfeed_path %>"><%= image_tag('news-text.png') %>Newsfeed</a>
+          </li>
+          <li class="menu-item">
+            <a id="library" href="<%= library_path %>"><%= image_tag('content-text.png') %>Library</a>
+          </li>
+          <li class="menu-item">
+            <a id="log-in" href="<%= new_user_session_path %>"><%= image_tag('sign-in-alt-solid.png') %>Log In</a>
+          </li>
+          <li class="menu-item">
+            <a id="sign-up" href="<%= new_user_registration_path %>"><%= image_tag('sign-up-solid.png') %>Sign Up</a>
+          </li>
+        </ul>
+      </div>
+  <% end %>
 </div>
 
 <!-- JS - Nav Menu Slide -->

@@ -1,7 +1,7 @@
 class OwnContentsController < ApplicationController
 
   before_action :find_content, only: [:show, :like, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :show, :like]
+  before_action :authenticate_user!, only: [:index, :like]
 
   respond_to :js, :html, :json
 
@@ -10,7 +10,7 @@ class OwnContentsController < ApplicationController
   end
 
   def show
-    find_content
+    # find_content
     @own_content_comment = OwnContentComment.new
   end
 
