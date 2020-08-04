@@ -7,7 +7,7 @@
     <!-- Favourite button -->
     <div>
       <%= link_to own_content_favourites_path(@own_content), method: :post,  class:"pl-1 nav-button" do %>
-        <% if current_user.favourites.map { |fav| fav.own_content }.include?(@own_content) %>
+        <% if user_signed_in? && current_user.favourites.map { |fav| fav.own_content }.include?(@own_content) %>
           <i class="pl-3 fas fa-heart fa-lg ct-primary-light"></i>
         <% else %>
           <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
@@ -15,7 +15,7 @@
       <% end %>
 
     <!-- Admin features -->
-      <% if current_user.admin %>
+      <% if user_signed_in? && current_user.admin %>
           <%= link_to  edit_own_content_path(@own_content) do %>
             <i class="far fa-edit"></i>
           <% end %>

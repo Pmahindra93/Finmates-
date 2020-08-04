@@ -88,7 +88,20 @@ window.fbAsyncInit = function() {
 
   <!-- Article content -->
   <div class="article_content">
-    <p><%= sanitize @own_content.article %></p>
+    <% if user_signed_in? %>
+      <p><%= sanitize @own_content.article %></p>
+    <% else %>
+      <div class="blurry-paywall">
+        <p><%= sanitize @own_content.article.truncate_words(50, seperator: /\s/) %></p>
+      </div>
+      <div class="read-full-story">
+        <p><strong>TO READ THE FULL STORY</strong></p>
+      </div>
+      <div class="flex-sign-up-login-btn">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-horizontal-gradient" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn-horizontal-white" %>
+      </div>
+    <% end %>
   </div>
 
   <!-- Comments -->

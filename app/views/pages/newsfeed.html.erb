@@ -8,7 +8,11 @@
     <br>
     <hr></hr>
 
-    <h5><%= current_user.first_name %>, here is your bit-size news 💸</h5>
+    <% if user_signed_in? %>
+      <h5><%= current_user.first_name %>, here is your bit-size news 💸</h5>
+    <% else %>
+      <h5>Hey there, here is your bit-size news 💸</h5>
+    <% end %>
     <br>
   </div>
   <div class="cardsnf m-3">
@@ -37,7 +41,7 @@
     <div class="m-3">
       <div class= "py-2 d-flex justify-content-between">
         <h5>Learn 📚</h5>
-        <% if current_user.admin %>
+        <% if user_signed_in? && current_user.admin %>
             <%= link_to "Add", new_education_content_path %>
           <% end %>
       </div>
@@ -66,7 +70,7 @@
   <div class="m-3">
       <div class= "py-2 d-flex justify-content-between">
         <h5>Did you know? 🤔</h5>
-        <% if current_user.admin %>
+        <% if user_signed_in? && current_user.admin %>
             <%= link_to "Add", new_didyouknow_path %>
           <% end %>
       </div>
