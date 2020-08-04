@@ -113,9 +113,9 @@ ActiveRecord::Schema.define(version: 2020_07_27_191418) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname"
     t.string "first_name"
     t.string "last_name"
-    t.string "nickname"
     t.boolean "admin", default: false, null: false
     t.string "provider"
     t.string "uid"
