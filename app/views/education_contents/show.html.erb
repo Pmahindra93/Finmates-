@@ -1,10 +1,6 @@
 <% content_for :meta_title, "#{sanitize @education_content.title} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "#{sanitize @education_content.description}" %>
-<% if @education_content.thumbnail.attached? %>
-  <% content_for :meta_image, cl_image_path(@education_content.thumbnail.key) %>
-<% else %>
-  <%= content_for :meta_image, "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80" %>
-<% end %>
+<% content_for :meta_description, "#{sanitize @education_content.description, tags: %w()}" %>
+<% content_for :meta_image, cl_image_path(@education_content.thumbnail.key) %>
 
 <!-- Article thumbnail -->
 <div class="article_banner">
@@ -36,11 +32,19 @@
     </div>
 
     <!-- social-share-button -->
-    <div class="social-share-btn">
+    <div class="social-share-btn-article">
 
       <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
-      <a href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@education_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
-          <i class="fab fa-twitter-square"></i>
+      <a class="twitter-link" href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@education_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i class="fab fa-twitter-square"></i>
+      </a>
+
+      <a href="https://www.facebook.com/dialog/share?app_id=307358133764324&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i id="shareBtn" class="fab fa-facebook-square"></i>
+      </a>
+
+      <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@education_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i class="fab fa-linkedin"></i>
       </a>
 
     </div>
