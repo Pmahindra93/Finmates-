@@ -1,5 +1,5 @@
 <% content_for :meta_title, "#{sanitize @own_content.title} is on #{DEFAULT_META["meta_product_name"]}" %>
-
+<% content_for :meta_description, "#{sanitize @own_content.description}" %>
 <% if @own_content.photo.attached? %>
   <% content_for :meta_image, cl_image_path(@own_content.photo.key) %>
 <% else %>
