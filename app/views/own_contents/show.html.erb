@@ -1,5 +1,5 @@
 <% content_for :meta_title, "#{sanitize @own_content.title} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "#{sanitize @own_content.description}" %>
+
 <% if @own_content.photo.attached? %>
   <% content_for :meta_image, cl_image_path(@own_content.photo.key) %>
 <% else %>
@@ -63,9 +63,9 @@ window.fbAsyncInit = function() {
         <i class="fab fa-twitter-square"></i>
       </a>
 
-   <!--    <a href="https://www.facebook.com/dialog/share?app_id=307358133764324&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+      <a href="https://www.facebook.com/dialog/share?app_id=307358133764324&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
         <i id="shareBtn" class="fab fa-facebook-square"></i>
-      </a> -->
+      </a>
 
       <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
         <i class="fab fa-linkedin"></i>
