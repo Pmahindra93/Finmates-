@@ -2,26 +2,6 @@
 <% content_for :meta_description, "#{sanitize @own_content.description, tags: %w()}" %>
 <% content_for :meta_image, cl_image_path(@own_content.photo.key) %>
 
-<!-- <script>
-window.fbAsyncInit = function() {
-  FB.init({
-    appId : '307358133764324',
-    autoLogAppEvents : true,
-    xfbml : true,
-    version : 'v7.0'
-  });
-  // FB.AppEvents.logPageView();
-};
-
-(function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
-</script> -->
-
 <!-- Article thumbnail -->
 <div class="article_banner">
   <% if @own_content.photo.attached? %>
@@ -112,14 +92,3 @@ window.fbAsyncInit = function() {
   <br><br>
   </div>
 </div>
-
-<!-- <script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    display: 'popup',
-    method: 'share',
-    href: window.location.href,
-  }, function(response){});
-}
-</script> -->
-<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
