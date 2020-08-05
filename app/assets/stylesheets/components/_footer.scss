@@ -14,9 +14,16 @@
   display: flex;
   justify-content: center;
   a, p {
-    margin: 0 16px;
+    margin: 0 6px;
     color: white !important;
   }
+}
+
+.copyright p {
+   display: flex;
+  justify-content: center;
+    margin: 0 6px;
+    color: white !important;
 }
 
 .social-share-btn {
