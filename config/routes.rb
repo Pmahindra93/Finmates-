@@ -1,6 +1,7 @@
  Rails.application.routes.draw do
 
 
+  resources :photos
   devise_for :users,
      controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -19,6 +20,9 @@
 
 
   resources :education_contents do
+    member do
+      put "like" => "education_contents#like"
+    end
   end
 
   resources :didyouknows do
@@ -27,6 +31,9 @@
  get '/library', to: 'pages#library'
  get '/newsfeed', to: 'pages#newsfeed'
  get '/favourites', to: 'favourites#index'
+ get '/about', to: 'pages#about'
+ get '/faq', to: 'pages#faq'
+
 
   resources :users, only: [:show, :edit, :update]
       # post "users/:id", to: "users#show"

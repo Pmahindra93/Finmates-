@@ -1,0 +1,3 @@
+<% vote_text = current_user&.voted_for?(education_content) ? "👎" : "👍" %>
+
+<%= link_to vote_text, like_education_content_path(education_content), method: :put, remote: :true, class: 'like-link' %>

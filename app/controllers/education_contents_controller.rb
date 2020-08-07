@@ -1,7 +1,7 @@
 class EducationContentsController < ApplicationController
 
-  before_action :find_econtent, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_econtent, only: [:show, :like, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :like]
 
 
 
@@ -42,6 +42,13 @@ class EducationContentsController < ApplicationController
    redirect_to newsfeed_path, alert: "Content Deleted"
   end
 
+  def like
+    if current_user.voted_for? @education_content
+      @education_content.unliked_by current_user
+    else
+      @education_content.liked_by current_user
+    end
+  end
 
   private
 
@@ -51,7 +58,7 @@ class EducationContentsController < ApplicationController
   end
 
   def educontent_params
-    params.require(:education_content).permit(:title, :description, :edu_content, :thumbnail, photos: [])
+    params.require(:education_content).permit(:title, :description, :edu_content, :thumbnail, :figure)
   end
 
 

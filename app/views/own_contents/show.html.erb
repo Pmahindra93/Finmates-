@@ -1,41 +1,21 @@
 <% content_for :meta_title, "#{sanitize @own_content.title} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "#{sanitize @own_content.description}" %>
+<% content_for :meta_description, "#{sanitize @own_content.description, tags: %w()}" %>
 <% if @own_content.photo.attached? %>
   <% content_for :meta_image, cl_image_path(@own_content.photo.key) %>
 <% else %>
   <%= content_for :meta_image, "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80" %>
 <% end %>
 
-<!-- <script>
-window.fbAsyncInit = function() {
-  FB.init({
-    appId : '199160927992724',
-    autoLogAppEvents : true,
-    xfbml : true,
-    version : 'v7.0'
-  });
-  // FB.AppEvents.logPageView();
-};
-
-(function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
-</script> -->
-
 <!-- Article thumbnail -->
 <div class="article_banner">
   <% if @own_content.photo.attached? %>
     <div class="article_thumbnail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @own_content.photo.key %>')">
-      <%= render 'components/banner_content' %>
+      <%= render 'components/banner_owncontent' %>
     </div>
 
   <% else %>
     <div class="article_thumbnail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80')">
-      <%= render 'components/banner_content' %>
+      <%= render 'components/banner_owncontent' %>
     </div>
   <% end %>
 </div>
@@ -56,28 +36,21 @@ window.fbAsyncInit = function() {
     </div>
 
     <!-- social-share-button -->
-    <div class="social-share-btn">
+    <div class="social-share-btn-article">
 
-          <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
-          <a href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@own_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
-              <i class="fab fa-twitter-square"></i>
-          </a>
+      <!-- To include Twitter hashtags copy+paste "&hashtags={hash_tags}" to the end of href and replace "{hash_tags}" -->
+      <a class="twitter-link" href="https://twitter.com/intent/tweet?url=<%= request.original_url %>&text=<%= "#{@own_content.title}" %>+&via=finmates_co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i class="fab fa-twitter-square"></i>
+      </a>
 
-        <!-- <li>
-          <a href="https://www.facebook.com/dialog/share?app_id=199160927992724&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
-            <i id="shareBtn" class="fab fa-facebook-square"></i>
-          </a>
-        </li> -->
-        <!-- <li>
-          <div class="fb-share-button" data-href="http://www.finmates.co/own_contents/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffinmates.co%2Fown_contents%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-        </li>
-        <li>
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li> -->
+      <a href="https://www.facebook.com/dialog/share?app_id=307358133764324&display=popup&href=<%= request.original_url %>&redirect_uri=<%= request.original_url %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i id="shareBtn" class="fab fa-facebook-square"></i>
+      </a>
 
-      <%#= social_share_button_tag(sanitize @own_content.title, :url => "#{own_content_path(@own_content)}", desc: "#{@own_content.description}") %>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<%= request.original_url %>&amp;title=<%= "#{@own_content.title}" %>&amp;source=finmates.co" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
     </div>
   </div>
   <br>
@@ -88,7 +61,20 @@ window.fbAsyncInit = function() {
 
   <!-- Article content -->
   <div class="article_content">
-    <p><%= sanitize @own_content.article %></p>
+    <% if user_signed_in? %>
+      <p><%= sanitize @own_content.article %></p>
+    <% else %>
+      <div class="blurry-paywall">
+        <p><%= sanitize @own_content.article.truncate_words(50, seperator: /\s/) %></p>
+      </div>
+      <div class="read-full-story">
+        <p><strong>TO READ THE FULL STORY</strong></p>
+      </div>
+      <div class="flex-sign-up-login-btn">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-horizontal-gradient" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn-horizontal-white" %>
+      </div>
+    <% end %>
   </div>
 
   <!-- Comments -->
@@ -110,14 +96,3 @@ window.fbAsyncInit = function() {
   <br><br>
   </div>
 </div>
-
-<!-- <script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    display: 'popup',
-    method: 'share',
-    href: window.location.href,
-  }, function(response){});
-}
-</script> -->
-<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!
 
 
   def home
@@ -18,6 +18,12 @@ class PagesController < ApplicationController
     @week_date = Date.today()-7
     @didyouknows = Didyouknow.all
     @education_contents = EducationContent.all
+  end
+
+  def about
+  end
+
+  def faq
   end
 
 end

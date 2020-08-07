@@ -8,8 +8,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
-gem 'social-share-button'
 gem 'pundit'
+gem 'social-share-button'
 
 
 gem 'omniauth'
@@ -27,10 +27,11 @@ gem 'trix'
 
 # for image processing/uploading
 gem 'carrierwave'
+gem "shrine", "~> 3.0"
 gem 'mini_magick'
 
 # Upload Photo gem
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
