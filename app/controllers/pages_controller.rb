@@ -3,6 +3,9 @@ class PagesController < ApplicationController
 
 
   def home
+    if user_signed_in?
+      redirect_to newsfeed_path
+    end
   end
 
   def library
