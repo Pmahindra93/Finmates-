@@ -65,9 +65,9 @@
 
 
 
+  <div class='twitterDyk'>
     <!-- Did-you know section -->
-
-  <div class="m-3">
+    <div class="m-3 didyk">
       <div class= "py-2 d-flex justify-content-between">
         <h5>Did you know? 🤔</h5>
         <% if user_signed_in? && current_user.admin %>
@@ -106,16 +106,17 @@
         </a>
       </div>
       <% end %>
-  </div>
+    </div>
 
   <!-- end of did you know -->
   <hr></hr>
 
 <!-- start of the twitter feed -->
-  <div class="m-3 py-2">
-    <a class="twitter-timeline" data-width="100%" data-height="550" href="https://twitter.com/finmates_co?ref_src=twsrc%5Etfw">Tweets by finmates_co</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
+    <div class="m-3 py-2 twitter">
+      <h5>FinTweets 📬</h5>
+      <a class="twitter-timeline" data-width="100%" data-height="550" href="https://twitter.com/finmates_co?ref_src=twsrc%5Etfw"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
   <!-- end of twitter feed -->
-
+ </div>
 </div>
 
