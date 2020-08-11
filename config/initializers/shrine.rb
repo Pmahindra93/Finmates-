@@ -30,7 +30,7 @@ else
   Cloudinary.config(
     cloud_name: "dvscdtpyl",
     api_key:    "581579419931912",
-    api_secret: "GiDIqUEiqumYXmOZXM1xIVMf3AC",
+    api_secret: "GiDIqUEiqvmYXmOzXM1xIVMf3AQ",
   )
 
   Shrine.storages = {
