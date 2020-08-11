@@ -1,5 +1,5 @@
 <% unless e_content.thumbnail.attached? %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path("thought-catalog-I0TDRP0fj6Y-unsplash_ccjbhz") %>')">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag('thought-catalog-I0TDRP0fj6Y-unsplash_ccjbhz') %>')">
     <%= e_content.title  %>
   </div>
 <% else %>
