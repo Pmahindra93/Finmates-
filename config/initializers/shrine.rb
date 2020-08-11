@@ -14,9 +14,9 @@ require "cloudinary"
 require "shrine/storage/cloudinary"
 
 Cloudinary.config(
-  cloud_name: "...",
-  api_key:    "...",
-  api_secret: "...",
+  cloud_name: "dvscdtpyl",
+  api_key:    "581579419931912",
+  api_secret: "GiDIqUEiqumYXmOZXM1xIVMf3AC",
 )
 
 Shrine.storages = {
