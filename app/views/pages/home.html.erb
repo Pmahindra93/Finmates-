@@ -20,12 +20,28 @@
             <button class="btn-white"> Go to Newsfeed </button>
           <% end %>
         </div>
-
-        <div class="banner-img">
-          <%= image_tag 'banner-img.png' %>
-        </div>
+        
+          <div class="mx-3 mt-5 pt-3 head">
+            <h5>Check out the latest articles on Finmates 🗞</h5>
+         </div>
+          <div class="cardsnf mx-3 py-4">
+            <% @top_content.each do |content| %>
+                <%= link_to own_content_path(content) do %>
+                  <%= render 'components/card', content: content %>
+                  <br>
+                <% end %>
+            <% end %>
+          </div>
       </div>
   </section>
+
+
+ 
+ 
+
+
+  <hr></hr>
+
 
   <!-- OUR-STORY-SECTION -->
     <div class="primary-container">

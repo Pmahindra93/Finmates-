@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     if user_signed_in?
       redirect_to newsfeed_path
     end
+    @top_content = OwnContent.last(3)
   end
 
   def library
