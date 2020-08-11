@@ -105,6 +105,9 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -113,9 +116,17 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashie (4.1.0)
+    http (4.4.1)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      http-parser (~> 1.2.0)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    http-parser (1.2.1)
+      ffi-compiler (>= 1.0, < 2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     image_processing (1.11.0)
@@ -270,6 +281,11 @@ GEM
     shrine (3.2.1)
       content_disposition (~> 1.0)
       down (~> 5.1)
+    shrine-cloudinary (1.1.1)
+      cloudinary (~> 1.12)
+      down (~> 5.0)
+      http (>= 3.2, < 5)
+      shrine (>= 3.0.0.rc, < 4)
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -344,6 +360,7 @@ DEPENDENCIES
   remotipart!
   sassc-rails
   shrine (~> 3.0)
+  shrine-cloudinary (~> 1.1)
   simple_form
   social-share-button
   spring
