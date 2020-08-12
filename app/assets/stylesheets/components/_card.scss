@@ -56,11 +56,25 @@
 
 @media(max-width: 992px) {
   .cardsnf {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media(max-width: 768px) {
+  .cardsnf {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cardsnf {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
   .cardsnf {
     grid-template-columns: 1fr;
   }
