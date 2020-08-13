@@ -6,6 +6,8 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  max-width: 600px;
+  margin: auto;
 }
 
 .card-product img {
@@ -43,13 +45,13 @@
 }
 
 // cards - newsfeed responsiveness
-
 .cardsnf{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
+<<<<<<< HEAD
 .card-img-top{
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
 }
@@ -79,10 +81,31 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+=======
+@media (min-width: 100px) and (max-width: 1067px) {
+  .cardsnf {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-img-top{
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+}
+
+// @media(max-width: 768px) {
+//   .cardsnf {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+
+// @media(max-width: 992px) {
+//   .cardsnf {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
+>>>>>>> master
 
 // cards for Educational content
-
-
 .cardsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
