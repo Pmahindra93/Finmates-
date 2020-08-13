@@ -54,11 +54,16 @@
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
 }
 
-
+// Smallest device
+@media (min-width: 100px) and (max-width: 576px) {
+  .cardsnf {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media(max-width: 768px) {
   .cardsnf {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -66,9 +71,14 @@
   .cardsnf {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}                           
+}            
 
-
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cardsnf {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 
 // cards for Educational content
 
