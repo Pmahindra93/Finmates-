@@ -10,8 +10,13 @@ class PagesController < ApplicationController
   end
 
   def library
-    @own_contents = OwnContent.all
-    @didyouknows = Didyouknow.all
+    if params[:query].present?
+      @own_contents = OwnContent.search("#{params[:query]}")
+      @education_contents = EducationContent.search("#{params[:query]}")
+    else
+      @own_contents = OwnContent.all
+      @education_contents = EducationContent.all
+    end
   end
 
   def newsfeed

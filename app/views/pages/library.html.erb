@@ -1,15 +1,53 @@
 <div class="primary-container-newsfeed">
   <div class="mx-3 my-4 py-5">
     <br>
-    <h5>Articles</h5>
+      <div class="search-form">
+        <div class="search-form-input">
+          <%= form_tag library_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Try 'Bitcoin'"
+            %>
+        </div>
+        <div class="search-form-submit">
+          <%= submit_tag "Search", class: "btn-gradient" %>
+          <% end %>
+        </div>
+      </div>
+
     <br>
-    <% @own_contents.each do |content| %>
-      <%= link_to own_content_path(content) do %>
-        <%= render 'components/card', content: content %>
+    <br>
+    <br>
+    <h5>News, Updates, and Fun Stuff 📰 🙌 </h5>
+    <br>
+    <% @own_contents.each do |own_content| %>
+      <%= link_to own_content_path(own_content) do %>
+        <%= render 'components/card', own_content: own_content %>
         <br>
       <% end %>
     <% end %>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h5>Learning Units 📚 🙇</h5>
+    <br>
+     <div class="cardsGrid">
+        <% if @education_contents.empty? %>
+        <div class="py-2">
+          <p>Apologies, our teacher is on the way to deliver the latest course from the crypto world!</p>
+        </div>
+    <% else %>
+      <% @education_contents.each do |edu_content| %>
+        <%= link_to education_content_path(edu_content) do %>
+          <%= render 'components/cardGrid', edu_content: edu_content %>
+          <br>
+        <% end %>
+      <% end %>
+    <% end %>
+    </div>
   </div>
   <hr></hr>
-
 </div>
