@@ -1,6 +1,23 @@
 <div class="primary-container-newsfeed">
   <div class="mx-3 my-4 py-5">
     <br>
+    <div class="search-form">
+      <div class="d-flex">
+        <div class="search-form-input">
+          <%= form_tag own_contents_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Try 'Bitcoin'"
+            %>
+        </div>
+        <div class="search-form-submit">
+          <%= submit_tag "Search", class: "btn-gradient" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <br>
     <h5>Articles</h5>
     <br>
     <% @own_contents.each do |content| %>
