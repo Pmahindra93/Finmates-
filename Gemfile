@@ -35,7 +35,7 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
 # search gem
-gem 'pg_search'
+gem 'searchkick'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
