@@ -14,8 +14,8 @@ class PagesController < ApplicationController
       @own_contents = OwnContent.search("#{params[:query]}")
       @education_contents = EducationContent.search("#{params[:query]}")
     else
-      @own_contents = OwnContent.all
-      @education_contents = EducationContent.all
+      @own_contents = OwnContent.all.sort_by { |date| date.published_date}.reverse!
+      @education_contents = EducationContent.all.sort_by { |date| date.created_at}.reverse!
     end
   end
 
