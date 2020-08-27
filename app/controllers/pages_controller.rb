@@ -15,7 +15,7 @@ class PagesController < ApplicationController
     else
       @own_contents = OwnContent.all
     end
-    @didyouknows = Didyouknow.all
+    @education_contents = EducationContent.all
   end
 
   def newsfeed
