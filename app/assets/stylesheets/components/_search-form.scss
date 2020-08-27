@@ -1,15 +1,22 @@
 .search-form {
-align-items: center;
-}
-
-.search-form .btn-pink {
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .form-control {
-  border-radius: 16px;
+  margin: 20px 0;
+  padding: 8px 25px;
+  border-radius: 8px;
 }
 
 .search-form-input {
   width: 60%;
+}
+
+.search-form-submit {
+  .btn-gradient {
+    font-size: 16px;
+    margin: 20px 0 20px 20px;
+    padding: 5px 25px;
+  }
 }
