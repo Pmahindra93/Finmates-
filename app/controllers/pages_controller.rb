@@ -10,7 +10,11 @@ class PagesController < ApplicationController
   end
 
   def library
-    @own_contents = OwnContent.all
+    if params[:query].present?
+      @own_contents = OwnContent.search("#{params[:query]}")
+    else
+      @own_contents = OwnContent.all
+    end
     @didyouknows = Didyouknow.all
   end
 

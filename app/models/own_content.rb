@@ -13,4 +13,12 @@ class OwnContent < ApplicationRecord
   validates :article, presence: true
 
   acts_as_votable
+
+  searchkick #:text_middle [:title]
+
+  def search_data
+    {
+      title: title,
+    }
+  end
 end

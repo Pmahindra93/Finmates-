@@ -4,7 +4,7 @@
     <div class="search-form">
       <div class="d-flex">
         <div class="search-form-input">
-          <%= form_tag own_contents_path, method: :get do %>
+          <%= form_tag library_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
@@ -17,6 +17,7 @@
         </div>
       </div>
     </div>
+
     <br>
     <h5>Articles</h5>
     <br>
