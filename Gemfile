@@ -34,6 +34,9 @@ gem 'mini_magick'
 # Upload Photo gem
 gem 'image_processing', '~> 1.2'
 
+# search gem
+gem 'searchkick'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'
