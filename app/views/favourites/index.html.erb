@@ -4,9 +4,9 @@
     <h5>Your Favourites</h5>
     <br>
    <% if @favourites.present? %>
-      <% @favourites.each do |content| %>
-        <%= link_to own_content_path(content.own_content) do %>
-          <%= render 'components/card', content: content.own_content %>
+      <% @favourites.each do |own_content| %>
+        <%= link_to own_content_path(own_content.own_content) do %>
+          <%= render 'components/card', own_content: own_content.own_content %>
           <br>
         <% end %>
       <% end %>
