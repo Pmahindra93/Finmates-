@@ -15,8 +15,8 @@
     <% end %>
     <br>
   </div>
-  <div class="cardsnf m-3">
 
+  <div class="cardsnf m-3">
    <!--  <br>
     <p> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </p>
     <br> -->
@@ -34,6 +34,19 @@
     <% end %>
   </div>
   <hr></hr>
+
+
+
+    <!-- Podcast / SPOTIFY -->
+    <div class="m-3">
+      <h5>Podcasts 🎧</h5>
+      <iframe src="https://open.spotify.com/embed-podcast/episode/14D71GE6uP9kluB5K0r5DW" width="55%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div class= "py-2 d-flex justify-content-between">
+          <%= link_to "More Podcasts..", favourites_path %>
+        </div>
+      </div>
+    <hr></hr>
+
 
 
     <!-- Education content -->
@@ -60,6 +73,7 @@
       <% end %>
     <% end %>
     </div>
+    <%= link_to "More Education..", library_path %>
   </div>
   <hr></hr>
 
