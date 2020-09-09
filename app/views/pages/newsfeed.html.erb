@@ -52,7 +52,7 @@
           <p>Apologies, our teacher is on the way to deliver the latest course from the crypto world!</p>
         </div>
     <% else %>
-      <% @education_contents.each do |edu_content| %>
+      <% @top_edu_content.each do |edu_content| %>
         <%= link_to education_content_path(edu_content) do %>
           <%= render 'components/cardGrid', edu_content: edu_content %>
           <br>
