@@ -25,6 +25,7 @@ class PagesController < ApplicationController
     @today_content = @today_content.sort_by {|article| article.published_date}
     @today_content = @today_content.reverse
     @week_date = Date.today()-7
+    @top_edu_content = EducationContent.last(3)
     @didyouknows = Didyouknow.all
     @education_contents = EducationContent.all
   end
