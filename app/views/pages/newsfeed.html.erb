@@ -15,8 +15,8 @@
     <% end %>
     <br>
   </div>
-  <div class="cardsnf m-3">
 
+  <div class="cardsnf m-3">
    <!--  <br>
     <p> News from <strong><%= @week_date.strftime("%B %d, %Y")  %></strong> to <strong> <%= Date.today().strftime("%B %d, %Y") %> </strong> </p>
     <br> -->
@@ -36,6 +36,20 @@
   <hr></hr>
 
 
+
+    <!-- Podcast / SPOTIFY -->
+    <div class="m-3">
+      <h5>Podcasts 🎧</h5>
+      <iframe class="spotify-player" src="https://open.spotify.com/embed-podcast/episode/14D71GE6uP9kluB5K0r5DW" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <iframe class="spotify-player" src="https://open.spotify.com/embed-podcast/episode/7z5oMLZ1p6Vg6LhRmk3KWa" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div class= "py-2 d-flex justify-content-between">
+          <%= link_to "More Episodes...", favourites_path %>
+        </div>
+      </div>
+    <hr></hr>
+
+
+
     <!-- Education content -->
 
     <div class="m-3">
@@ -52,7 +66,7 @@
           <p>Apologies, our teacher is on the way to deliver the latest course from the crypto world!</p>
         </div>
     <% else %>
-      <% @education_contents.each do |edu_content| %>
+      <% @top_edu_content.each do |edu_content| %>
         <%= link_to education_content_path(edu_content) do %>
           <%= render 'components/cardGrid', edu_content: edu_content %>
           <br>
@@ -60,6 +74,7 @@
       <% end %>
     <% end %>
     </div>
+    <%= link_to "More Education..", library_path %>
   </div>
   <hr></hr>
 

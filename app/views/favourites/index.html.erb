@@ -1,18 +1,12 @@
 <div class="primary-container-newsfeed">
   <div class="mx-3 my-4 py-5">
     <br>
-    <h5>Your Favourites</h5>
+    <h5>Podcasts 🎧</h5>
     <br>
-   <% if @favourites.present? %>
-      <% @favourites.each do |content| %>
-        <%= link_to own_content_path(content.own_content) do %>
-          <%= render 'components/card', content: content.own_content %>
-          <br>
-        <% end %>
-      <% end %>
-    <% else %>
-      <p class="mt-2"> Currently, you have no Favourites! </p>
-    <% end %>
+
+    <iframe src="https://open.spotify.com/embed-podcast/episode/14D71GE6uP9kluB5K0r5DW" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <iframe src="https://open.spotify.com/embed-podcast/episode/7z5oMLZ1p6Vg6LhRmk3KWa" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <div class= "py-2 d-flex justify-content-between"></div>
   </div>
 </div>
 
